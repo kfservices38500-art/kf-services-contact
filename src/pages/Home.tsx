@@ -206,7 +206,7 @@ const Home = () => {
               ))}
             </div>
             {/* Stats bar */}
-            <div className="absolute bottom-4 left-4 right-4 bg-background/95 backdrop-blur rounded-2xl p-4 flex items-center justify-between gap-4">
+            <div className="absolute bottom-4 left-4 right-4 bg-background/40 backdrop-blur-xl rounded-2xl p-4 flex items-center justify-between gap-4">
               <div className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-muted-foreground" />
                 <span className="text-base font-bold">+20 ans d'expérience</span>
