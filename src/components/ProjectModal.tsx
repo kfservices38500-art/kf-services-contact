@@ -89,8 +89,8 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               <X className="w-5 h-5" />
             </button>
 
-            {/* Image carousel */}
-            <div className="relative w-full aspect-[16/10] bg-muted overflow-hidden">
+            {/* Image carousel — shrinks to fit, doesn't overflow */}
+            <div className="relative w-full min-h-0 flex-1 bg-muted overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentIndex}
@@ -143,8 +143,8 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               </span>
             </div>
 
-            {/* Info */}
-            <div className="p-6 md:p-8 bg-background relative z-10">
+            {/* Info — always visible, white background, never pushed out */}
+            <div className="shrink-0 p-6 md:p-8 bg-background">
               <span className="inline-block gradient-red text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-3">
                 {project.categoryLabel}
               </span>
