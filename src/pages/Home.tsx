@@ -206,9 +206,9 @@ const Home = () => {
               ))}
             </div>
             {/* Stats bar */}
-            <div className="absolute bottom-4 left-4 right-4 bg-background/40 backdrop-blur-xl rounded-2xl p-4 flex items-center justify-between gap-4">
+            <div className="absolute bottom-4 left-4 right-4 bg-background/40 backdrop-blur-xl rounded-2xl p-4 flex items-center justify-between gap-4 text-white">
               <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-muted-foreground" />
+                <Users className="w-5 h-5" />
                 <span className="text-base font-bold">+20 ans d'expérience</span>
               </div>
               <div className="flex gap-1.5">
@@ -217,13 +217,13 @@ const Home = () => {
                     key={i}
                     onClick={() => setCurrentImage(i)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      i === currentImage ? "gradient-red scale-110" : "bg-border"
+                      i === currentImage ? "gradient-red scale-110" : "bg-white/40"
                     }`}
                   />
                 ))}
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-muted-foreground" />
+                <MapPin className="w-5 h-5" />
                 <span className="text-base font-bold">Île-de-France</span>
               </div>
             </div>
