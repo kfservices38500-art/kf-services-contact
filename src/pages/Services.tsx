@@ -1,5 +1,8 @@
-import { Link } from "react-router-dom";
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+import ScrollReveal from "../components/animations/ScrollReveal";
+import ParallaxSection from "../components/animations/ParallaxSection";
+import KFButton from "../components/ui/KFButton";
 
 const servicesData = [
   {
@@ -100,10 +103,16 @@ const Services = () => {
       {/* Hero */}
       <section className="bg-muted py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Tous vos travaux, un seul partenaire de confiance</h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Vous évitez la galère de coordonner plusieurs artisans. KF Services gère l'intégralité de votre projet pour que vous n'ayez qu'un seul numéro à appeler.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Tous vos travaux, <span className="gradient-red-text">un seul partenaire de confiance</span></h1>
+            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
+              Vous évitez la galère de coordonner plusieurs artisans. KF Services gère l'intégralité de votre projet pour que vous n'ayez qu'un seul numéro à appeler.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -113,65 +122,57 @@ const Services = () => {
           {servicesData.map((service, index) => (
             <div
               key={service.title}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? "lg:direction-rtl" : ""
-              }`}
+              className="grid lg:grid-cols-2 gap-12 items-center"
             >
-              <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 flex items-center gap-3">
-                  <span>{service.emoji}</span>
-                  {service.title}
+              <ScrollReveal direction={index % 2 === 0 ? "left" : "right"} className={index % 2 === 1 ? "lg:order-2" : ""}>
+                <h2 className="text-2xl md:text-4xl font-bold mb-4 flex items-center gap-3">
+                  <span className="text-3xl">{service.emoji}</span>
+                  <span className="gradient-red-text">{service.title}</span>
                 </h2>
-                <p className="text-muted-foreground mb-6">{service.description}</p>
+                <p className="text-muted-foreground text-base md:text-lg mb-6">{service.description}</p>
                 <ul className="space-y-3 mb-8">
                   {service.benefits.map((benefit, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-muted-foreground">{benefit}</span>
+                      <span className="text-base text-muted-foreground">{benefit}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-3">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:bg-foreground/90 transition-colors"
-                  >
-                    Obtenir mon devis <ArrowUpRight className="w-4 h-4" />
-                  </Link>
-                  <Link
-                    to={`/realisations?category=${service.category}`}
-                    className="inline-flex items-center gap-2 border border-border px-5 py-2.5 rounded-full text-sm font-medium hover:bg-muted transition-colors"
-                  >
-                    Voir les résultats <ArrowUpRight className="w-4 h-4" />
-                  </Link>
+                  <KFButton to="/contact" variant="gradient">
+                    Obtenir mon devis
+                  </KFButton>
+                  <KFButton to={`/realisations?category=${service.category}`} variant="outline">
+                    Voir les résultats
+                  </KFButton>
                 </div>
-              </div>
-              <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                <div className="rounded-2xl overflow-hidden">
-                  <img
+              </ScrollReveal>
+              <ScrollReveal direction={index % 2 === 0 ? "right" : "left"} className={index % 2 === 1 ? "lg:order-1" : ""}>
+                <div className="rounded-3xl overflow-hidden">
+                  <motion.img
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.5 }}
                     src={service.image}
                     alt={service.title}
                     className="w-full aspect-[4/3] object-cover"
                   />
                 </div>
-              </div>
+              </ScrollReveal>
             </div>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-foreground text-background py-16">
+      <section className="gradient-red text-white py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Vous avez un projet ? Parlons-en.</h2>
-          <p className="text-background/70 mb-8">En 48h, vous recevez un appel et un rendez-vous pour une visite gratuite sur site.</p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-medium hover:bg-primary/90 transition-colors"
-          >
-            Obtenir mon devis gratuit
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Vous avez un projet ? Parlons-en.</h2>
+            <p className="text-white/70 text-base md:text-lg mb-8">En 48h, vous recevez un appel et un rendez-vous pour une visite gratuite sur site.</p>
+            <KFButton to="/contact" variant="light">
+              Obtenir mon devis gratuit
+            </KFButton>
+          </ScrollReveal>
         </div>
       </section>
     </div>

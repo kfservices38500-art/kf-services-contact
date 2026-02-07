@@ -10,8 +10,6 @@ import {
   Star,
   Users,
   MapPin,
-  Clock,
-  Phone,
   CheckCircle2,
   ChevronRight,
   Shield,
@@ -20,7 +18,11 @@ import {
   Scale,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm";
+import ScrollReveal from "../components/animations/ScrollReveal";
+import ParallaxSection from "../components/animations/ParallaxSection";
+import KFButton from "../components/ui/KFButton";
 
 const heroImages = [
   { src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80", alt: "Votre maison plus solide" },
@@ -29,12 +31,12 @@ const heroImages = [
 ];
 
 const services = [
-  { icon: Hammer, label: "Maçonnerie" },
-  { icon: HomeIcon, label: "Charpente & Couverture" },
-  { icon: Droplets, label: "Gouttières Alu" },
-  { icon: ShieldAlert, label: "Désamiantage" },
-  { icon: Wrench, label: "Plomberie" },
-  { icon: Building2, label: "Neuf & Rénovation" },
+  { icon: Hammer, label: "Maçonnerie", desc: "Murs, fondations, extensions" },
+  { icon: HomeIcon, label: "Charpente & Couverture", desc: "Toiture, isolation, zinguerie" },
+  { icon: Droplets, label: "Gouttières Alu", desc: "Évacuation, protection façades" },
+  { icon: ShieldAlert, label: "Désamiantage", desc: "Retrait sécurisé, certification SS4" },
+  { icon: Wrench, label: "Plomberie", desc: "Sanitaires, chauffage, VMC" },
+  { icon: Building2, label: "Neuf & Rénovation", desc: "Projet clé en main, coordination" },
 ];
 
 const testimonials = [
@@ -70,7 +72,6 @@ const serviceCards = [
       "Une toiture étanche qui vous protège des intempéries",
       "Une isolation performante qui réduit vos factures d'énergie",
       "Des matériaux durables pour 30 ans de tranquillité",
-      "Zinguerie et étanchéité pour zéro infiltration",
     ],
   },
   {
@@ -78,18 +79,15 @@ const serviceCards = [
     benefits: [
       "Un diagnostic clair pour savoir où vous en êtes",
       "Un retrait sécurisé par une équipe certifiée SS4",
-      "Traitement conforme des déchets, vous êtes en règle",
       "Votre santé et celle de vos proches protégées",
     ],
   },
   {
     title: "Plomberie",
-    subtitle: "Confort & économies",
     benefits: [
       "Des sanitaires fonctionnels dès le premier jour",
       "Un air sain grâce à une VMC bien dimensionnée",
       "Des économies d'énergie avec une pompe à chaleur adaptée",
-      "Un dépannage rapide pour éviter les dégâts",
     ],
   },
 ];
@@ -102,18 +100,18 @@ const guarantees = [
 ];
 
 const portfolioItems = [
-  { img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80", title: "Maçonnerie & Construction", desc: "Des murs solides et des extensions qui augmentent la surface habitable et la valeur de votre bien." },
-  { img: "https://images.unsplash.com/photo-1635424710928-0544e8512eae?w=800&q=80", title: "Charpente & Couverture", desc: "Une toiture qui vous met à l'abri pour des décennies, avec une isolation qui réduit vos factures." },
-  { img: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=800&q=80", title: "Gouttières Aluminium", desc: "Des gouttières sur mesure qui protègent vos façades et fondations des dégâts des eaux." },
-  { img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80", title: "Plomberie & Chauffage", desc: "Un confort thermique optimal et des économies d'énergie grâce à des installations modernes et fiables." },
+  { img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80", title: "Maçonnerie & Construction", desc: "Des murs solides et des extensions qui augmentent la surface habitable." },
+  { img: "https://images.unsplash.com/photo-1635424710928-0544e8512eae?w=800&q=80", title: "Charpente & Couverture", desc: "Une toiture qui vous met à l'abri pour des décennies." },
+  { img: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=800&q=80", title: "Gouttières Aluminium", desc: "Des gouttières sur mesure qui protègent vos façades." },
+  { img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80", title: "Plomberie & Chauffage", desc: "Un confort thermique optimal et des économies d'énergie." },
 ];
 
 const processSteps = [
   { num: "01", title: "Vous nous appelez", desc: "En 10 minutes, nous cernons votre besoin et planifions une visite." },
-  { num: "02", title: "On vient chez vous", desc: "Visite gratuite, analyse technique et conseil personnalisé sur place." },
-  { num: "03", title: "Vous recevez un devis clair", desc: "Devis détaillé ligne par ligne, sans coûts cachés ni surprise." },
-  { num: "04", title: "Les travaux avancent", desc: "Suivi régulier à chaque étape, vous restez informé en permanence." },
-  { num: "05", title: "Vous profitez du résultat", desc: "Réception soignée et garantie décennale pour votre tranquillité." },
+  { num: "02", title: "On vient chez vous", desc: "Visite gratuite, analyse technique et conseil personnalisé." },
+  { num: "03", title: "Vous recevez un devis clair", desc: "Devis détaillé ligne par ligne, sans coûts cachés." },
+  { num: "04", title: "Les travaux avancent", desc: "Suivi régulier à chaque étape, vous restez informé." },
+  { num: "05", title: "Vous profitez du résultat", desc: "Réception soignée et garantie décennale." },
 ];
 
 const departments = [
@@ -142,44 +140,50 @@ const Home = () => {
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-muted-foreground mb-4">
-              Depuis 2003, <span className="font-semibold text-foreground">KF Services</span> vous accompagne pour que vos projets de construction et rénovation se réalisent sereinement.
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="text-muted-foreground text-lg mb-4">
+              Depuis 2003, <span className="font-bold text-foreground">KF Services</span> vous accompagne pour que vos projets de construction et rénovation se réalisent sereinement.
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
               Votre maison plus solide,{" "}
-              <span className="text-primary">plus sûre, plus belle</span>
+              <span className="gradient-red-text">plus sûre, plus belle</span>
             </h1>
-            <p className="text-muted-foreground text-lg mb-8 max-w-lg">
+            <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-lg">
               Vous bénéficiez d'un interlocuteur unique qui coordonne maçonnerie, charpente et finitions — pour un chantier sans stress et un résultat durable.
             </p>
             <div className="flex flex-wrap gap-3 mb-8">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-full font-medium hover:bg-foreground/90 transition-colors"
-              >
+              <KFButton to="/contact" variant="gradient">
                 Obtenir mon devis gratuit
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/realisations"
-                className="inline-flex items-center gap-2 border border-border px-6 py-3 rounded-full font-medium hover:bg-muted transition-colors"
-              >
+              </KFButton>
+              <KFButton to="/realisations" variant="outline">
                 Voir nos réalisations
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
+              </KFButton>
             </div>
+            {/* All services badges in hero */}
             <div className="flex flex-wrap gap-2">
               {services.map((s) => (
-                <span key={s.label} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-muted rounded-full text-xs font-medium text-muted-foreground">
-                  <s.icon className="w-3.5 h-3.5" />
+                <Link
+                  key={s.label}
+                  to="/services"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-muted rounded-2xl text-sm font-medium text-muted-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                >
+                  <s.icon className="w-4 h-4" />
                   {s.label}
-                </span>
+                </Link>
               ))}
             </div>
-          </div>
-          <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+          </motion.div>
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="aspect-[4/3] rounded-3xl overflow-hidden">
               {heroImages.map((img, i) => (
                 <img
                   key={i}
@@ -192,297 +196,365 @@ const Home = () => {
               ))}
             </div>
             {/* Stats bar */}
-            <div className="absolute bottom-4 left-4 right-4 bg-background/95 backdrop-blur rounded-xl p-3 flex items-center justify-between gap-4">
+            <div className="absolute bottom-4 left-4 right-4 bg-background/95 backdrop-blur rounded-2xl p-4 flex items-center justify-between gap-4">
               <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-muted-foreground" />
-                <span className="text-sm font-semibold">+20 ans d'expérience</span>
+                <Users className="w-5 h-5 text-muted-foreground" />
+                <span className="text-base font-bold">+20 ans d'expérience</span>
               </div>
-              <div className="flex gap-1">
+              <div className="flex gap-1.5">
                 {heroImages.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrentImage(i)}
-                    className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                      i === currentImage ? "bg-primary" : "bg-border"
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      i === currentImage ? "gradient-red scale-110" : "bg-border"
                     }`}
                   />
                 ))}
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-muted-foreground" />
-                <span className="text-sm font-semibold">Toute l'Île-de-France</span>
+                <MapPin className="w-5 h-5 text-muted-foreground" />
+                <span className="text-base font-bold">Île-de-France</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="bg-muted py-16 md:py-24">
+      <ParallaxSection className="bg-muted py-16 md:py-24" speed={0.15}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-primary font-bold text-lg">4.9/5</span>
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-              ))}
+          <ScrollReveal>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="gradient-red-text font-bold text-2xl">4.9/5</span>
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                ))}
+              </div>
             </div>
-          </div>
-          <p className="text-sm text-muted-foreground mb-8">Clients satisfaits · Avis vérifiés Google</p>
+            <p className="text-base text-muted-foreground mb-8">Clients satisfaits · Avis vérifiés Google</p>
+          </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <div key={i} className="bg-background rounded-2xl p-6 shadow-sm">
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">"{t.text}"</p>
-                <div>
-                  <p className="font-semibold text-sm">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.location}</p>
-                </div>
-              </div>
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <motion.div
+                  whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)" }}
+                  className="bg-background rounded-3xl p-7 shadow-sm transition-all"
+                >
+                  <p className="text-base text-muted-foreground mb-5 leading-relaxed">"{t.text}"</p>
+                  <div>
+                    <p className="font-bold text-base">{t.name}</p>
+                    <p className="text-sm text-muted-foreground">{t.location}</p>
+                  </div>
+                </motion.div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* Value Prop */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="rounded-2xl overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
-              alt="Chantier KF Services"
-              className="w-full aspect-[4/3] object-cover"
-            />
-          </div>
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Un budget maîtrisé,<br />zéro mauvaise surprise.
+          <ScrollReveal direction="left">
+            <div className="rounded-3xl overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
+                alt="Chantier KF Services"
+                className="w-full aspect-[4/3] object-cover"
+              />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal direction="right">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Un budget maîtrisé,<br /><span className="gradient-red-text">zéro mauvaise surprise.</span>
             </h2>
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl md:text-2xl font-semibold mb-4">
               Gagnez du temps<br />et de la sérénité
             </h3>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-muted-foreground text-base md:text-lg mb-4">
               Vous évitez la galère de coordonner plusieurs artisans : un seul interlocuteur gère l'intégralité de votre chantier, du devis à la réception.
             </p>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground text-base md:text-lg mb-6">
               Vous bénéficiez d'un devis détaillé et d'un planning réaliste, pour que votre projet avance sans surprise et dans les temps.
             </p>
             <Link
               to="/a-propos"
-              className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+              className="inline-flex items-center gap-2 gradient-red-text font-bold text-lg hover:underline"
             >
               Découvrir nos engagements
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5 text-primary" />
             </Link>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Services Overview */}
-      <section className="bg-muted py-16 md:py-24">
+      <ParallaxSection className="bg-muted py-16 md:py-24" speed={0.1}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-primary font-medium text-sm uppercase tracking-wider mb-2">Tous vos travaux, un seul partenaire</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Des solutions concrètes pour chaque besoin</h2>
-          <p className="text-muted-foreground max-w-2xl mb-12">
-            Vous évitez la multiplication des artisans et les retards : KF Services coordonne tous les corps de métier pour que votre projet avance vite, bien, et dans votre budget.
-          </p>
+          <ScrollReveal>
+            <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Tous vos travaux, un seul partenaire</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Des solutions concrètes pour <span className="gradient-red-text">chaque besoin</span></h2>
+            <p className="text-muted-foreground text-base md:text-lg max-w-2xl mb-12">
+              Vous évitez la multiplication des artisans et les retards : KF Services coordonne tous les corps de métier pour que votre projet avance vite, bien, et dans votre budget.
+            </p>
+          </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-6">
-            {serviceCards.map((card) => (
-              <div key={card.title} className="bg-background rounded-2xl p-6 shadow-sm">
-                <h3 className="text-xl font-bold mb-4">{card.title}</h3>
-                {card.subtitle && <p className="text-sm text-primary font-medium mb-2">{card.subtitle}</p>}
-                <ul className="space-y-2">
-                  {card.benefits.map((b, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {serviceCards.map((card, i) => (
+              <ScrollReveal key={card.title} delay={i * 0.1}>
+                <motion.div
+                  whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)" }}
+                  className="bg-background rounded-3xl p-7 shadow-sm"
+                >
+                  <h3 className="text-xl md:text-2xl font-bold mb-4">{card.title}</h3>
+                  <ul className="space-y-3">
+                    {card.benefits.map((b, j) => (
+                      <li key={j} className="flex items-start gap-3 text-base text-muted-foreground">
+                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* Trust */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <p className="text-primary font-medium text-sm uppercase tracking-wider mb-2">Pourquoi nos clients nous font confiance</p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">Rénovez sereinement, on s'occupe de tout</h2>
+        <ScrollReveal>
+          <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Pourquoi nos clients nous font confiance</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-12">Rénovez sereinement, <span className="gradient-red-text">on s'occupe de tout</span></h2>
+        </ScrollReveal>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          <div className="bg-muted rounded-2xl p-8">
-            <p className="text-primary text-xs font-medium uppercase tracking-wider mb-2">Votre projet, simplifié</p>
-            <h3 className="text-xl font-bold mb-3">Un plan clair dès le départ</h3>
-            <p className="text-muted-foreground text-sm mb-4">
-              Vous obtenez une vision complète de votre projet avant le premier coup de pioche : choix des matériaux, planning détaillé et estimation précise. Vous savez exactement où vous allez.
-            </p>
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:bg-foreground/90 transition-colors">
-              Obtenir mon devis gratuit <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </div>
-          <div className="rounded-2xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="Consultation" className="w-full h-full object-cover" />
-          </div>
+          <ScrollReveal direction="left">
+            <div className="bg-muted rounded-3xl p-8 md:p-10 h-full">
+              <p className="gradient-red-text text-sm font-bold uppercase tracking-wider mb-2">Votre projet, simplifié</p>
+              <h3 className="text-xl md:text-2xl font-bold mb-3">Un plan clair dès le départ</h3>
+              <p className="text-muted-foreground text-base md:text-lg mb-6">
+                Vous obtenez une vision complète de votre projet avant le premier coup de pioche : choix des matériaux, planning détaillé et estimation précise.
+              </p>
+              <KFButton to="/contact" variant="dark">
+                Obtenir mon devis gratuit
+              </KFButton>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal direction="right">
+            <div className="rounded-3xl overflow-hidden h-full">
+              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="Consultation" className="w-full h-full object-cover min-h-[300px]" />
+            </div>
+          </ScrollReveal>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <div className="bg-muted rounded-2xl p-8">
-            <p className="text-primary text-xs font-medium uppercase tracking-wider mb-2">Votre budget, respecté</p>
-            <h3 className="text-xl font-bold mb-3">Aucune surprise sur la facture</h3>
-            <p className="text-muted-foreground text-sm mb-4">
-              Vous recevez un devis détaillé ligne par ligne, avec un calendrier réaliste. Chaque dépense est justifiée et vous gardez le contrôle de votre budget du début à la fin.
-            </p>
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:bg-foreground/90 transition-colors">
-              Obtenir mon devis gratuit <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </div>
-          <div className="rounded-2xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Budget" className="w-full h-full object-cover" />
-          </div>
+          <ScrollReveal direction="left">
+            <div className="bg-muted rounded-3xl p-8 md:p-10 h-full">
+              <p className="gradient-red-text text-sm font-bold uppercase tracking-wider mb-2">Votre budget, respecté</p>
+              <h3 className="text-xl md:text-2xl font-bold mb-3">Aucune surprise sur la facture</h3>
+              <p className="text-muted-foreground text-base md:text-lg mb-6">
+                Vous recevez un devis détaillé ligne par ligne, avec un calendrier réaliste. Chaque dépense est justifiée.
+              </p>
+              <KFButton to="/contact" variant="dark">
+                Obtenir mon devis gratuit
+              </KFButton>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal direction="right">
+            <div className="rounded-3xl overflow-hidden h-full">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Budget" className="w-full h-full object-cover min-h-[300px]" />
+            </div>
+          </ScrollReveal>
         </div>
 
         {/* Guarantees */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {guarantees.map((g) => (
-            <div key={g.title} className="bg-muted rounded-xl p-5 text-center">
-              <g.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-semibold text-sm mb-1">{g.title}</h4>
-              <p className="text-xs text-muted-foreground">{g.desc}</p>
-            </div>
+          {guarantees.map((g, i) => (
+            <ScrollReveal key={g.title} delay={i * 0.1}>
+              <motion.div
+                whileHover={{ y: -3 }}
+                className="bg-muted rounded-3xl p-6 text-center"
+              >
+                <g.icon className="w-10 h-10 text-primary mx-auto mb-3" />
+                <h4 className="font-bold text-base mb-1">{g.title}</h4>
+                <p className="text-sm text-muted-foreground">{g.desc}</p>
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
       {/* Portfolio Preview */}
-      <section className="bg-muted py-16 md:py-24">
+      <ParallaxSection className="bg-muted py-16 md:py-24" speed={0.15}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-primary font-medium text-sm uppercase tracking-wider mb-2">La preuve par l'exemple</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Des résultats qui parlent d'eux-mêmes</h2>
-          <p className="text-muted-foreground mb-12 max-w-2xl">
-            Chaque projet réalisé est un client satisfait. Découvrez ce que nos équipes peuvent accomplir pour transformer votre habitat.
-          </p>
+          <ScrollReveal>
+            <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">La preuve par l'exemple</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Des résultats qui <span className="gradient-red-text">parlent d'eux-mêmes</span></h2>
+            <p className="text-muted-foreground text-base md:text-lg mb-12 max-w-2xl">
+              Chaque projet réalisé est un client satisfait. Découvrez ce que nos équipes peuvent accomplir pour transformer votre habitat.
+            </p>
+          </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {portfolioItems.map((item) => (
-              <div key={item.title} className="bg-background rounded-2xl overflow-hidden shadow-sm">
-                <img src={item.img} alt={item.title} className="w-full aspect-[4/3] object-cover" />
-                <div className="p-4">
-                  <h3 className="font-semibold text-sm mb-1">{item.title}</h3>
-                  <p className="text-xs text-muted-foreground">{item.desc}</p>
-                </div>
-              </div>
+            {portfolioItems.map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 0.1}>
+                <motion.div
+                  whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)" }}
+                  className="bg-background rounded-3xl overflow-hidden shadow-sm"
+                >
+                  <img src={item.img} alt={item.title} className="w-full aspect-[4/3] object-cover" />
+                  <div className="p-5">
+                    <h3 className="font-bold text-base mb-1">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  </div>
+                </motion.div>
+              </ScrollReveal>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Link to="/realisations" className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-full font-medium hover:bg-foreground/90 transition-colors">
-              Voir toutes nos réalisations <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <ScrollReveal className="text-center mt-10">
+            <KFButton to="/realisations" variant="dark">
+              Voir toutes nos réalisations
+            </KFButton>
+          </ScrollReveal>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* Process */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <p className="text-primary font-medium text-sm uppercase tracking-wider mb-2">Simple et transparent</p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Comment ça se passe concrètement ?</h2>
-        <p className="text-muted-foreground mb-12 max-w-2xl">
-          Vous savez exactement à quoi vous attendre à chaque étape. Pas de zone grise, pas de stress — juste un projet qui avance.
-        </p>
+        <ScrollReveal>
+          <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Simple et transparent</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Comment ça se passe <span className="gradient-red-text">concrètement ?</span></h2>
+          <p className="text-muted-foreground text-base md:text-lg mb-12 max-w-2xl">
+            Vous savez exactement à quoi vous attendre à chaque étape. Pas de zone grise, pas de stress.
+          </p>
+        </ScrollReveal>
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {processSteps.map((step) => (
-            <div key={step.num} className="relative">
-              <span className="text-4xl font-black text-primary/20">{step.num}</span>
-              <h3 className="font-semibold mt-2 mb-1">{step.title}</h3>
-              <p className="text-sm text-muted-foreground">{step.desc}</p>
-            </div>
+          {processSteps.map((step, i) => (
+            <ScrollReveal key={step.num} delay={i * 0.08}>
+              <div className="relative">
+                <span className="text-5xl font-black gradient-red-text opacity-30">{step.num}</span>
+                <h3 className="font-bold text-base mt-2 mb-1">{step.title}</h3>
+                <p className="text-sm text-muted-foreground">{step.desc}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
       {/* News */}
-      <section className="bg-muted py-16 md:py-24">
+      <ParallaxSection className="bg-muted py-16 md:py-24" speed={0.1}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-primary font-medium text-sm uppercase tracking-wider mb-2">Toujours en mouvement</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">Suivez nos avancées</h2>
+          <ScrollReveal>
+            <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Toujours en mouvement</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-12">Suivez nos <span className="gradient-red-text">avancées</span></h2>
+          </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-lg font-bold mb-6">Visitez nos chantiers terminés</h3>
+            <ScrollReveal direction="left">
+              <h3 className="text-xl font-bold mb-6">Visitez nos chantiers terminés</h3>
               <div className="space-y-4">
-                <div className="bg-background rounded-xl p-5">
-                  <p className="text-xs text-muted-foreground mb-1">15 Février 2025</p>
-                  <h4 className="font-semibold mb-1">Versailles</h4>
-                  <p className="text-sm text-muted-foreground mb-3">Rénovation maison — venez juger par vous-même</p>
-                  <Link to="/contact" className="text-primary text-sm font-medium hover:underline">Réserver ma visite →</Link>
-                </div>
-                <div className="bg-background rounded-xl p-5">
-                  <p className="text-xs text-muted-foreground mb-1">22 Février 2025</p>
-                  <h4 className="font-semibold mb-1">Boulogne-Billancourt</h4>
-                  <p className="text-sm text-muted-foreground mb-3">Extension + Toiture — voyez le résultat en vrai</p>
-                  <Link to="/contact" className="text-primary text-sm font-medium hover:underline">Réserver ma visite →</Link>
-                </div>
+                <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">
+                  <p className="text-sm text-muted-foreground mb-1">15 Février 2025</p>
+                  <h4 className="font-bold text-base mb-1">Versailles</h4>
+                  <p className="text-base text-muted-foreground mb-3">Rénovation maison — venez juger par vous-même</p>
+                  <Link to="/contact" className="gradient-red-text text-base font-bold hover:underline">Réserver ma visite →</Link>
+                </motion.div>
+                <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">
+                  <p className="text-sm text-muted-foreground mb-1">22 Février 2025</p>
+                  <h4 className="font-bold text-base mb-1">Boulogne-Billancourt</h4>
+                  <p className="text-base text-muted-foreground mb-3">Extension + Toiture — voyez le résultat en vrai</p>
+                  <Link to="/contact" className="gradient-red-text text-base font-bold hover:underline">Réserver ma visite →</Link>
+                </motion.div>
               </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-6">Dernières réalisations</h3>
+            </ScrollReveal>
+            <ScrollReveal direction="right">
+              <h3 className="text-xl font-bold mb-6">Dernières réalisations</h3>
               <div className="space-y-4">
-                <div className="bg-background rounded-xl p-5">
-                  <p className="text-xs text-muted-foreground mb-1">10 Janvier 2025</p>
-                  <h4 className="font-semibold mb-1">Nouveau projet livré à Neuilly-sur-Seine</h4>
-                  <p className="text-sm text-muted-foreground">Une maison de ville entièrement rénovée : les propriétaires ont gagné 30 m² de surface habitable.</p>
-                </div>
-                <div className="bg-background rounded-xl p-5">
-                  <p className="text-xs text-muted-foreground mb-1">5 Janvier 2025</p>
-                  <h4 className="font-semibold mb-1">Certification SS4 renouvelée pour 2025</h4>
-                  <p className="text-sm text-muted-foreground">Votre sécurité reste notre priorité : notre équipe désamiantage est recertifiée.</p>
-                </div>
+                <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">
+                  <p className="text-sm text-muted-foreground mb-1">10 Janvier 2025</p>
+                  <h4 className="font-bold text-base mb-1">Nouveau projet livré à Neuilly-sur-Seine</h4>
+                  <p className="text-base text-muted-foreground">Une maison de ville entièrement rénovée : les propriétaires ont gagné 30 m² de surface habitable.</p>
+                </motion.div>
+                <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">
+                  <p className="text-sm text-muted-foreground mb-1">5 Janvier 2025</p>
+                  <h4 className="font-bold text-base mb-1">Certification SS4 renouvelée pour 2025</h4>
+                  <p className="text-base text-muted-foreground">Votre sécurité reste notre priorité : notre équipe désamiantage est recertifiée.</p>
+                </motion.div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* CTA */}
-      <section className="bg-foreground text-background py-16">
+      <section className="gradient-red text-white py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Prêt à concrétiser votre projet ?</h2>
-          <p className="text-background/70 mb-8">En 48h, vous recevez une réponse et un rendez-vous pour avancer ensemble.</p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-medium hover:bg-primary/90 transition-colors"
-          >
-            Obtenir mon devis gratuit
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Prêt à concrétiser votre projet ?</h2>
+            <p className="text-white/70 text-base md:text-lg mb-8">En 48h, vous recevez une réponse et un rendez-vous pour avancer ensemble.</p>
+            <KFButton to="/contact" variant="light">
+              Obtenir mon devis gratuit
+            </KFButton>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Contact Form */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <p className="text-primary font-medium text-sm uppercase tracking-wider mb-2">C'est simple et rapide</p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Décrivez votre projet, on s'occupe du reste</h2>
-        <p className="text-muted-foreground mb-12 max-w-2xl">
-          Remplissez ce formulaire en 2 minutes. Vous recevrez un appel sous 48h pour planifier une visite gratuite et obtenir votre devis détaillé.
-        </p>
-        <ContactForm />
+        <ScrollReveal>
+          <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">C'est simple et rapide</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Décrivez votre projet, <span className="gradient-red-text">on s'occupe du reste</span></h2>
+          <p className="text-muted-foreground text-base md:text-lg mb-12 max-w-2xl">
+            Remplissez ce formulaire en 2 minutes. Vous recevrez un appel sous 48h pour planifier une visite gratuite et obtenir votre devis détaillé.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal delay={0.2}>
+          <ContactForm />
+        </ScrollReveal>
       </section>
 
-      {/* Map / Coverage */}
-      <section className="bg-muted py-16 md:py-24">
+      {/* Map / Coverage + Google Maps */}
+      <ParallaxSection className="bg-muted py-16 md:py-24" speed={0.1}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-primary font-medium text-sm uppercase tracking-wider mb-2">Près de chez vous</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Nous intervenons partout en Île-de-France</h2>
-          <p className="text-muted-foreground mb-12 max-w-2xl">
-            Où que vous soyez dans la région, vous bénéficiez de la même réactivité et du même niveau d'exigence sur votre chantier.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {departments.map((d) => (
-              <div key={d.code} className="bg-background rounded-xl p-4 text-center shadow-sm">
-                <span className="text-2xl font-black text-primary">{d.code}</span>
-                <p className="text-sm text-muted-foreground mt-1">{d.name}</p>
-              </div>
+          <ScrollReveal>
+            <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Près de chez vous</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Nous intervenons partout en <span className="gradient-red-text">Île-de-France</span></h2>
+            <p className="text-muted-foreground text-base md:text-lg mb-12 max-w-2xl">
+              Où que vous soyez dans la région, vous bénéficiez de la même réactivité et du même niveau d'exigence.
+            </p>
+          </ScrollReveal>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+            {departments.map((d, i) => (
+              <ScrollReveal key={d.code} delay={i * 0.05}>
+                <motion.div
+                  whileHover={{ y: -3 }}
+                  className="bg-background rounded-3xl p-5 text-center shadow-sm"
+                >
+                  <span className="text-3xl font-black gradient-red-text">{d.code}</span>
+                  <p className="text-base text-muted-foreground mt-1">{d.name}</p>
+                </motion.div>
+              </ScrollReveal>
             ))}
           </div>
+          {/* Google Maps */}
+          <ScrollReveal>
+            <div className="rounded-3xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.509!2d5.5917!3d45.3629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af4818e91c82f%3A0x0!2s58+Rue+des+Tallifardi%C3%A8res%2C+38500+Voiron!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="KF Services - Localisation"
+                className="w-full"
+              />
+            </div>
+          </ScrollReveal>
         </div>
-      </section>
+      </ParallaxSection>
     </div>
   );
 };

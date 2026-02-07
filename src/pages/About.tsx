@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Shield, FileCheck, Award, Scale, Target, Heart, Eye, Users } from "lucide-react";
+import { Shield, FileCheck, Award, Scale, Target, Heart, Eye, Users } from "lucide-react";
+import { motion } from "framer-motion";
+import ScrollReveal from "../components/animations/ScrollReveal";
+import ParallaxSection from "../components/animations/ParallaxSection";
+import KFButton from "../components/ui/KFButton";
 
 const stats = [
   { value: "20+", label: "Années à votre service" },
@@ -37,22 +41,28 @@ const About = () => {
       {/* Hero */}
       <section className="bg-muted py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Un partenaire fiable pour des travaux qui durent</h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Depuis 2003, vous bénéficiez d'une équipe expérimentée qui coordonne tous les corps de métier pour que votre projet se déroule sans stress, dans les délais et dans votre budget.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Un partenaire fiable pour des travaux <span className="gradient-red-text">qui durent</span></h1>
+            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
+              Depuis 2003, vous bénéficiez d'une équipe expérimentée qui coordonne tous les corps de métier pour que votre projet se déroule sans stress.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="bg-foreground text-background py-12">
+      <section className="gradient-red text-white py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <span className="text-3xl md:text-4xl font-black text-primary">{stat.value}</span>
-                <p className="text-sm text-background/60 mt-1">{stat.label}</p>
-              </div>
+            {stats.map((stat, i) => (
+              <ScrollReveal key={stat.label} delay={i * 0.1}>
+                <span className="text-4xl md:text-5xl font-black text-white">{stat.value}</span>
+                <p className="text-base text-white/70 mt-1">{stat.label}</p>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -61,75 +71,96 @@ const About = () => {
       {/* About + Timeline */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12">
-          <div>
-            <p className="text-primary font-medium text-sm uppercase tracking-wider mb-2">Pourquoi nous faire confiance</p>
-            <h2 className="text-3xl font-bold mb-6">20 ans d'expérience au service de votre tranquillité</h2>
-            <div className="space-y-4 text-muted-foreground">
+          <ScrollReveal direction="left">
+            <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Pourquoi nous faire confiance</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">20 ans d'expérience au service de <span className="gradient-red-text">votre tranquillité</span></h2>
+            <div className="space-y-4 text-muted-foreground text-base md:text-lg">
               <p>
-                Quand vous confiez votre chantier à KF Services, vous gagnez un avantage décisif : un seul interlocuteur qui maîtrise tous les métiers du bâtiment. Plus besoin de coordonner maçon, charpentier et plombier — on s'en charge.
+                Quand vous confiez votre chantier à KF Services, vous gagnez un avantage décisif : un seul interlocuteur qui maîtrise tous les métiers du bâtiment.
               </p>
               <p>
-                Avec trois équipes spécialisées et plus de 500 chantiers à notre actif, vous bénéficiez d'une réactivité et d'un savoir-faire qui se traduisent concrètement : des délais tenus, des finitions soignées et un budget respecté.
+                Avec trois équipes spécialisées et plus de 500 chantiers à notre actif, vous bénéficiez d'une réactivité et d'un savoir-faire qui se traduisent concrètement.
               </p>
               <p>
-                Notre promesse est simple : vous accompagner du premier appel jusqu'à la réception finale, pour que votre projet devienne exactement ce que vous aviez imaginé.
+                Notre promesse est simple : vous accompagner du premier appel jusqu'à la réception finale.
               </p>
             </div>
-          </div>
-          <div className="space-y-6">
-            {timeline.map((item) => (
-              <div key={item.year} className="flex gap-4">
-                <span className="text-lg font-black text-primary min-w-[60px]">{item.year}</span>
-                <p className="text-muted-foreground text-sm pt-1">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          </ScrollReveal>
+          <ScrollReveal direction="right">
+            <div className="space-y-6">
+              {timeline.map((item, i) => (
+                <motion.div
+                  key={item.year}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex gap-4"
+                >
+                  <span className="text-xl font-black gradient-red-text min-w-[70px]">{item.year}</span>
+                  <p className="text-muted-foreground text-base pt-0.5">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Values */}
-      <section className="bg-muted py-16 md:py-24">
+      <ParallaxSection className="bg-muted py-16 md:py-24" speed={0.15}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-primary font-medium text-sm uppercase tracking-wider mb-2">Ce que vous gagnez avec nous</p>
-          <h2 className="text-3xl font-bold mb-12">Des engagements concrets, pas des promesses en l'air</h2>
+          <ScrollReveal>
+            <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Ce que vous gagnez avec nous</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12">Des engagements concrets, <span className="gradient-red-text">pas des promesses en l'air</span></h2>
+          </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((v) => (
-              <div key={v.title} className="bg-background rounded-2xl p-6 shadow-sm">
-                <v.icon className="w-8 h-8 text-primary mb-4" />
-                <h3 className="font-semibold mb-2">{v.title}</h3>
-                <p className="text-sm text-muted-foreground">{v.desc}</p>
-              </div>
+            {values.map((v, i) => (
+              <ScrollReveal key={v.title} delay={i * 0.1}>
+                <motion.div
+                  whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)" }}
+                  className="bg-background rounded-3xl p-7 shadow-sm"
+                >
+                  <v.icon className="w-10 h-10 text-primary mb-4" />
+                  <h3 className="font-bold text-lg mb-2">{v.title}</h3>
+                  <p className="text-base text-muted-foreground">{v.desc}</p>
+                </motion.div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* Certifications */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <h2 className="text-3xl font-bold mb-12">Vos travaux protégés, votre esprit tranquille</h2>
+        <ScrollReveal>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12">Vos travaux protégés, <span className="gradient-red-text">votre esprit tranquille</span></h2>
+        </ScrollReveal>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {certifications.map((c) => (
-            <div key={c.title} className="border border-border rounded-xl p-6">
-              <c.icon className="w-8 h-8 text-primary mb-4" />
-              <h3 className="font-semibold mb-2">{c.title}</h3>
-              <p className="text-sm text-muted-foreground">{c.desc}</p>
-            </div>
+          {certifications.map((c, i) => (
+            <ScrollReveal key={c.title} delay={i * 0.1}>
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="border-2 border-border rounded-3xl p-7"
+              >
+                <c.icon className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-bold text-lg mb-2">{c.title}</h3>
+                <p className="text-base text-muted-foreground">{c.desc}</p>
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-foreground text-background py-16">
+      <section className="gradient-red text-white py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Prêt à lancer votre projet en toute sérénité ?</h2>
-          <p className="text-background/70 mb-8">Contactez-nous pour une visite gratuite et un devis détaillé sans engagement.</p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-medium hover:bg-primary/90 transition-colors"
-          >
-            Obtenir mon devis gratuit
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Prêt à lancer votre projet en toute sérénité ?</h2>
+            <p className="text-white/70 text-base md:text-lg mb-8">Contactez-nous pour une visite gratuite et un devis détaillé sans engagement.</p>
+            <KFButton to="/contact" variant="light">
+              Obtenir mon devis gratuit
+            </KFButton>
+          </ScrollReveal>
         </div>
       </section>
     </div>
