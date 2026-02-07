@@ -1,5 +1,7 @@
 import { Phone, Mail, MapPin, Clock, CalendarCheck, FileText, Shield } from "lucide-react";
+import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm";
+import ScrollReveal from "../components/animations/ScrollReveal";
 
 const Contact = () => {
   return (
@@ -7,24 +9,30 @@ const Contact = () => {
       {/* Hero */}
       <section className="bg-muted py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Lancez votre projet en 2 minutes</h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            Décrivez vos besoins, nous vous rappelons sous 48h avec un rendez-vous pour une visite gratuite et un devis détaillé sans engagement.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-background rounded-full text-sm font-medium shadow-sm border border-border">
-              <CalendarCheck className="w-4 h-4 text-primary" />
-              Réponse sous 48h garantie
-            </span>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-background rounded-full text-sm font-medium shadow-sm border border-border">
-              <FileText className="w-4 h-4 text-primary" />
-              Devis détaillé et gratuit
-            </span>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-background rounded-full text-sm font-medium shadow-sm border border-border">
-              <Shield className="w-4 h-4 text-primary" />
-              Assurance décennale & RC Pro
-            </span>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Lancez votre projet <span className="gradient-red-text">en 2 minutes</span></h1>
+            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8">
+              Décrivez vos besoins, nous vous rappelons sous 48h avec un rendez-vous pour une visite gratuite et un devis détaillé sans engagement.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <span className="inline-flex items-center gap-2 px-5 py-3 bg-background rounded-full text-base font-semibold shadow-sm border-2 border-border">
+                <CalendarCheck className="w-5 h-5 text-primary" />
+                Réponse sous 48h garantie
+              </span>
+              <span className="inline-flex items-center gap-2 px-5 py-3 bg-background rounded-full text-base font-semibold shadow-sm border-2 border-border">
+                <FileText className="w-5 h-5 text-primary" />
+                Devis détaillé et gratuit
+              </span>
+              <span className="inline-flex items-center gap-2 px-5 py-3 bg-background rounded-full text-base font-semibold shadow-sm border-2 border-border">
+                <Shield className="w-5 h-5 text-primary" />
+                Assurance décennale & RC Pro
+              </span>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -32,80 +40,89 @@ const Contact = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Left: Info */}
-          <div className="lg:col-span-2">
-            <h2 className="text-2xl font-bold mb-4">Comment ça se passe ?</h2>
-            <p className="text-muted-foreground text-sm mb-8">
-              Vous remplissez le formulaire, on vous rappelle pour comprendre votre projet, puis on vient chez vous pour établir un devis précis. Simple et sans engagement.
+          <ScrollReveal direction="left" className="lg:col-span-2">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Comment ça <span className="gradient-red-text">se passe ?</span></h2>
+            <p className="text-muted-foreground text-base md:text-lg mb-8">
+              Vous remplissez le formulaire, on vous rappelle pour comprendre votre projet, puis on vient chez vous pour établir un devis précis.
             </p>
 
             <div className="space-y-6">
-              <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-sm">Appelez-nous directement</p>
-                  <a href="tel:+33123456789" className="text-sm text-muted-foreground hover:text-foreground">01 23 45 67 89</a>
+                  <p className="font-bold text-base">Appelez-nous directement</p>
+                  <a href="tel:+33123456789" className="text-base text-muted-foreground hover:text-foreground transition-colors">01 23 45 67 89</a>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-sm">Écrivez-nous</p>
-                  <a href="mailto:contact@kf-services.fr" className="text-sm text-muted-foreground hover:text-foreground">contact@kf-services.fr</a>
+                  <p className="font-bold text-base">Écrivez-nous</p>
+                  <a href="mailto:contact@kf-services.fr" className="text-base text-muted-foreground hover:text-foreground transition-colors">contact@kf-services.fr</a>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-sm">Siège</p>
-                  <p className="text-sm text-muted-foreground">58 Rue des Tallifardières</p>
-                  <p className="text-sm text-muted-foreground">38500 Voiron</p>
+                  <p className="font-bold text-base">Siège</p>
+                  <p className="text-base text-muted-foreground">58 Rue des Tallifardières</p>
+                  <p className="text-base text-muted-foreground">38500 Voiron</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-sm">Disponibilité</p>
-                  <p className="text-sm text-muted-foreground">Lun – Ven : 8h00 – 18h00</p>
-                  <p className="text-sm text-muted-foreground">Sam : 9h00 – 12h00</p>
+                  <p className="font-bold text-base">Disponibilité</p>
+                  <p className="text-base text-muted-foreground">Lun – Ven : 8h00 – 18h00</p>
+                  <p className="text-base text-muted-foreground">Sam : 9h00 – 12h00</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 p-5 bg-muted rounded-xl">
-              <h3 className="font-semibold text-sm mb-2">Nous venons chez vous</h3>
-              <p className="text-xs text-muted-foreground">
+            <div className="mt-8 p-6 gradient-red rounded-3xl">
+              <h3 className="font-bold text-base text-white mb-2">Nous venons chez vous</h3>
+              <p className="text-sm text-white/80">
                 Intervention dans toute l'Île-de-France : Paris et les départements 77, 78, 91, 92, 93, 94 et 95. Où que vous soyez, vous bénéficiez du même niveau de service.
               </p>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right: Form */}
-          <div className="lg:col-span-3">
-            <div className="bg-background border border-border rounded-2xl p-6 md:p-8">
-              <h2 className="text-xl font-bold mb-2">Décrivez votre projet</h2>
-              <p className="text-sm text-muted-foreground mb-6">
+          <ScrollReveal direction="right" className="lg:col-span-3">
+            <div className="bg-background border-2 border-border rounded-3xl p-6 md:p-10">
+              <h2 className="text-xl md:text-2xl font-bold mb-2">Décrivez votre <span className="gradient-red-text">projet</span></h2>
+              <p className="text-base text-muted-foreground mb-6">
                 Plus vous êtes précis, plus notre devis sera adapté à vos besoins réels.
               </p>
               <ContactForm />
-              <p className="text-xs text-muted-foreground mt-4">
+              <p className="text-sm text-muted-foreground mt-4">
                 En soumettant ce formulaire, vous acceptez notre politique de confidentialité. Aucun engagement, aucun frais.
               </p>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Map placeholder */}
+      {/* Google Maps */}
       <section className="bg-muted py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-lg font-semibold mb-2">Carte interactive</h2>
-          <p className="text-sm text-muted-foreground mb-6">Nous intervenons dans toute l'Île-de-France</p>
-          <div className="bg-background rounded-2xl h-64 flex items-center justify-center border border-border">
-            <div className="text-center">
-              <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
-              <p className="text-sm text-muted-foreground">58 Rue des Tallifardières, 38500 Voiron</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center">Retrouvez-nous <span className="gradient-red-text">ici</span></h2>
+            <p className="text-base text-muted-foreground mb-8 text-center">Nous intervenons dans toute l'Île-de-France</p>
+            <div className="rounded-3xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.509!2d5.5917!3d45.3629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af4818e91c82f%3A0x0!2s58+Rue+des+Tallifardi%C3%A8res%2C+38500+Voiron!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="KF Services - Localisation"
+                className="w-full"
+              />
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>
