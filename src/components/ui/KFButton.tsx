@@ -17,7 +17,7 @@ const KFButton = ({ to, children, variant = "gradient", className = "", external
     gradient: "btn-gradient",
     dark: "bg-foreground text-background hover:bg-[image:linear-gradient(135deg,hsl(0_78%_55%),hsl(0_78%_35%))] hover:shadow-[0_8px_25px_-5px_hsl(0_78%_45%/0.4)]",
     light: "btn-light",
-    outline: "border-2 border-foreground text-foreground hover:bg-[image:linear-gradient(135deg,hsl(0_78%_55%),hsl(0_78%_35%))] hover:text-white hover:border-transparent hover:shadow-[0_8px_25px_-5px_hsl(0_78%_45%/0.4)]",
+    outline: "border border-foreground/20 text-foreground hover:bg-[image:linear-gradient(135deg,hsl(0_78%_55%),hsl(0_78%_35%))] hover:text-white hover:border-transparent hover:shadow-[0_8px_25px_-5px_hsl(0_78%_45%/0.4)]",
   };
 
   const iconColor = variant === "light" ? "text-foreground" : variant === "outline" ? "text-foreground" : "";

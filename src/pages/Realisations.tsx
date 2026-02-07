@@ -119,7 +119,7 @@ const Realisations = () => {
                 className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ${
                   activeCategory === cat.key
                     ? "gradient-red text-white shadow-lg"
-                    : "border-2 border-border text-muted-foreground hover:bg-muted"
+                    : "border border-foreground/20 text-muted-foreground hover:text-foreground hover:border-foreground/40"
                 }`}
               >
                 {cat.label}
@@ -142,7 +142,7 @@ const Realisations = () => {
               >
                 <motion.div
                   whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)" }}
-                  className="bg-background rounded-3xl overflow-hidden shadow-sm border-2 border-border"
+                  className="bg-background rounded-3xl overflow-hidden shadow-sm border border-foreground/15"
                 >
                   <div className="relative">
                     <img src={project.image} alt={project.title} className="w-full aspect-[4/3] object-cover" />
