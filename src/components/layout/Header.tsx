@@ -71,10 +71,10 @@ const Header = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`relative px-5 py-2.5 text-base font-semibold transition-all duration-300 ${
+                className={`relative px-5 py-2.5 text-base font-semibold rounded-full transition-all duration-300 ${
                   location.pathname === link.to
                     ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-background/60"
                 }`}
               >
                 {link.label}
@@ -91,13 +91,13 @@ const Header = () => {
 
           {/* CTA - phone + dark contact button */}
           <div className="hidden md:flex items-center gap-5">
-            <a href="tel:+33123456789" className="flex items-center gap-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
-              <Phone className="w-5 h-5 text-primary" />
+            <a href="tel:+33123456789" className="flex items-center gap-2.5 px-5 py-2.5 rounded-full text-base font-bold text-foreground bg-muted hover:bg-primary hover:text-white transition-all duration-300 group">
+              <Phone className="w-5 h-5 text-primary group-hover:text-white transition-colors duration-300" />
               01 23 45 67 89
             </a>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-foreground text-background px-7 py-3 rounded-full text-base font-semibold hover:bg-foreground/90 transition-all duration-300 group"
+              className="inline-flex items-center gap-2 btn-gradient px-7 py-3 rounded-full text-base font-semibold group"
             >
               Devis gratuit
               <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
