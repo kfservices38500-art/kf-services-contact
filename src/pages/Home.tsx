@@ -24,6 +24,7 @@ import ContactForm from "../components/ContactForm";
 import ScrollReveal from "../components/animations/ScrollReveal";
 import ParallaxSection from "../components/animations/ParallaxSection";
 import KFButton from "../components/ui/KFButton";
+import WhyUsCarousel from "../components/WhyUsCarousel";
 
 const heroImages = [
   { src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80", alt: "Votre maison plus solide" },
@@ -123,6 +124,9 @@ const testimonials = [
     rating: 5,
   },
 ];
+
+
+
 
 const guarantees = [
   { icon: Shield, title: "Assurance Décennale", desc: "Vos travaux protégés pendant 10 ans, en toute sérénité" },
@@ -483,31 +487,9 @@ const Home = () => {
           </h2>
         </ScrollReveal>
 
-        {/* Big split card */}
-        <ScrollReveal>
-          <div className="rounded-3xl overflow-hidden mb-12">
-            <div className="grid lg:grid-cols-2">
-              <div className="gradient-red p-10 md:p-14 flex flex-col justify-end min-h-[400px]">
-                <p className="text-white/70 text-sm font-bold uppercase tracking-wider mb-3">Votre projet, simplifié</p>
-                <h3 className="text-white text-2xl md:text-3xl font-bold mb-4">Un plan clair dès le départ</h3>
-                <p className="text-white/80 text-base md:text-lg mb-8">
-                  Vous obtenez une vision complète de votre projet avant le premier coup de pioche : choix des matériaux, planning détaillé et estimation précise. Vous savez exactement où vous allez.
-                </p>
-                <div>
-                  <KFButton to="/contact" variant="light">
-                    Obtenir mon devis gratuit
-                  </KFButton>
-                </div>
-              </div>
-              <div className="relative min-h-[300px]">
-                <img
-                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80"
-                  alt="Consultation chantier"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+        {/* Why Us Carousel */}
+        <ScrollReveal className="mb-12">
+          <WhyUsCarousel />
         </ScrollReveal>
 
         {/* Guarantees */}
