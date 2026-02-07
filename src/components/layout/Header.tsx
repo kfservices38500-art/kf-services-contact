@@ -73,18 +73,11 @@ const Header = () => {
                 to={link.to}
                 className={`relative px-5 py-2.5 text-base font-semibold rounded-full transition-all duration-300 ${
                   location.pathname === link.to
-                    ? "text-foreground bg-background shadow-md"
-                    : "text-muted-foreground hover:text-foreground hover:bg-background hover:shadow-md hover:scale-105"
+                    ? "text-foreground bg-background shadow-[0_2px_8px_-2px_rgba(0,0,0,0.12)]"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.label}
-                {location.pathname === link.to && (
-                  <motion.span
-                    layoutId="nav-underline"
-                    className="absolute bottom-0.5 left-4 right-4 h-[2.5px] bg-foreground rounded-full"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
               </Link>
             ))}
           </nav>
