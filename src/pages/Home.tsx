@@ -296,7 +296,7 @@ const Home = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden">
+            <div className="aspect-[3/3.2] rounded-3xl overflow-hidden">
               {heroImages.map((img, i) => (
                 <img
                   key={i}
