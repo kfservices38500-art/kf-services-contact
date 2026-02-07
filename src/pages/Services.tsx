@@ -122,7 +122,8 @@ const Services = () => {
           {servicesData.map((service, index) => (
             <div
               key={service.title}
-              className="grid lg:grid-cols-2 gap-12 items-center"
+              id={service.category}
+              className="grid lg:grid-cols-2 gap-12 items-center scroll-mt-28"
             >
               <ScrollReveal direction={index % 2 === 0 ? "left" : "right"} className={index % 2 === 1 ? "lg:order-2" : ""}>
                 <h2 className="text-2xl md:text-4xl font-bold mb-4 flex items-center gap-3">

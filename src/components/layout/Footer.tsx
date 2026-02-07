@@ -44,13 +44,21 @@ const Footer = () => {
             {/* Services */}
             <div>
               <h4 className="text-white font-bold mb-4 text-base uppercase tracking-wider">Services</h4>
-              <ul className="space-y-3 text-base text-white/70">
-                <li>Maçonnerie</li>
-                <li>Charpente & Couverture</li>
-                <li>Gouttières Aluminium</li>
-                <li>Désamiantage</li>
-                <li>Plomberie</li>
-                <li>Neuf & Rénovation</li>
+              <ul className="space-y-3 text-base">
+                {[
+                  { label: "Maçonnerie", hash: "maconnerie" },
+                  { label: "Charpente & Couverture", hash: "charpente" },
+                  { label: "Gouttières Aluminium", hash: "gouttieres" },
+                  { label: "Désamiantage", hash: "desamiantage" },
+                  { label: "Plomberie", hash: "plomberie" },
+                  { label: "Neuf & Rénovation", hash: "neuf-renovation" },
+                ].map((service) => (
+                  <li key={service.hash}>
+                    <Link to={`/services#${service.hash}`} className="text-white/70 hover:text-white transition-colors">
+                      {service.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
