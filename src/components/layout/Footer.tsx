@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import ScrollReveal from "../animations/ScrollReveal";
+import logoKF from "@/assets/logo-kf.svg";
 
 const Footer = () => {
   return (
@@ -10,9 +11,11 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             {/* Brand */}
             <div className="md:col-span-1">
-              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-foreground text-sm font-black mb-4">
-                KF
-              </div>
+              <img
+                src={logoKF}
+                alt="KF Services"
+                className="h-10 w-auto mb-4 brightness-0 invert"
+              />
               <p className="text-base text-white/70">
                 Depuis 2003, KF Services vous accompagne pour vos projets de construction et rénovation en Île-de-France.
               </p>

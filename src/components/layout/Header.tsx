@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Phone, ArrowUpRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoKF from "@/assets/logo-kf.svg";
 
 const navLinks = [
   { label: "Accueil", to: "/" },
@@ -36,10 +37,13 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 font-bold text-2xl tracking-tight">
-            <div className="w-12 h-12 gradient-red rounded-2xl flex items-center justify-center text-white text-sm font-black">
-              KF
-            </div>
+          <Link to="/" className="flex items-center">
+            <img
+              src={logoKF}
+              alt="KF Services"
+              className="h-10 md:h-12 w-auto transition-all duration-300"
+              style={{ filter: scrolled ? "none" : "none" }}
+            />
           </Link>
 
           {/* Desktop Nav - grey pill, blur on scroll */}
