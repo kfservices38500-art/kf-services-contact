@@ -144,7 +144,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </div>
 
             {/* Info */}
-            <div className="p-6 md:p-8">
+            <div className="p-6 md:p-8 bg-background relative z-10">
               <span className="inline-block gradient-red text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-3">
                 {project.categoryLabel}
               </span>
