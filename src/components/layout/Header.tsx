@@ -32,13 +32,7 @@ const Header = () => {
   }, [mobileOpen]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-lg shadow-sm border-b border-border"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
@@ -48,8 +42,14 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Desktop Nav - pill style with underline active */}
-          <nav className="hidden md:flex items-center bg-white/50 backdrop-blur-xl rounded-full px-3 py-2 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)] border border-white/60">
+          {/* Desktop Nav - grey pill, blur on scroll */}
+          <nav
+            className={`hidden md:flex items-center rounded-full px-3 py-2 transition-all duration-500 ${
+              scrolled
+                ? "bg-muted/70 backdrop-blur-xl shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]"
+                : "bg-muted"
+            }`}
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.to}
