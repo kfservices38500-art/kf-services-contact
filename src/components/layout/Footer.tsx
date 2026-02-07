@@ -5,7 +5,7 @@ import logoKF from "@/assets/logo-kf.svg";
 
 const Footer = () => {
   return (
-    <footer className="gradient-red text-white">
+    <footer className="text-white" style={{ background: "linear-gradient(135deg, hsl(0 0% 18%), hsl(0 0% 8%))" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
