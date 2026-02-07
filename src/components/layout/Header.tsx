@@ -61,10 +61,10 @@ const Header = () => {
 
           {/* Desktop Nav - grey pill, blur on scroll */}
           <nav
-            className={`hidden md:flex items-center rounded-full px-3 py-2 transition-all duration-500 ${
+            className={`hidden md:flex items-center rounded-full px-2 py-1.5 transition-all duration-500 ${
               scrolled
-                ? "bg-muted/70 backdrop-blur-xl shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]"
-                : "bg-muted"
+                ? "bg-foreground/10 backdrop-blur-xl shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]"
+                : "bg-foreground/[0.06]"
             }`}
           >
             {navLinks.map((link) => (
