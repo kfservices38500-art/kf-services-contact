@@ -73,8 +73,8 @@ const Header = () => {
                 to={link.to}
                 className={`relative px-5 py-2.5 text-base font-semibold rounded-full transition-all duration-300 ${
                   location.pathname === link.to
-                    ? "text-foreground bg-background/70"
-                    : "text-muted-foreground hover:text-foreground hover:bg-background/70 hover:shadow-sm"
+                    ? "text-foreground bg-background shadow-md"
+                    : "text-muted-foreground hover:text-foreground hover:bg-background hover:shadow-md hover:scale-105"
                 }`}
               >
                 {link.label}
