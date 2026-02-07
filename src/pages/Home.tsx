@@ -228,7 +228,7 @@ const Home = () => {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5" />
-                <span className="text-base font-bold">Île-de-France</span>
+                <span className="text-base font-bold">Auvergne-Rhône-Alpes</span>
               </div>
             </div>
           </motion.div>
