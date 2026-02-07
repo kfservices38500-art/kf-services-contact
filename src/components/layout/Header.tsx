@@ -49,12 +49,12 @@ const Header = () => {
           </Link>
 
           {/* Desktop Nav - pill style with underline active */}
-          <nav className="hidden md:flex items-center bg-white/60 backdrop-blur-md rounded-full px-2 py-1.5 shadow-sm border border-border/40">
+          <nav className="hidden md:flex items-center bg-white/50 backdrop-blur-xl rounded-full px-3 py-2 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)] border border-white/60">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`relative px-5 py-2.5 rounded-full text-base font-semibold transition-all duration-300 ${
+                className={`relative px-5 py-2.5 text-base font-semibold transition-all duration-300 ${
                   location.pathname === link.to
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
@@ -64,7 +64,7 @@ const Header = () => {
                 {location.pathname === link.to && (
                   <motion.span
                     layoutId="nav-underline"
-                    className="absolute bottom-1 left-5 right-5 h-[3px] bg-foreground rounded-full"
+                    className="absolute bottom-0.5 left-4 right-4 h-[2.5px] bg-foreground rounded-full"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
