@@ -103,7 +103,7 @@ const ContactForm = () => {
       </div>
       <button
         type="submit"
-        className="w-full btn-gradient py-4 rounded-2xl text-base font-bold group flex items-center justify-center gap-2"
+        className="w-full btn-gradient py-4 rounded-full text-base font-bold group flex items-center justify-center gap-2"
       >
         Envoyer ma demande de devis
         <span className="relative w-5 h-5">
