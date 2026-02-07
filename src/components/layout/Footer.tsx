@@ -17,7 +17,7 @@ const Footer = () => {
                 className="h-14 w-auto mb-4 brightness-0 invert"
               />
               <p className="text-base text-white/70">
-                Depuis 2003, KF Services vous accompagne pour vos projets de construction et rénovation en Île-de-France.
+                Fort de plus de 20 ans d'expertise, KF Services vous accompagne pour vos projets de construction et rénovation en Auvergne-Rhône-Alpes.
               </p>
             </div>
 
