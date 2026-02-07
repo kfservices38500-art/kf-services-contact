@@ -16,8 +16,9 @@ import {
   FileCheck,
   Award,
   Scale,
+  Quote,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm";
 import ScrollReveal from "../components/animations/ScrollReveal";
@@ -89,16 +90,37 @@ const testimonials = [
     text: "Notre salle de bain est méconnaissable ! Délais tenus, budget respecté et une équipe toujours à l'écoute. On a gagné en confort au quotidien sans aucune mauvaise surprise.",
     name: "Marie Dupont",
     location: "Voiron",
+    rating: 5,
   },
   {
     text: "L'extension de notre maison s'est déroulée sans accroc. Un seul interlocuteur a tout coordonné, ce qui nous a évité beaucoup de stress. Rapport qualité-prix imbattable.",
     name: "Jean-Pierre Martin",
     location: "Grenoble",
+    rating: 5,
   },
   {
     text: "Suite à une tempête, notre toiture a été réparée en un temps record. Nous avons retrouvé la sérénité très vite. Professionnalisme et réactivité exemplaires !",
     name: "Sophie Bernard",
     location: "Moirans",
+    rating: 5,
+  },
+  {
+    text: "Travaux de plomberie impeccables, équipe ponctuelle et soignée. Le devis était clair et le prix final identique. Je recommande vivement !",
+    name: "Laurent Girard",
+    location: "Voreppe",
+    rating: 5,
+  },
+  {
+    text: "Désamiantage réalisé dans les règles de l'art, avec toutes les certifications. On se sent en sécurité avec KF Services. Merci pour votre sérieux.",
+    name: "Catherine Roux",
+    location: "Tullins",
+    rating: 5,
+  },
+  {
+    text: "Rénovation complète de notre maison ancienne. Le résultat dépasse nos attentes. L'équipe a su préserver le charme tout en modernisant l'ensemble.",
+    name: "Michel Faure",
+    location: "Saint-Égrève",
+    rating: 5,
   },
 ];
 
@@ -138,6 +160,83 @@ const departments = [
   { code: "73", name: "Savoie" },
   { code: "74", name: "Haute-Savoie" },
 ];
+
+const TestimonialCarousel = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const totalPages = Math.ceil(testimonials.length / 3);
+
+  const scrollToIndex = useCallback((index: number) => {
+    if (!scrollRef.current) return;
+    const cardWidth = scrollRef.current.firstElementChild?.getBoundingClientRect().width ?? 0;
+    const gap = 24;
+    scrollRef.current.scrollTo({
+      left: index * (cardWidth + gap) * 3,
+      behavior: "smooth",
+    });
+    setActiveIndex(index);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => {
+        const next = (prev + 1) % totalPages;
+        scrollToIndex(next);
+        return next;
+      });
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [totalPages, scrollToIndex]);
+
+  return (
+    <div>
+      <div
+        ref={scrollRef}
+        className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-2"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {testimonials.map((t, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.08 }}
+            whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)" }}
+            className="bg-background rounded-3xl p-7 shadow-sm flex-shrink-0 w-[calc(33.333%-1rem)] min-w-[300px] snap-start flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex gap-1 mb-4">
+                {[...Array(t.rating)].map((_, j) => (
+                  <Star key={j} className="w-5 h-5 fill-primary text-primary" />
+                ))}
+              </div>
+              <p className="text-base text-muted-foreground mb-5 leading-relaxed">"{t.text}"</p>
+            </div>
+            <div className="flex items-end justify-between">
+              <div>
+                <p className="font-bold text-base">{t.name}</p>
+                <p className="text-sm text-muted-foreground">{t.location}</p>
+              </div>
+              <Quote className="w-8 h-8 text-primary opacity-30" />
+            </div>
+          </motion.div>
+        ))}
+      </div>
+      <div className="flex gap-2 mt-8 justify-center">
+        {Array.from({ length: totalPages }).map((_, i) => (
+          <button
+            key={i}
+            onClick={() => scrollToIndex(i)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              i === activeIndex ? "gradient-red scale-110" : "bg-foreground/20"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -235,36 +334,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <ParallaxSection className="bg-muted py-16 md:py-24" speed={0.15}>
+      {/* Testimonials - Carousel */}
+      <ParallaxSection className="bg-muted py-16 md:py-24 overflow-hidden" speed={0.15}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="flex items-center gap-3 mb-3">
-              <span className="gradient-red-text font-bold text-2xl">4.9/5</span>
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                ))}
-              </div>
-            </div>
-            <p className="text-base text-muted-foreground mb-8">Clients satisfaits · Avis vérifiés Google</p>
+            <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2 text-center">Témoignages</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center">
+              Ce que nos clients <span className="gradient-red-text">disent de nous</span>
+            </h2>
+            <p className="text-muted-foreground text-base md:text-lg mb-12 text-center max-w-2xl mx-auto">
+              4.9/5 sur Google · Avis vérifiés
+            </p>
           </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <motion.div
-                  whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)" }}
-                  className="bg-background rounded-3xl p-7 shadow-sm transition-all"
-                >
-                  <p className="text-base text-muted-foreground mb-5 leading-relaxed">"{t.text}"</p>
-                  <div>
-                    <p className="font-bold text-base">{t.name}</p>
-                    <p className="text-sm text-muted-foreground">{t.location}</p>
-                  </div>
-                </motion.div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <TestimonialCarousel />
         </div>
       </ParallaxSection>
 
