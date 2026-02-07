@@ -596,13 +596,13 @@ const Home = () => {
               <div className="space-y-4">
                 <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">
                   <p className="text-sm text-muted-foreground mb-1">15 Février 2025</p>
-                  <h4 className="font-bold text-base mb-1">Versailles</h4>
+                  <h4 className="font-bold text-base mb-1">Voiron</h4>
                   <p className="text-base text-muted-foreground mb-3">Rénovation maison — venez juger par vous-même</p>
                   <Link to="/contact" className="gradient-red-text text-base font-bold hover:underline">Réserver ma visite →</Link>
                 </motion.div>
                 <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">
                   <p className="text-sm text-muted-foreground mb-1">22 Février 2025</p>
-                  <h4 className="font-bold text-base mb-1">Boulogne-Billancourt</h4>
+                  <h4 className="font-bold text-base mb-1">Grenoble</h4>
                   <p className="text-base text-muted-foreground mb-3">Extension + Toiture — voyez le résultat en vrai</p>
                   <Link to="/contact" className="gradient-red-text text-base font-bold hover:underline">Réserver ma visite →</Link>
                 </motion.div>
@@ -613,7 +613,7 @@ const Home = () => {
               <div className="space-y-4">
                 <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">
                   <p className="text-sm text-muted-foreground mb-1">10 Janvier 2025</p>
-                  <h4 className="font-bold text-base mb-1">Nouveau projet livré à Neuilly-sur-Seine</h4>
+                  <h4 className="font-bold text-base mb-1">Nouveau projet livré à Moirans</h4>
                   <p className="text-base text-muted-foreground">Une maison de ville entièrement rénovée : les propriétaires ont gagné 30 m² de surface habitable.</p>
                 </motion.div>
                 <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">

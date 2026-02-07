@@ -13,11 +13,11 @@ const stats = [
 ];
 
 const timeline = [
-  { year: "2003", desc: "Notre gérant entre dans le métier — 20 ans d'expérience à votre service" },
+  { year: "2003", desc: "Notre gérant entre dans le métier — plus de 20 ans d'expérience à votre service" },
   { year: "2010", desc: "Spécialisation charpente-couverture pour mieux protéger votre toiture" },
   { year: "2015", desc: "Certification SS4 — votre sécurité en désamiantage assurée" },
-  { year: "2018", desc: "Création de KF Services — un interlocuteur unique pour tous vos travaux" },
-  { year: "2020", desc: "3 équipes spécialisées — des délais plus courts pour vos projets" },
+  { year: "2022", desc: "Création de KF Services — un interlocuteur unique pour tous vos travaux" },
+  { year: "2023", desc: "3 équipes spécialisées — des délais plus courts pour vos projets" },
   { year: "2024", desc: "+500 chantiers livrés — autant de clients satisfaits" },
 ];
 
@@ -48,7 +48,7 @@ const About = () => {
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Un partenaire fiable pour des travaux <span className="gradient-red-text">qui durent</span></h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-              Depuis 2003, vous bénéficiez d'une équipe expérimentée qui coordonne tous les corps de métier pour que votre projet se déroule sans stress.
+              Fort de plus de 20 ans d'expertise, vous bénéficiez d'une équipe expérimentée qui coordonne tous les corps de métier pour que votre projet se déroule sans stress.
             </p>
           </motion.div>
         </div>

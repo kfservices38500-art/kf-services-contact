@@ -19,7 +19,7 @@ const projects = [
     category: "maconnerie",
     categoryLabel: "Maçonnerie",
     title: "+30 m² habitables grâce à une rénovation complète",
-    location: "Versailles (78)",
+    location: "Voiron (38)",
     description: "Les propriétaires ont gagné un étage entier et revalorisé leur bien de 150 000 €, sans un seul jour de retard.",
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     category: "maconnerie",
     categoryLabel: "Maçonnerie",
     title: "Une extension lumineuse qui a changé leur quotidien",
-    location: "Saint-Germain-en-Laye (78)",
+    location: "Grenoble (38)",
     description: "40 m² supplémentaires avec baies vitrées et toiture terrasse.",
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     category: "charpente",
     categoryLabel: "Charpente/Couverture",
     title: "Fini les infiltrations : une toiture neuve pour 30 ans",
-    location: "Neuilly-sur-Seine (92)",
+    location: "Moirans (38)",
     description: "Couverture ardoise intégralement remplacée avec isolation par l'extérieur.",
   },
   {
@@ -43,7 +43,7 @@ const projects = [
     category: "charpente",
     categoryLabel: "Charpente/Couverture",
     title: "Une charpente en chêne qui traversera les générations",
-    location: "Meudon (92)",
+    location: "Chambéry (73)",
     description: "Charpente traditionnelle massive pour une maison neuve.",
   },
   {
@@ -51,7 +51,7 @@ const projects = [
     category: "plomberie",
     categoryLabel: "Plomberie",
     title: "-40% sur la facture de chauffage grâce à une pompe à chaleur",
-    location: "Boulogne-Billancourt (92)",
+    location: "Annecy (74)",
     description: "Installation d'une PAC air/eau avec nouveaux radiateurs.",
   },
   {
@@ -59,7 +59,7 @@ const projects = [
     category: "plomberie",
     categoryLabel: "Plomberie",
     title: "Une salle de bain spa qui valorise l'appartement",
-    location: "Paris 16ème",
+    location: "Lyon 6ème (69)",
     description: "Douche italienne, baignoire balnéo et finitions haut de gamme.",
   },
   {
@@ -67,7 +67,7 @@ const projects = [
     category: "autres",
     categoryLabel: "Désamiantage",
     title: "Un immeuble désamianté en toute sécurité",
-    location: "Levallois-Perret (92)",
+    location: "Voreppe (38)",
     description: "Retrait complet des matériaux amiantés dans les parties communes.",
   },
   {
@@ -75,7 +75,7 @@ const projects = [
     category: "autres",
     categoryLabel: "Gouttières",
     title: "Des gouttières alu qui protègent les façades pour 25 ans",
-    location: "Le Vésinet (78)",
+    location: "Tullins (38)",
     description: "Installation sur mesure avec descentes décoratives.",
   },
 ];
