@@ -73,8 +73,8 @@ const Header = () => {
                 to={link.to}
                 className={`relative px-5 py-2.5 text-base font-semibold rounded-full transition-all duration-300 ${
                   location.pathname === link.to
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-background/60"
+                    ? "text-foreground bg-background/70"
+                    : "text-muted-foreground hover:text-foreground hover:bg-background/70 hover:shadow-sm"
                 }`}
               >
                 {link.label}
@@ -91,7 +91,7 @@ const Header = () => {
 
           {/* CTA - phone + dark contact button */}
           <div className="hidden md:flex items-center gap-5">
-            <a href="tel:+33123456789" className="flex items-center gap-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <a href="tel:+33123456789" className="flex items-center gap-2 text-base font-medium text-muted-foreground hover:text-foreground hover:font-bold transition-all duration-300">
               <Phone className="w-5 h-5 text-primary" />
               01 23 45 67 89
             </a>
