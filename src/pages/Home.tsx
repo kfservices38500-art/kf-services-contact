@@ -436,7 +436,7 @@ const Home = () => {
               </div>
             </div>
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {serviceCards.map((card, i) => <ScrollReveal key={card.title} delay={i * 0.1}>
                 <motion.div whileHover={{
               y: -5,
