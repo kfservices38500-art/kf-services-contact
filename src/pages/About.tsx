@@ -68,7 +68,7 @@ const certifications = [{
 }, {
   icon: FileCheck,
   title: "RC Professionnelle",
-  desc: "En cas d'imprévu sur le chantier, votre patrimoine est protégé."
+  desc: "Nous protégeons votre chantier du début à la fin de notre intervention."
 }, {
   icon: Award,
   title: "Qualité certifiée",
