@@ -1,10 +1,16 @@
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "../components/animations/ScrollReveal";
 import KFButton from "../components/ui/KFButton";
 import ProjectModal from "../components/ProjectModal";
+
+const deptNames: Record<string, string> = {
+  "01": "Ain", "03": "Allier", "07": "Ardèche", "15": "Cantal",
+  "26": "Drôme", "38": "Isère", "42": "Loire", "43": "Haute-Loire",
+  "63": "Puy-de-Dôme", "69": "Rhône", "73": "Savoie", "74": "Haute-Savoie"
+};
 
 const categories = [
   { key: "all", label: "Tous les projets" },
@@ -103,11 +109,19 @@ const projects = [
 const Realisations = () => {
   const [searchParams] = useSearchParams();
   const initialCategory = searchParams.get("category") || "all";
+  const deptFilter = searchParams.get("dept") || null;
   const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [selectedProject, setSelectedProject] = useState<typeof projects[number] | null>(null);
-  const filteredProjects = activeCategory === "all"
-    ? projects
-    : projects.filter((p) => p.category === activeCategory);
+  
+  const filteredProjects = (() => {
+    let filtered = activeCategory === "all"
+      ? projects
+      : projects.filter((p) => p.category === activeCategory);
+    if (deptFilter) {
+      filtered = filtered.filter((p) => p.location.includes(`(${deptFilter})`));
+    }
+    return filtered;
+  })();
 
   return (
     <div>
@@ -119,10 +133,23 @@ const Realisations = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Des résultats concrets, <span className="gradient-red-text">pas des promesses</span></h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+              {deptFilter ? (
+                <>Nos réalisations en <span className="gradient-red-text">{deptNames[deptFilter] || deptFilter} ({deptFilter})</span></>
+              ) : (
+                <>Des résultats concrets, <span className="gradient-red-text">pas des promesses</span></>
+              )}
+            </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-              Chaque projet ci-dessous est un client qui a retrouvé confort, sécurité ou valeur immobilière. Jugez par vous-même.
+              {deptFilter
+                ? `Découvrez nos chantiers réalisés dans le département ${deptNames[deptFilter] || deptFilter}.`
+                : "Chaque projet ci-dessous est un client qui a retrouvé confort, sécurité ou valeur immobilière. Jugez par vous-même."}
             </p>
+            {deptFilter && (
+              <Link to="/realisations" className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors">
+                ← Voir tous les projets
+              </Link>
+            )}
           </motion.div>
         </div>
       </section>
@@ -151,6 +178,14 @@ const Realisations = () => {
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout">
+            {filteredProjects.length === 0 ? (
+              <div className="col-span-full text-center py-16">
+                <p className="text-muted-foreground text-lg mb-4">Aucun chantier référencé pour le moment dans ce département.</p>
+                <Link to="/realisations" className="inline-flex items-center gap-2 font-semibold gradient-red-text hover:underline">
+                  ← Voir tous nos projets
+                </Link>
+              </div>
+            ) : null}
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.title}
