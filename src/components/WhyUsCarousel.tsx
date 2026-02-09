@@ -42,7 +42,7 @@ const WhyUsCarousel = () => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % whyUsSlides.length);
-    }, 5000);
+    }, 8000);
   }, []);
 
   useEffect(() => {
@@ -60,7 +60,11 @@ const WhyUsCarousel = () => {
   const slide = whyUsSlides[currentIndex];
 
   return (
-    <div className="rounded-3xl overflow-hidden relative">
+    <div
+      className="rounded-3xl overflow-hidden relative"
+      onMouseEnter={() => { if (intervalRef.current) clearInterval(intervalRef.current); }}
+      onMouseLeave={() => startAutoplay()}
+    >
       <div className="grid lg:grid-cols-2">
         <motion.div
           key={`whyus-text-${currentIndex}`}
