@@ -2,12 +2,11 @@ import { Phone, Mail, MapPin, Clock, CalendarCheck, FileText, Shield } from "luc
 import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm";
 import ScrollReveal from "../components/animations/ScrollReveal";
-import contactSvg from "../assets/contact.svg";
 const Contact = () => {
   return <div>
       {/* Hero */}
-      <section className="bg-muted pt-16 md:pt-24 pb-8 md:pb-10 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+      <section className="bg-muted py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{
           opacity: 0,
           y: 30
@@ -16,12 +15,12 @@ const Contact = () => {
           y: 0
         }} transition={{
           duration: 0.7
-        }} className="text-left flex-1">
+        }}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Lancez votre projet <span className="gradient-red-text">en 2 minutes</span></h1>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-8">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8">
               Décrivez votre projet et vos besoins, nous vous contacterons dans les 48h pour une visite gratuite et un devis détaillé sans engagement.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
               <span className="inline-flex items-center gap-2 px-5 py-3 bg-background rounded-full text-base font-semibold shadow-sm border-2 border-border">
                 <CalendarCheck className="w-5 h-5 text-primary" />
                 Réponse sous 48h garantie
@@ -35,21 +34,6 @@ const Contact = () => {
                 Assurance décennale & RC Pro
               </span>
             </div>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.2 }} className="flex-shrink-0 hidden lg:block">
-            <div
-              className="w-[500px] h-[500px] gradient-red"
-              style={{
-                WebkitMaskImage: `url(${contactSvg})`,
-                maskImage: `url(${contactSvg})`,
-                WebkitMaskSize: "contain",
-                maskSize: "contain",
-                WebkitMaskRepeat: "no-repeat",
-                maskRepeat: "no-repeat",
-                WebkitMaskPosition: "center",
-                maskPosition: "center",
-              }}
-            />
           </motion.div>
         </div>
       </section>
@@ -76,7 +60,7 @@ const Contact = () => {
                 <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-base">Écrivez-nous</p>
-                  <a href="mailto:contact@kf-services.fr" className="text-base text-muted-foreground hover:text-foreground transition-colors">contact@kf-services.fr</a>
+                  <a href="mailto:contact@kf-services.fr" className="text-base text-muted-foreground hover:text-foreground transition-colors">Vous remplissez le formulaire, nous vous recontactons pour comprendre votre projet, puis nous nous déplaçons chez vous pour établir un devis précis.</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
