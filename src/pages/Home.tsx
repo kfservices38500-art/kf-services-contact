@@ -325,7 +325,7 @@ const Home = () => {
           delay: 0.2,
           ease: [0.22, 1, 0.36, 1]
         }}>
-            <div className="aspect-[3/3.2] rounded-3xl overflow-hidden">
+            <div className="aspect-[3/3.2] rounded-[2rem] overflow-hidden relative">
               {heroImages.map((img, i) => <img key={i} src={img.src} alt={img.alt} className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === currentImage ? "opacity-100" : "opacity-0"}`} />)}
             </div>
             {/* Stats bar */}
