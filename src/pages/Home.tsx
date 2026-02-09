@@ -125,7 +125,7 @@ const processSteps = [{
   desc: "Nous cernons votre besoin et planifions une visite."
 }, {
   num: "02",
-  title: "On vient chez vous",
+  title: "On se déplace chez vous",
   desc: "Visite gratuite, analyse technique et conseil personnalisé."
 }, {
   num: "03",
