@@ -634,16 +634,15 @@ const Home = () => {
           <ScrollReveal>
             <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Près de chez vous</p>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Nous intervenons partout en <span className="gradient-red-text">Auvergne-Rhône-Alpes</span></h2>
-            <p className="text-muted-foreground text-base md:text-lg mb-12 max-w-2xl">
-              Où que vous soyez dans la région, vous bénéficiez de la même réactivité et du même niveau d'exigence.
-            </p>
+            <p className="text-muted-foreground text-base md:text-lg mb-12 max-w-2xl">Où que vous soyez dans la région, vous bénéficiez de la même qualité de services.</p>
           </ScrollReveal>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
             {departments.map((d, i) => <ScrollReveal key={d.code} delay={i * 0.05}>
                 <Link to={`/realisations?dept=${d.code}`}>
                   <motion.div whileHover={{
-                    y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.15)"
-                  }} className="bg-background rounded-3xl overflow-hidden shadow-sm border border-border group cursor-pointer">
+                y: -5,
+                boxShadow: "0 20px 40px -15px rgba(0,0,0,0.15)"
+              }} className="bg-background rounded-3xl overflow-hidden shadow-sm border border-border group cursor-pointer">
                     <div className="relative h-32 overflow-hidden">
                       <img src={d.image} alt={d.landmark} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
