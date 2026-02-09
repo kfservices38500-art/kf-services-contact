@@ -73,12 +73,13 @@ const serviceCards = [
   },
   {
     icon: Wrench,
-    title: "PLOMBERIE",
+    title: "PLOMBERIE & CHAUFFAGE",
     subtitle: "CONFORT & ÉCONOMIES",
     benefits: [
       "Des sanitaires fonctionnels dès le premier jour",
-      "Un air sain grâce à une VMC bien dimensionnée",
+      "Un chauffage performant pour une chaleur homogène dans toute la maison",
       "Des économies d'énergie avec une pompe à chaleur adaptée",
+      "Un air sain grâce à une VMC bien dimensionnée",
       "Un dépannage rapide pour éviter les dégâts",
     ],
   },
