@@ -78,3 +78,9 @@ html {
   transform: translateY(-1px);
   box-shadow: 0 8px 25px -5px hsl(0 0% 0% / 0.3);
 }
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}

@@ -478,6 +478,22 @@ const Home = () => {
         </div>
       </ParallaxSection>
 
+      {/* Bandeau défilant valeurs */}
+      <div className="w-full overflow-hidden py-6 md:py-8" style={{ background: 'linear-gradient(135deg, hsl(0 78% 55%), hsl(0 78% 35%))' }}>
+        <div className="flex whitespace-nowrap" style={{ animation: 'marquee 18s linear infinite' }}>
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="flex items-center shrink-0">
+              <span className="text-white font-bold text-2xl md:text-4xl uppercase tracking-[0.15em] mx-8 md:mx-14">Transparence</span>
+              <span className="text-white/50 text-3xl md:text-5xl mx-2">✦</span>
+              <span className="text-white font-bold text-2xl md:text-4xl uppercase tracking-[0.15em] mx-8 md:mx-14">Accompagnement</span>
+              <span className="text-white/50 text-3xl md:text-5xl mx-2">✦</span>
+              <span className="text-white font-bold text-2xl md:text-4xl uppercase tracking-[0.15em] mx-8 md:mx-14">Sérénité</span>
+              <span className="text-white/50 text-3xl md:text-5xl mx-2">✦</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Trust - Split card */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <ScrollReveal>
