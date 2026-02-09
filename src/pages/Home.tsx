@@ -1,22 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  ArrowUpRight,
-  Hammer,
-  Home as HomeIcon,
-  Droplets,
-  Wrench,
-  Building2,
-  Star,
-  Users,
-  MapPin,
-  CheckCircle2,
-  ChevronRight,
-  Shield,
-  FileCheck,
-  Award,
-  Scale,
-  Quote,
-} from "lucide-react";
+import { ArrowUpRight, Hammer, Home as HomeIcon, Droplets, Wrench, Building2, Star, Users, MapPin, CheckCircle2, ChevronRight, Shield, FileCheck, Award, Scale, Quote } from "lucide-react";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm";
@@ -24,169 +7,193 @@ import ScrollReveal from "../components/animations/ScrollReveal";
 import ParallaxSection from "../components/animations/ParallaxSection";
 import KFButton from "../components/ui/KFButton";
 import WhyUsCarousel from "../components/WhyUsCarousel";
-
-const heroImages = [
-  { src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80", alt: "Votre maison plus solide" },
-  { src: "https://images.unsplash.com/photo-1635424710928-0544e8512eae?w=1920&q=80", alt: "Une toiture qui vous protège" },
-  { src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80", alt: "Un confort thermique optimal" },
-];
-
-const services = [
-  { icon: Hammer, label: "Maçonnerie & Gros œuvre" },
-  { icon: HomeIcon, label: "Charpente & Couverture" },
-  { icon: Wrench, label: "Plomberie & Chauffage" },
-  { icon: Droplets, label: "Gouttières Aluminium" },
-  { icon: Building2, label: "Neuf & Rénovation" },
-];
-
-const serviceCards = [
-  {
-    icon: Hammer,
-    title: "MAÇONNERIE",
-    subtitle: "SOLIDITÉ & DURABILITÉ",
-    benefits: [
-      "Des fondations et murs solides pour un bâti durable",
-      "Des extensions qui valorisent votre bien immobilier",
-      "Une rénovation complète qui transforme votre intérieur",
-    ],
-  },
-  {
-    icon: HomeIcon,
-    title: "CHARPENTE & COUVERTURE",
-    subtitle: "PROTECTION & ISOLATION",
-    benefits: [
-      "Une toiture étanche qui vous protège des intempéries",
-      "Une isolation performante qui réduit vos factures d'énergie",
-      "Des matériaux durables pour 30 ans de tranquillité",
-      "Zinguerie et étanchéité pour zéro infiltration",
-    ],
-  },
-  {
-    icon: Droplets,
-    title: "GOUTTIÈRES ALUMINIUM",
-    subtitle: "ÉVACUATION & ÉTANCHÉITÉ",
-    benefits: [
-      "Des gouttières sur mesure intégrées à votre toiture",
-      "Des raccordements étanches qui éliminent les fuites",
-      "Une protection durable de vos façades et fondations",
-    ],
-  },
-  {
-    icon: Wrench,
-    title: "PLOMBERIE & CHAUFFAGE",
-    subtitle: "CONFORT & ÉCONOMIES",
-    benefits: [
-      "Des sanitaires fonctionnels dès le premier jour",
-      "Un chauffage performant pour une chaleur homogène dans toute la maison",
-      "Des économies d'énergie avec une pompe à chaleur adaptée",
-      "Un air sain grâce à une VMC bien dimensionnée",
-      "Un dépannage rapide",
-    ],
-  },
-  {
-    icon: Building2,
-    title: "NEUF & RÉNOVATION",
-    subtitle: "PROJET CLÉ EN MAIN",
-    benefits: [
-      "Une maison neuve conforme à vos plans et votre budget",
-      "Une rénovation complète sans tracas",
-      "Un seul interlocuteur qui coordonne tous les corps de métier",
-    ],
-  },
-];
-
-const testimonials = [
-  {
-    text: "Notre salle de bain est méconnaissable ! Délais tenus, budget respecté et une équipe toujours à l'écoute. On a gagné en confort au quotidien sans aucune mauvaise surprise.",
-    name: "Marie Dupont",
-    location: "Voiron",
-    rating: 5,
-  },
-  {
-    text: "L'extension de notre maison s'est déroulée sans accroc. Un seul interlocuteur a tout coordonné, ce qui nous a évité beaucoup de stress. Rapport qualité-prix imbattable.",
-    name: "Jean-Pierre Martin",
-    location: "Grenoble",
-    rating: 5,
-  },
-  {
-    text: "Suite à une tempête, notre toiture a été réparée en un temps record. Nous avons retrouvé la sérénité très vite. Professionnalisme et réactivité exemplaires !",
-    name: "Sophie Bernard",
-    location: "Moirans",
-    rating: 5,
-  },
-  {
-    text: "Travaux de plomberie impeccables, équipe ponctuelle et soignée. Le devis était clair et le prix final identique. Je recommande vivement !",
-    name: "Laurent Girard",
-    location: "Voreppe",
-    rating: 5,
-  },
-  {
-    text: "Rénovation complète de notre maison ancienne. Le résultat dépasse nos attentes. L'équipe a su préserver le charme tout en modernisant l'ensemble.",
-    name: "Michel Faure",
-    location: "Saint-Égrève",
-    rating: 5,
-  },
-];
-
-
-
-
-const guarantees = [
-  { icon: Shield, title: "Assurance Décennale", desc: "Vos travaux protégés pendant 10 ans, en toute sérénité" },
-  { icon: FileCheck, title: "RC Professionnelle", desc: "Vous êtes couvert en cas d'imprévu sur le chantier" },
-  { icon: Award, title: "Qualité certifiée", desc: "Des travaux réalisés dans les règles de l'art par des professionnels qualifiés" },
-  { icon: Scale, title: "Normes respectées", desc: "Des travaux conformes qui sécurisent la valeur de votre bien" },
-];
-
-const portfolioItems = [
-  { img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80", title: "Maçonnerie & Construction", desc: "Des murs solides et des extensions qui augmentent la surface habitable." },
-  { img: "https://images.unsplash.com/photo-1635424710928-0544e8512eae?w=800&q=80", title: "Charpente & Couverture", desc: "Une toiture qui vous met à l'abri pour des décennies." },
-  { img: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=800&q=80", title: "Gouttières Aluminium", desc: "Des gouttières sur mesure qui protègent vos façades." },
-  { img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80", title: "Plomberie & Chauffage", desc: "Un confort thermique optimal et des économies d'énergie." },
-];
-
-const processSteps = [
-  { num: "01", title: "Vous nous appelez", desc: "En 10 minutes, nous cernons votre besoin et planifions une visite." },
-  { num: "02", title: "On vient chez vous", desc: "Visite gratuite, analyse technique et conseil personnalisé." },
-  { num: "03", title: "Vous recevez un devis clair", desc: "Devis détaillé ligne par ligne, sans coûts cachés." },
-  { num: "04", title: "Les travaux avancent", desc: "Suivi régulier à chaque étape, vous restez informé." },
-  { num: "05", title: "Vous profitez du résultat", desc: "Réception soignée et garantie décennale." },
-];
-
-const departments = [
-  { code: "01", name: "Ain" },
-  { code: "03", name: "Allier" },
-  { code: "07", name: "Ardèche" },
-  { code: "15", name: "Cantal" },
-  { code: "26", name: "Drôme" },
-  { code: "38", name: "Isère" },
-  { code: "42", name: "Loire" },
-  { code: "43", name: "Haute-Loire" },
-  { code: "63", name: "Puy-de-Dôme" },
-  { code: "69", name: "Rhône" },
-  { code: "73", name: "Savoie" },
-  { code: "74", name: "Haute-Savoie" },
-];
-
+const heroImages = [{
+  src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80",
+  alt: "Votre maison plus solide"
+}, {
+  src: "https://images.unsplash.com/photo-1635424710928-0544e8512eae?w=1920&q=80",
+  alt: "Une toiture qui vous protège"
+}, {
+  src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80",
+  alt: "Un confort thermique optimal"
+}];
+const services = [{
+  icon: Hammer,
+  label: "Maçonnerie & Gros œuvre"
+}, {
+  icon: HomeIcon,
+  label: "Charpente & Couverture"
+}, {
+  icon: Wrench,
+  label: "Plomberie & Chauffage"
+}, {
+  icon: Droplets,
+  label: "Gouttières Aluminium"
+}, {
+  icon: Building2,
+  label: "Neuf & Rénovation"
+}];
+const serviceCards = [{
+  icon: Hammer,
+  title: "MAÇONNERIE",
+  subtitle: "SOLIDITÉ & DURABILITÉ",
+  benefits: ["Des fondations et murs solides pour un bâti durable", "Des extensions qui valorisent votre bien immobilier", "Une rénovation complète qui transforme votre intérieur"]
+}, {
+  icon: HomeIcon,
+  title: "CHARPENTE & COUVERTURE",
+  subtitle: "PROTECTION & ISOLATION",
+  benefits: ["Une toiture étanche qui vous protège des intempéries", "Une isolation performante qui réduit vos factures d'énergie", "Des matériaux durables pour 30 ans de tranquillité", "Zinguerie et étanchéité pour zéro infiltration"]
+}, {
+  icon: Droplets,
+  title: "GOUTTIÈRES ALUMINIUM",
+  subtitle: "ÉVACUATION & ÉTANCHÉITÉ",
+  benefits: ["Des gouttières sur mesure intégrées à votre toiture", "Des raccordements étanches qui éliminent les fuites", "Une protection durable de vos façades et fondations"]
+}, {
+  icon: Wrench,
+  title: "PLOMBERIE & CHAUFFAGE",
+  subtitle: "CONFORT & ÉCONOMIES",
+  benefits: ["Des sanitaires fonctionnels dès le premier jour", "Un chauffage performant pour une chaleur homogène dans toute la maison", "Des économies d'énergie avec une pompe à chaleur adaptée", "Un air sain grâce à une VMC bien dimensionnée", "Un dépannage rapide"]
+}, {
+  icon: Building2,
+  title: "NEUF & RÉNOVATION",
+  subtitle: "PROJET CLÉ EN MAIN",
+  benefits: ["Une maison neuve conforme à vos plans et votre budget", "Une rénovation complète sans tracas", "Un seul interlocuteur qui coordonne tous les corps de métier"]
+}];
+const testimonials = [{
+  text: "Notre salle de bain est méconnaissable ! Délais tenus, budget respecté et une équipe toujours à l'écoute. On a gagné en confort au quotidien sans aucune mauvaise surprise.",
+  name: "Marie Dupont",
+  location: "Voiron",
+  rating: 5
+}, {
+  text: "L'extension de notre maison s'est déroulée sans accroc. Un seul interlocuteur a tout coordonné, ce qui nous a évité beaucoup de stress. Rapport qualité-prix imbattable.",
+  name: "Jean-Pierre Martin",
+  location: "Grenoble",
+  rating: 5
+}, {
+  text: "Suite à une tempête, notre toiture a été réparée en un temps record. Nous avons retrouvé la sérénité très vite. Professionnalisme et réactivité exemplaires !",
+  name: "Sophie Bernard",
+  location: "Moirans",
+  rating: 5
+}, {
+  text: "Travaux de plomberie impeccables, équipe ponctuelle et soignée. Le devis était clair et le prix final identique. Je recommande vivement !",
+  name: "Laurent Girard",
+  location: "Voreppe",
+  rating: 5
+}, {
+  text: "Rénovation complète de notre maison ancienne. Le résultat dépasse nos attentes. L'équipe a su préserver le charme tout en modernisant l'ensemble.",
+  name: "Michel Faure",
+  location: "Saint-Égrève",
+  rating: 5
+}];
+const guarantees = [{
+  icon: Shield,
+  title: "Assurance Décennale",
+  desc: "Vos travaux protégés pendant 10 ans, en toute sérénité"
+}, {
+  icon: FileCheck,
+  title: "RC Professionnelle",
+  desc: "Vous êtes couvert en cas d'imprévu sur le chantier"
+}, {
+  icon: Award,
+  title: "Qualité certifiée",
+  desc: "Des travaux réalisés dans les règles de l'art par des professionnels qualifiés"
+}, {
+  icon: Scale,
+  title: "Normes respectées",
+  desc: "Des travaux conformes qui sécurisent la valeur de votre bien"
+}];
+const portfolioItems = [{
+  img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
+  title: "Maçonnerie & Construction",
+  desc: "Des murs solides et des extensions qui augmentent la surface habitable."
+}, {
+  img: "https://images.unsplash.com/photo-1635424710928-0544e8512eae?w=800&q=80",
+  title: "Charpente & Couverture",
+  desc: "Une toiture qui vous met à l'abri pour des décennies."
+}, {
+  img: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=800&q=80",
+  title: "Gouttières Aluminium",
+  desc: "Des gouttières sur mesure qui protègent vos façades."
+}, {
+  img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
+  title: "Plomberie & Chauffage",
+  desc: "Un confort thermique optimal et des économies d'énergie."
+}];
+const processSteps = [{
+  num: "01",
+  title: "Vous nous appelez",
+  desc: "En 10 minutes, nous cernons votre besoin et planifions une visite."
+}, {
+  num: "02",
+  title: "On vient chez vous",
+  desc: "Visite gratuite, analyse technique et conseil personnalisé."
+}, {
+  num: "03",
+  title: "Vous recevez un devis clair",
+  desc: "Devis détaillé ligne par ligne, sans coûts cachés."
+}, {
+  num: "04",
+  title: "Les travaux avancent",
+  desc: "Suivi régulier à chaque étape, vous restez informé."
+}, {
+  num: "05",
+  title: "Vous profitez du résultat",
+  desc: "Réception soignée et garantie décennale."
+}];
+const departments = [{
+  code: "01",
+  name: "Ain"
+}, {
+  code: "03",
+  name: "Allier"
+}, {
+  code: "07",
+  name: "Ardèche"
+}, {
+  code: "15",
+  name: "Cantal"
+}, {
+  code: "26",
+  name: "Drôme"
+}, {
+  code: "38",
+  name: "Isère"
+}, {
+  code: "42",
+  name: "Loire"
+}, {
+  code: "43",
+  name: "Haute-Loire"
+}, {
+  code: "63",
+  name: "Puy-de-Dôme"
+}, {
+  code: "69",
+  name: "Rhône"
+}, {
+  code: "73",
+  name: "Savoie"
+}, {
+  code: "74",
+  name: "Haute-Savoie"
+}];
 const TestimonialCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const totalPages = Math.ceil(testimonials.length / 3);
-
   const scrollToIndex = useCallback((index: number) => {
     if (!scrollRef.current) return;
     const cardWidth = scrollRef.current.firstElementChild?.getBoundingClientRect().width ?? 0;
     const gap = 24;
     scrollRef.current.scrollTo({
       left: index * (cardWidth + gap) * 3,
-      behavior: "smooth",
+      behavior: "smooth"
     });
     setActiveIndex(index);
   }, []);
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) => {
+      setActiveIndex(prev => {
         const next = (prev + 1) % totalPages;
         scrollToIndex(next);
         return next;
@@ -194,29 +201,28 @@ const TestimonialCarousel = () => {
     }, 6000);
     return () => clearInterval(interval);
   }, [totalPages, scrollToIndex]);
-
-  return (
-    <div>
-      <div
-        ref={scrollRef}
-        className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-2"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
-        {testimonials.map((t, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08 }}
-            whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)" }}
-            className="bg-background rounded-3xl p-7 shadow-sm flex-shrink-0 w-[calc(33.333%-1rem)] min-w-[300px] snap-start flex flex-col justify-between"
-          >
+  return <div>
+      <div ref={scrollRef} className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-2" style={{
+      scrollbarWidth: "none",
+      msOverflowStyle: "none"
+    }}>
+        {testimonials.map((t, i) => <motion.div key={i} initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        delay: i * 0.08
+      }} whileHover={{
+        y: -5,
+        boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)"
+      }} className="bg-background rounded-3xl p-7 shadow-sm flex-shrink-0 w-[calc(33.333%-1rem)] min-w-[300px] snap-start flex flex-col justify-between">
             <div>
               <div className="flex gap-1 mb-4">
-                {[...Array(t.rating)].map((_, j) => (
-                  <Star key={j} className="w-5 h-5 fill-primary text-primary" />
-                ))}
+                {[...Array(t.rating)].map((_, j) => <Star key={j} className="w-5 h-5 fill-primary text-primary" />)}
               </div>
               <p className="text-base text-muted-foreground mb-5 leading-relaxed">"{t.text}"</p>
             </div>
@@ -227,44 +233,37 @@ const TestimonialCarousel = () => {
               </div>
               <Quote className="w-8 h-8 text-primary opacity-30" />
             </div>
-          </motion.div>
-        ))}
+          </motion.div>)}
       </div>
       <div className="flex gap-2 mt-8 justify-center">
-        {Array.from({ length: totalPages }).map((_, i) => (
-          <button
-            key={i}
-            onClick={() => scrollToIndex(i)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              i === activeIndex ? "gradient-red scale-110" : "bg-foreground/20"
-            }`}
-          />
-        ))}
+        {Array.from({
+        length: totalPages
+      }).map((_, i) => <button key={i} onClick={() => scrollToIndex(i)} className={`w-3 h-3 rounded-full transition-all duration-300 ${i === activeIndex ? "gradient-red scale-110" : "bg-foreground/20"}`} />)}
       </div>
-    </div>
-  );
+    </div>;
 };
-
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
-
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+      setCurrentImage(prev => (prev + 1) % heroImages.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
-
-  return (
-    <div>
+  return <div>
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: -40
+        }} animate={{
+          opacity: 1,
+          x: 0
+        }} transition={{
+          duration: 0.8,
+          ease: [0.22, 1, 0.36, 1]
+        }}>
             <p className="text-muted-foreground text-lg mb-4">
               Fort depuis plus de <span className="font-bold text-foreground">20 ans d'expérience</span> dans le domaine du bâtiment, les associés <span className="font-bold gradient-red-text">Fatih</span> (plombier - chauffagiste) et <span className="font-bold gradient-red-text">Mukremin KOCAK</span> (maçon - charpentier) ont décidé de mettre en commun avec <span className="font-bold gradient-red-text">KF Services</span> leurs compétences, afin de répondre aux besoins et exigences des clients particuliers et professionnels.
             </p>
@@ -285,35 +284,25 @@ const Home = () => {
             </div>
             {/* All services badges in hero */}
             <div className="flex flex-wrap gap-2">
-              {services.map((s) => (
-                <Link
-                  key={s.label}
-                  to="/services"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-muted rounded-2xl text-sm font-medium text-muted-foreground hover:bg-foreground hover:text-background transition-all duration-300"
-                >
+              {services.map(s => <Link key={s.label} to="/services" className="inline-flex items-center gap-2 px-4 py-2.5 bg-muted rounded-2xl text-sm font-medium text-muted-foreground hover:bg-foreground hover:text-background transition-all duration-300">
                   <s.icon className="w-4 h-4" />
                   {s.label}
-                </Link>
-              ))}
+                </Link>)}
             </div>
           </motion.div>
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          >
+          <motion.div className="relative" initial={{
+          opacity: 0,
+          x: 40
+        }} animate={{
+          opacity: 1,
+          x: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.2,
+          ease: [0.22, 1, 0.36, 1]
+        }}>
             <div className="aspect-[3/3.2] rounded-3xl overflow-hidden">
-              {heroImages.map((img, i) => (
-                <img
-                  key={i}
-                  src={img.src}
-                  alt={img.alt}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                    i === currentImage ? "opacity-100" : "opacity-0"
-                  }`}
-                />
-              ))}
+              {heroImages.map((img, i) => <img key={i} src={img.src} alt={img.alt} className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === currentImage ? "opacity-100" : "opacity-0"}`} />)}
             </div>
             {/* Stats bar */}
             <div className="absolute bottom-4 left-4 right-4 bg-background/40 backdrop-blur-xl rounded-2xl p-4 flex items-center justify-between gap-4 text-white">
@@ -322,15 +311,7 @@ const Home = () => {
                 <span className="text-base font-bold">+20 ans d'expérience</span>
               </div>
               <div className="flex gap-1.5">
-                {heroImages.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentImage(i)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      i === currentImage ? "gradient-red scale-110" : "bg-white/40"
-                    }`}
-                  />
-                ))}
+                {heroImages.map((_, i) => <button key={i} onClick={() => setCurrentImage(i)} className={`w-3 h-3 rounded-full transition-all duration-300 ${i === currentImage ? "gradient-red scale-110" : "bg-white/40"}`} />)}
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5" />
@@ -363,11 +344,7 @@ const Home = () => {
           {/* Left - Photo with overlay */}
           <ScrollReveal direction="left">
             <div className="relative rounded-3xl overflow-hidden h-full min-h-[400px]">
-              <img
-                src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
-                alt="Chantier KF Services"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" alt="Chantier KF Services" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <h3 className="text-white text-2xl md:text-3xl font-bold leading-tight">
@@ -397,10 +374,7 @@ const Home = () => {
                     Vous bénéficiez d'un devis détaillé et d'un planning réaliste, pour que votre projet avance sans surprise et dans les temps.
                   </li>
                 </ul>
-                <Link
-                  to="/a-propos"
-                  className="inline-flex items-center gap-2 gradient-red-text font-bold text-base hover:underline"
-                >
+                <Link to="/a-propos" className="inline-flex items-center gap-2 gradient-red-text font-bold text-base hover:underline">
                   Découvrir nos engagements
                   <ChevronRight className="w-5 h-5 text-primary" />
                 </Link>
@@ -411,21 +385,12 @@ const Home = () => {
           {/* Right - Photo with service tags */}
           <ScrollReveal direction="right">
             <div className="relative rounded-3xl overflow-hidden h-full min-h-[400px]">
-              <img
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80"
-                alt="Cuisine rénovée KF Services"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Cuisine rénovée KF Services" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
-                {services.map((s) => (
-                  <span
-                    key={s.label}
-                    className="inline-flex items-center px-4 py-2 bg-foreground/80 backdrop-blur-sm text-background text-sm font-medium rounded-full"
-                  >
+                {services.map(s => <span key={s.label} className="inline-flex items-center px-4 py-2 bg-foreground/80 backdrop-blur-sm text-background text-sm font-medium rounded-full">
                     {s.label}
-                  </span>
-                ))}
+                  </span>)}
               </div>
             </div>
           </ScrollReveal>
@@ -449,51 +414,47 @@ const Home = () => {
             </div>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {serviceCards.map((card, i) => (
-              <ScrollReveal key={card.title} delay={i * 0.1}>
-                <motion.div
-                  whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.15)" }}
-                  className="bg-background rounded-3xl overflow-hidden shadow-sm h-full flex flex-col"
-                >
+            {serviceCards.map((card, i) => <ScrollReveal key={card.title} delay={i * 0.1}>
+                <motion.div whileHover={{
+              y: -5,
+              boxShadow: "0 20px 40px -15px rgba(0,0,0,0.15)"
+            }} className="bg-background rounded-3xl overflow-hidden shadow-sm h-full flex flex-col">
                   {/* Gradient red header */}
                   <div className="gradient-red p-6 pb-5">
                     <card.icon className="w-8 h-8 text-white/80 mb-3" />
                     <h3 className="text-white text-lg font-bold leading-tight">{card.title}</h3>
-                    {card.subtitle && (
-                      <p className="text-white/70 text-sm font-medium mt-1">{card.subtitle}</p>
-                    )}
+                    {card.subtitle && <p className="text-white/70 text-sm font-medium mt-1">{card.subtitle}</p>}
                   </div>
                   {/* Benefits */}
                   <div className="p-6 flex-1">
                     <ul className="space-y-3">
-                      {card.benefits.map((b, j) => (
-                        <li key={j} className="flex items-start gap-3 text-sm text-muted-foreground">
+                      {card.benefits.map((b, j) => <li key={j} className="flex items-start gap-3 text-sm text-muted-foreground">
                           <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                           {b}
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </div>
                 </motion.div>
-              </ScrollReveal>
-            ))}
+              </ScrollReveal>)}
           </div>
         </div>
       </ParallaxSection>
 
       {/* Bandeau défilant valeurs */}
-      <div className="w-full overflow-hidden py-6 md:py-8" style={{ background: 'linear-gradient(135deg, hsl(0 78% 55%), hsl(0 78% 35%))' }}>
-        <div className="flex whitespace-nowrap" style={{ animation: 'marquee 18s linear infinite' }}>
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="flex items-center shrink-0">
+      <div className="w-full overflow-hidden py-6 md:py-8" style={{
+      background: 'linear-gradient(135deg, hsl(0 78% 55%), hsl(0 78% 35%))'
+    }}>
+        <div className="flex whitespace-nowrap" style={{
+        animation: 'marquee 18s linear infinite'
+      }}>
+          {[...Array(3)].map((_, i) => <div key={i} className="flex items-center shrink-0">
               <span className="text-white font-bold text-2xl md:text-4xl uppercase tracking-[0.15em] mx-8 md:mx-14">Transparence</span>
               <span className="text-white/50 text-3xl md:text-5xl mx-2">✦</span>
               <span className="text-white font-bold text-2xl md:text-4xl uppercase tracking-[0.15em] mx-8 md:mx-14">Accompagnement</span>
               <span className="text-white/50 text-3xl md:text-5xl mx-2">✦</span>
               <span className="text-white font-bold text-2xl md:text-4xl uppercase tracking-[0.15em] mx-8 md:mx-14">Sérénité</span>
               <span className="text-white/50 text-3xl md:text-5xl mx-2">✦</span>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
 
@@ -513,18 +474,15 @@ const Home = () => {
 
         {/* Guarantees */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {guarantees.map((g, i) => (
-            <ScrollReveal key={g.title} delay={i * 0.1}>
-              <motion.div
-                whileHover={{ y: -3 }}
-                className="bg-muted rounded-3xl p-6 text-center"
-              >
+          {guarantees.map((g, i) => <ScrollReveal key={g.title} delay={i * 0.1}>
+              <motion.div whileHover={{
+            y: -3
+          }} className="bg-muted rounded-3xl p-6 text-center">
                 <g.icon className="w-10 h-10 text-primary mx-auto mb-3" />
                 <h4 className="font-bold text-base mb-1">{g.title}</h4>
                 <p className="text-sm text-muted-foreground">{g.desc}</p>
               </motion.div>
-            </ScrollReveal>
-          ))}
+            </ScrollReveal>)}
         </div>
       </section>
 
@@ -539,20 +497,18 @@ const Home = () => {
             </p>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {portfolioItems.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 0.1}>
-                <motion.div
-                  whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)" }}
-                  className="bg-background rounded-3xl overflow-hidden shadow-sm"
-                >
+            {portfolioItems.map((item, i) => <ScrollReveal key={item.title} delay={i * 0.1}>
+                <motion.div whileHover={{
+              y: -5,
+              boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)"
+            }} className="bg-background rounded-3xl overflow-hidden shadow-sm">
                   <img src={item.img} alt={item.title} className="w-full aspect-[4/3] object-cover" />
                   <div className="p-5">
                     <h3 className="font-bold text-base mb-1">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.desc}</p>
                   </div>
                 </motion.div>
-              </ScrollReveal>
-            ))}
+              </ScrollReveal>)}
           </div>
           <ScrollReveal className="text-center mt-10">
             <KFButton to="/realisations" variant="dark">
@@ -572,15 +528,13 @@ const Home = () => {
           </p>
         </ScrollReveal>
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {processSteps.map((step, i) => (
-            <ScrollReveal key={step.num} delay={i * 0.08}>
+          {processSteps.map((step, i) => <ScrollReveal key={step.num} delay={i * 0.08}>
               <div className="relative">
                 <span className="text-5xl font-black gradient-red-text opacity-30">{step.num}</span>
                 <h3 className="font-bold text-base mt-2 mb-1">{step.title}</h3>
                 <p className="text-sm text-muted-foreground">{step.desc}</p>
               </div>
-            </ScrollReveal>
-          ))}
+            </ScrollReveal>)}
         </div>
       </section>
 
@@ -593,21 +547,27 @@ const Home = () => {
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <ScrollReveal>
-              <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">
+              <motion.div whileHover={{
+              y: -3
+            }} className="bg-background rounded-3xl p-6">
                 <p className="text-sm text-muted-foreground mb-1">10 Janvier 2025</p>
                 <h4 className="font-bold text-base mb-1">Nouveau projet livré à Moirans</h4>
                 <p className="text-base text-muted-foreground">Une maison de ville entièrement rénovée : les propriétaires ont gagné 30 m² de surface habitable.</p>
               </motion.div>
             </ScrollReveal>
             <ScrollReveal>
-              <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">
+              <motion.div whileHover={{
+              y: -3
+            }} className="bg-background rounded-3xl p-6">
                 <p className="text-sm text-muted-foreground mb-1">5 Janvier 2025</p>
                 <h4 className="font-bold text-base mb-1">Extension livrée à Voiron</h4>
                 <p className="text-base text-muted-foreground">30 m² supplémentaires pour une famille qui avait besoin d'espace — chantier livré en 8 semaines.</p>
               </motion.div>
             </ScrollReveal>
             <ScrollReveal>
-              <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">
+              <motion.div whileHover={{
+              y: -3
+            }} className="bg-background rounded-3xl p-6">
                 <p className="text-sm text-muted-foreground mb-1">15 Décembre 2024</p>
                 <h4 className="font-bold text-base mb-1">Toiture rénovée à Grenoble</h4>
                 <p className="text-base text-muted-foreground">Charpente et couverture complètes pour une maison des années 60 — étanchéité garantie.</p>
@@ -635,7 +595,7 @@ const Home = () => {
         <div className="max-w-2xl mx-auto text-center">
           <ScrollReveal>
             <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">C'est simple et rapide</p>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Décrivez votre projet, <span className="gradient-red-text">on s'occupe du reste</span></h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">on <span className="gradient-red-text">on s'occupe du reste</span></h2>
             <p className="text-muted-foreground text-base md:text-lg mb-12">
               Remplissez ce formulaire en 2 minutes. Vous recevrez un appel sous 48h pour planifier une visite gratuite et obtenir votre devis détaillé.
             </p>
@@ -657,38 +617,25 @@ const Home = () => {
             </p>
           </ScrollReveal>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
-            {departments.map((d, i) => (
-              <ScrollReveal key={d.code} delay={i * 0.05}>
-                <motion.div
-                  whileHover={{ y: -3 }}
-                  className="bg-background rounded-3xl p-5 text-center shadow-sm"
-                >
+            {departments.map((d, i) => <ScrollReveal key={d.code} delay={i * 0.05}>
+                <motion.div whileHover={{
+              y: -3
+            }} className="bg-background rounded-3xl p-5 text-center shadow-sm">
                   <span className="text-3xl font-black gradient-red-text">{d.code}</span>
                   <p className="text-base text-muted-foreground mt-1">{d.name}</p>
                 </motion.div>
-              </ScrollReveal>
-            ))}
+              </ScrollReveal>)}
           </div>
           {/* Google Maps */}
           <ScrollReveal>
             <div className="rounded-3xl overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.509!2d5.5917!3d45.3629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af4818e91c82f%3A0x0!2s58+Rue+des+Tallifardi%C3%A8res%2C+38500+Voiron!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="KF Services - Localisation"
-                className="w-full"
-              />
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.509!2d5.5917!3d45.3629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af4818e91c82f%3A0x0!2s58+Rue+des+Tallifardi%C3%A8res%2C+38500+Voiron!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" width="100%" height="400" style={{
+              border: 0
+            }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="KF Services - Localisation" className="w-full" />
             </div>
           </ScrollReveal>
         </div>
       </ParallaxSection>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
