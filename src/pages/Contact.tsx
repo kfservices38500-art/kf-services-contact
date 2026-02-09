@@ -10,14 +10,14 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <motion.div initial={{
-              opacity: 0,
-              y: 30
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.7
-            }} className="flex-1 text-left">
+            opacity: 0,
+            y: 30
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.7
+          }} className="flex-1 text-left">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Lancez votre projet <span className="gradient-red-text">en 2 minutes</span></h1>
               <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-8">
                 Décrivez votre projet et vos besoins, nous vous contacterons dans les 48h pour une visite gratuite et un devis détaillé sans engagement.
@@ -37,25 +37,28 @@ const Contact = () => {
                 </span>
               </div>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden lg:block flex-shrink-0"
-              style={{
-                width: '500px',
-                height: '500px',
-                WebkitMaskImage: `url(${contactSvg})`,
-                maskImage: `url(${contactSvg})`,
-                WebkitMaskRepeat: 'no-repeat',
-                maskRepeat: 'no-repeat',
-                WebkitMaskSize: 'contain',
-                maskSize: 'contain',
-                WebkitMaskPosition: 'center',
-                maskPosition: 'center',
-                background: 'linear-gradient(135deg, hsl(0 78% 55%), hsl(0 78% 35%))',
-              }}
-            />
+            <motion.div initial={{
+            opacity: 0,
+            scale: 0.8
+          }} animate={{
+            opacity: 1,
+            scale: 1
+          }} transition={{
+            duration: 0.8,
+            delay: 0.2
+          }} className="hidden lg:block flex-shrink-0" style={{
+            width: '500px',
+            height: '500px',
+            WebkitMaskImage: `url(${contactSvg})`,
+            maskImage: `url(${contactSvg})`,
+            WebkitMaskRepeat: 'no-repeat',
+            maskRepeat: 'no-repeat',
+            WebkitMaskSize: 'contain',
+            maskSize: 'contain',
+            WebkitMaskPosition: 'center',
+            maskPosition: 'center',
+            background: 'linear-gradient(135deg, hsl(0 78% 55%), hsl(0 78% 35%))'
+          }} />
           </div>
         </div>
       </section>
@@ -67,7 +70,7 @@ const Contact = () => {
           <ScrollReveal direction="left" className="lg:col-span-2">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Comment ça <span className="gradient-red-text">se passe ?</span></h2>
             <p className="text-muted-foreground text-base md:text-lg mb-8">
-              Vous remplissez le formulaire, on vous rappelle pour comprendre votre projet, puis on vient chez vous pour établir un devis précis.
+              Vous remplissez le formulaire, nous vous recontactons pour comprendre votre projet, puis nous nous déplaçons chez vous pour établir un devis précis.
             </p>
 
             <div className="space-y-6">
