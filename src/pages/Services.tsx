@@ -25,7 +25,7 @@ const servicesData = [{
   image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
   category: "gouttieres"
 }, {
-  title: "Plomberie",
+  title: "Plomberie & chauffage",
   emoji: "🔧",
   description: "Vous gagnez en confort au quotidien et vous réduisez vos dépenses énergétiques grâce à des installations modernes, fiables et adaptées à votre habitat.",
   benefits: ["Des sanitaires fonctionnels et esthétiques dès le premier jour", "Un chauffage performant qui répartit la chaleur uniformément", "Une pompe à chaleur qui divise vos factures de chauffage", "Un air sain grâce à une VMC bien dimensionnée pour votre logement", "Un dépannage rapide qui limite les dégâts en cas d'urgence", "Une mise aux normes qui sécurise votre installation"],
