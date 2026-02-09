@@ -1,21 +1,25 @@
 import { Link } from "react-router-dom";
-import { Shield, FileCheck, Award, Scale, Target, Heart, Eye, Users } from "lucide-react";
+import { Shield, FileCheck, Award, Scale, Target, Heart, Eye, Users, Handshake, Home, HardHat, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "../components/animations/ScrollReveal";
 import ParallaxSection from "../components/animations/ParallaxSection";
 import KFButton from "../components/ui/KFButton";
 const stats = [{
   value: "20+",
-  label: "Années à votre service"
+  label: "Années à votre service",
+  icon: Handshake
 }, {
   value: "500+",
-  label: "Projets livrés avec succès"
+  label: "Projets livrés avec succès",
+  icon: Home
 }, {
-  value: "3",
-  label: "Équipes dédiées à votre chantier"
+  value: "1",
+  label: "Équipe dédiée à votre chantier",
+  icon: HardHat
 }, {
   value: "98%",
-  label: "De clients satisfaits"
+  label: "De clients satisfaits",
+  icon: Star
 }];
 const timeline = [{
   year: "2003",
@@ -95,6 +99,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, i) => <ScrollReveal key={stat.label} delay={i * 0.1}>
+                <stat.icon className="w-8 h-8 text-white/80 mx-auto mb-2" />
                 <span className="text-4xl md:text-5xl font-black text-white">{stat.value}</span>
                 <p className="text-base text-white/70 mt-1">{stat.label}</p>
               </ScrollReveal>)}
