@@ -142,40 +142,64 @@ const processSteps = [{
 }];
 const departments = [{
   code: "01",
-  name: "Ain"
+  name: "Ain",
+  landmark: "Monastère de Brou",
+  image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
 }, {
   code: "03",
-  name: "Allier"
+  name: "Allier",
+  landmark: "Château des Bourbon",
+  image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80"
 }, {
   code: "07",
-  name: "Ardèche"
+  name: "Ardèche",
+  landmark: "Pont d'Arc",
+  image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80"
 }, {
   code: "15",
-  name: "Cantal"
+  name: "Cantal",
+  landmark: "Viaduc de Garabit",
+  image: "https://images.unsplash.com/photo-1470770841497-7b3090ac6836?w=600&q=80"
 }, {
   code: "26",
-  name: "Drôme"
+  name: "Drôme",
+  landmark: "Palais du Facteur Cheval",
+  image: "https://images.unsplash.com/photo-1499002238440-d264edd596ec?w=600&q=80"
 }, {
   code: "38",
-  name: "Isère"
+  name: "Isère",
+  landmark: "Fort de la Bastille",
+  image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
 }, {
   code: "42",
-  name: "Loire"
+  name: "Loire",
+  landmark: "Château de la Bâtie d'Urfé",
+  image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80"
 }, {
   code: "43",
-  name: "Haute-Loire"
+  name: "Haute-Loire",
+  landmark: "Cathédrale du Puy-en-Velay",
+  image: "https://images.unsplash.com/photo-1464146072230-91cabc968266?w=600&q=80"
 }, {
   code: "63",
-  name: "Puy-de-Dôme"
+  name: "Puy-de-Dôme",
+  landmark: "Puy de Dôme",
+  image: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=600&q=80"
 }, {
   code: "69",
-  name: "Rhône"
+  name: "Rhône",
+  landmark: "Basilique de Fourvière",
+  image: "https://images.unsplash.com/photo-1524396309943-e03f5249f002?w=600&q=80"
 }, {
   code: "73",
-  name: "Savoie"
+  name: "Savoie",
+  landmark: "Lac du Bourget",
+  image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80"
 }, {
   code: "74",
-  name: "Haute-Savoie"
+  name: "Haute-Savoie",
+  landmark: "Lac d'Annecy",
+  image: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=600&q=80"
 }];
 const TestimonialCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -614,14 +638,23 @@ const Home = () => {
               Où que vous soyez dans la région, vous bénéficiez de la même réactivité et du même niveau d'exigence.
             </p>
           </ScrollReveal>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
             {departments.map((d, i) => <ScrollReveal key={d.code} delay={i * 0.05}>
-                <motion.div whileHover={{
-              y: -3
-            }} className="bg-background rounded-3xl p-5 text-center shadow-sm">
-                  <span className="text-3xl font-black gradient-red-text">{d.code}</span>
-                  <p className="text-base text-muted-foreground mt-1">{d.name}</p>
-                </motion.div>
+                <Link to={`/realisations?dept=${d.code}`}>
+                  <motion.div whileHover={{
+                    y: -5, boxShadow: "0 20px 40px -15px rgba(0,0,0,0.15)"
+                  }} className="bg-background rounded-3xl overflow-hidden shadow-sm border border-border group cursor-pointer">
+                    <div className="relative h-32 overflow-hidden">
+                      <img src={d.image} alt={d.landmark} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <span className="absolute bottom-2 left-3 text-white/90 text-xs font-medium">{d.landmark}</span>
+                    </div>
+                    <div className="p-4 text-center">
+                      <span className="text-2xl font-black gradient-red-text">{d.code}</span>
+                      <p className="text-sm text-muted-foreground mt-0.5">{d.name}</p>
+                    </div>
+                  </motion.div>
+                </Link>
               </ScrollReveal>)}
           </div>
           {/* Google Maps */}
