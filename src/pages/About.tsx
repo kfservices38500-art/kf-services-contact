@@ -72,7 +72,7 @@ const certifications = [{
 }, {
   icon: Award,
   title: "Qualité certifiée",
-  desc: "Des travaux réalisés dans les règles de l'art par des professionnels qualifiés."
+  desc: "Des travaux réalisés par des professionnels qualifiés."
 }, {
   icon: Scale,
   title: "Conformité DTU",
