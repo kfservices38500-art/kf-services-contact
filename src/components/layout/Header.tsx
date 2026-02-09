@@ -61,10 +61,10 @@ const Header = () => {
 
           {/* Desktop Nav - grey pill, blur on scroll */}
           <nav
-            className={`hidden md:flex items-center rounded-full px-1.5 py-1.5 transition-all duration-500 shadow-[inset_0_1px_3px_rgba(0,0,0,0.06)] ${
+            className={`hidden md:flex items-center rounded-full px-1.5 py-1.5 transition-all duration-500 border border-white/40 ${
               scrolled
-                ? "bg-muted/80 backdrop-blur-xl shadow-[inset_0_1px_3px_rgba(0,0,0,0.06),0_2px_20px_-4px_rgba(0,0,0,0.08)]"
-                : "bg-muted"
+                ? "bg-white/30 backdrop-blur-2xl shadow-[inset_0_1px_2px_rgba(255,255,255,0.5),0_4px_30px_-4px_rgba(0,0,0,0.1)]"
+                : "bg-white/40 backdrop-blur-xl shadow-[inset_0_1px_2px_rgba(255,255,255,0.5),0_2px_20px_-4px_rgba(0,0,0,0.06)]"
             }`}
           >
             {navLinks.map((link) => (
