@@ -2,21 +2,23 @@ import { Phone, Mail, MapPin, Clock, CalendarCheck, FileText, Shield } from "luc
 import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm";
 import ScrollReveal from "../components/animations/ScrollReveal";
-
 const Contact = () => {
-  return (
-    <div>
+  return <div>
       {/* Hero */}
       <section className="bg-muted py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.7
+        }}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Lancez votre projet <span className="gradient-red-text">en 2 minutes</span></h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8">
-              Décrivez vos besoins, nous vous rappelons sous 48h avec un rendez-vous pour une visite gratuite et un devis détaillé sans engagement.
+              Décrivez votre projet et vos besoins, nous vous contacterons dans les 48h pour une visite gratuite et un devis détaillé sans engagement.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <span className="inline-flex items-center gap-2 px-5 py-3 bg-background rounded-full text-base font-semibold shadow-sm border-2 border-border">
@@ -110,23 +112,13 @@ const Contact = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center">Retrouvez-nous <span className="gradient-red-text">ici</span></h2>
             <p className="text-base text-muted-foreground mb-8 text-center">Nous intervenons dans toute la région Auvergne-Rhône-Alpes</p>
             <div className="rounded-3xl overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.509!2d5.5917!3d45.3629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af4818e91c82f%3A0x0!2s58+Rue+des+Tallifardi%C3%A8res%2C+38500+Voiron!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="KF Services - Localisation"
-                className="w-full"
-              />
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.509!2d5.5917!3d45.3629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af4818e91c82f%3A0x0!2s58+Rue+des+Tallifardi%C3%A8res%2C+38500+Voiron!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" width="100%" height="400" style={{
+              border: 0
+            }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="KF Services - Localisation" className="w-full" />
             </div>
           </ScrollReveal>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
