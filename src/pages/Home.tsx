@@ -121,7 +121,7 @@ const portfolioItems = [{
 }];
 const processSteps = [{
   num: "01",
-  title: "Vous nous appelez",
+  title: "Vous nous contactez",
   desc: "En 10 minutes, nous cernons votre besoin et planifions une visite."
 }, {
   num: "02",
