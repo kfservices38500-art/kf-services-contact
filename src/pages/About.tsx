@@ -76,7 +76,7 @@ const certifications = [{
 }, {
   icon: Scale,
   title: "Conformité DTU",
-  desc: "Des travaux aux normes qui sécurisent la valeur de votre bien."
+  desc: "Des travaux en conformité selon les règles pour garantir qualité, durabilité et sécurité de votre bien."
 }];
 const About = () => {
   return <div>
