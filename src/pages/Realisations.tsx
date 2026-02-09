@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
-import { MapPin, ChevronDown } from "lucide-react";
+import { MapPin } from "lucide-react";
+import arrowsDown from "../assets/arrows-down.svg";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "../components/animations/ScrollReveal";
 import KFButton from "../components/ui/KFButton";
@@ -157,7 +158,7 @@ const Realisations = () => {
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               className="mt-4"
             >
-              <ChevronDown className="w-8 h-8 text-muted-foreground mx-auto" />
+              <img src={arrowsDown} alt="Scroll vers le bas" className="w-10 h-10 mx-auto" />
             </motion.div>
           </motion.div>
         </div>
