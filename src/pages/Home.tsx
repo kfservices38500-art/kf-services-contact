@@ -122,7 +122,7 @@ const portfolioItems = [{
 const processSteps = [{
   num: "01",
   title: "Vous nous contactez",
-  desc: "En 10 minutes, nous cernons votre besoin et planifions une visite."
+  desc: "Nous cernons votre besoin et planifions une visite."
 }, {
   num: "02",
   title: "On vient chez vous",
