@@ -27,7 +27,7 @@ const servicesData = [{
 }, {
   title: "Plomberie & chauffage",
   emoji: "🔧",
-  description: "Vous gagnez en confort au quotidien et vous réduisez vos dépenses énergétiques grâce à des installations modernes, fiables et adaptées à votre habitat.",
+  description: "Grâce à des installations modernes, fiables et adaptées à votre habitat, vous gagnez en confort au quotidien et vous réduisez vos dépenses énergétiques.",
   benefits: ["Des sanitaires fonctionnels et esthétiques dès le premier jour", "Un chauffage performant qui répartit la chaleur uniformément", "Une pompe à chaleur qui divise vos factures de chauffage", "Un air sain grâce à une VMC bien dimensionnée pour votre logement", "Un dépannage rapide qui limite les dégâts en cas d'urgence", "Une mise aux normes qui sécurise votre installation"],
   image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80",
   category: "plomberie"
