@@ -137,7 +137,7 @@ const Realisations = () => {
               {deptFilter ? (
                 <>Nos réalisations en <span className="gradient-red-text">{deptNames[deptFilter] || deptFilter} ({deptFilter})</span></>
               ) : (
-                <>Des résultats concrets, <span className="gradient-red-text">pas des promesses</span></>
+                <>Pas des promesses, <span className="gradient-red-text">des résultats concrets</span></>
               )}
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
