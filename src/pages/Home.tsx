@@ -36,7 +36,7 @@ const services = [
   { icon: HomeIcon, label: "Charpente & Couverture" },
   { icon: Wrench, label: "Plomberie & Chauffage" },
   { icon: Droplets, label: "Gouttières Aluminium" },
-  { icon: Droplets, label: "Gouttières Aluminium" },
+  { icon: Building2, label: "Neuf & Rénovation" },
 ];
 
 const serviceCards = [
@@ -62,6 +62,16 @@ const serviceCards = [
     ],
   },
   {
+    icon: Droplets,
+    title: "GOUTTIÈRES ALUMINIUM",
+    subtitle: "",
+    benefits: [
+      "Des gouttières sur mesure intégrées à votre toiture",
+      "Des raccordements étanches qui éliminent les fuites",
+      "Une protection durable de vos façades et fondations",
+    ],
+  },
+  {
     icon: Wrench,
     title: "PLOMBERIE",
     subtitle: "CONFORT & ÉCONOMIES",
@@ -70,6 +80,16 @@ const serviceCards = [
       "Un air sain grâce à une VMC bien dimensionnée",
       "Des économies d'énergie avec une pompe à chaleur adaptée",
       "Un dépannage rapide pour éviter les dégâts",
+    ],
+  },
+  {
+    icon: Building2,
+    title: "NEUF & RÉNOVATION",
+    subtitle: "PROJET CLÉ EN MAIN",
+    benefits: [
+      "Une maison neuve conforme à vos plans et votre budget",
+      "Une rénovation complète sans tracas",
+      "Un seul interlocuteur qui coordonne tous les corps de métier",
     ],
   },
 ];
