@@ -46,7 +46,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Un partenaire fiable pour des travaux <span className="gradient-red-text">qui durent</span></h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Un partenaire fiable pour des travaux <span className="gradient-red-text">sereins</span></h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
               Fort de plus de 20 ans d'expertise, vous bénéficiez d'une équipe expérimentée qui coordonne tous les corps de métier pour que votre projet se déroule sans stress.
             </p>
