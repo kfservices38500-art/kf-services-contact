@@ -127,7 +127,7 @@ const Realisations = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-muted py-16 md:py-24">
+      <section className="bg-muted pt-16 md:pt-24 pb-6 md:pb-8">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
