@@ -95,17 +95,17 @@ const WhyUsCarousel = () => {
         </div>
       </div>
 
-      {/* Navigation arrows */}
+      {/* Navigation arrows - positioned on the image side */}
       <button
         onClick={() => goTo((currentIndex - 1 + whyUsSlides.length) % whyUsSlides.length)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-background transition-colors z-10"
+        className="absolute right-16 lg:right-[calc(50%-60px)] bottom-4 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-background transition-colors z-10"
         aria-label="Précédent"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={() => goTo((currentIndex + 1) % whyUsSlides.length)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-background transition-colors z-10"
+        className="absolute right-4 lg:right-4 bottom-4 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-background transition-colors z-10"
         aria-label="Suivant"
       >
         <ChevronRight className="w-5 h-5" />
