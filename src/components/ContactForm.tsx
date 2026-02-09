@@ -8,7 +8,6 @@ const projectTypes = [
   "Plomberie",
   "Gouttières",
   "Rénovation complète",
-  "Rénovation complète",
   "Autre",
 ];
 
