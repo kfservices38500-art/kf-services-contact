@@ -263,7 +263,7 @@ const Home = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="text-muted-foreground text-lg mb-4">
-              Fort depuis plus de 20 ans d'expérience dans le domaine du bâtiment, les associés <span className="font-bold gradient-red-text">Fatih</span> (plombier - chauffagiste) et <span className="font-bold gradient-red-text">Mukremin KOCAK</span> (maçon - charpentier) ont décidé de mettre en commun avec <span className="font-bold gradient-red-text">KF Services</span> leurs compétences, afin de répondre aux besoins et exigences des clients particuliers et professionnels.
+              Fort depuis plus de <span className="font-bold text-foreground">20 ans d'expérience</span> dans le domaine du bâtiment, les associés <span className="font-bold gradient-red-text">Fatih</span> (plombier - chauffagiste) et <span className="font-bold gradient-red-text">Mukremin KOCAK</span> (maçon - charpentier) ont décidé de mettre en commun avec <span className="font-bold gradient-red-text">KF Services</span> leurs compétences, afin de répondre aux besoins et exigences des clients particuliers et professionnels.
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
               Votre maison plus solide,{" "}
