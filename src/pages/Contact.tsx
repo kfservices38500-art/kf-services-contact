@@ -82,7 +82,7 @@ const Contact = () => {
             </div>
 
             <div className="mt-8 p-6 gradient-red rounded-3xl">
-              <h3 className="font-bold text-base text-white mb-2">Nous venons chez vous</h3>
+              <h3 className="font-bold text-base text-white mb-2">Où que vous soyez, nous nous déplaçons chez vous         </h3>
               <p className="text-sm text-white/80">
                 Intervention dans toute la région Auvergne-Rhône-Alpes : Isère, Savoie, Haute-Savoie, Rhône, Drôme, Ain et tous les départements de la région. Où que vous soyez, vous bénéficiez du même niveau de service.
               </p>
