@@ -465,7 +465,7 @@ const Home = () => {
 
       {/* Bandeau défilant valeurs */}
       <div className="w-full overflow-hidden py-6 md:py-8" style={{
-      background: 'linear-gradient(135deg, hsl(0 78% 55%), hsl(0 78% 35%))'
+      background: 'linear-gradient(135deg, hsl(220 10% 20%), hsl(220 10% 8%))'
     }}>
         <div className="flex whitespace-nowrap" style={{
         animation: 'marquee 18s linear infinite'
