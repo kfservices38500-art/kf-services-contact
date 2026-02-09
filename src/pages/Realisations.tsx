@@ -158,7 +158,7 @@ const Realisations = () => {
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               className="mt-4"
             >
-              <img src={arrowsDown} alt="Scroll vers le bas" className="w-[50px] h-[50px] mx-auto" />
+              <img src={arrowsDown} alt="Scroll vers le bas" className="w-[100px] h-[100px] mx-auto" />
             </motion.div>
           </motion.div>
         </div>
