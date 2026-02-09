@@ -395,7 +395,7 @@ zéro mauvaise surprise.<br />zéro mauvaise surprise.
                   </li>
                   <li className="flex items-start gap-3 text-muted-foreground text-base">
                     <span className="w-2.5 h-2.5 rounded-full gradient-red flex-shrink-0 mt-1.5" />
-                    Vous bénéficiez d'un devis détaillé et d'un planning réaliste, pour que votre projet avance sans surprise et dans les temps.
+                    Vous recevez un devis détaillé et d'un planning réaliste, pour que votre projet avance sans surprise et dans les temps.
                   </li>
                 </ul>
                 <Link to="/a-propos" className="inline-flex items-center gap-2 gradient-red-text font-bold text-base hover:underline">
@@ -634,7 +634,7 @@ zéro mauvaise surprise.<br />zéro mauvaise surprise.
           <ScrollReveal>
             <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Près de chez vous</p>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Nous intervenons partout en <span className="gradient-red-text">Auvergne-Rhône-Alpes</span></h2>
-            <p className="text-muted-foreground text-base md:text-lg mb-12 max-w-2xl">Où que vous soyez dans la région, vous bénéficiez de la même qualité de services.</p>
+            <p className="text-muted-foreground text-base md:text-lg mb-12 max-w-2xl">Où que vous soyez dans la région, vous accédez à la même qualité de services.</p>
           </ScrollReveal>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
             {departments.map((d, i) => <ScrollReveal key={d.code} delay={i * 0.05}>

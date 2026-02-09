@@ -93,7 +93,7 @@ const About = () => {
           duration: 0.7
         }}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Un partenaire fiable pour des travaux <span className="gradient-red-text">sereins</span></h1>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">Fort de plus de 20 ans d'expertise, vous bénéficiez d'une équipe expérimentée qui coordonne tous les corps de métier pour que votre projet à votre image et sans stress.</p>
+            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">Fort de plus de 20 ans d'expertise, vous profitez d'une équipe expérimentée qui coordonne tous les corps de métier pour que votre projet à votre image et sans stress.</p>
           </motion.div>
         </div>
       </section>
@@ -121,7 +121,7 @@ const About = () => {
               <p>
                 Quand vous confiez votre chantier à KF Services, vous gagnez un avantage décisif : un seul interlocuteur qui maîtrise tous les métiers du bâtiment.
               </p>
-              <p>Avec trois équipes spécialisées et plus de 500 chantiers à notre actif, vous bénéficiez d'une réactivité et d'un savoir-faire concret.</p>
+              <p>Avec trois équipes spécialisées et plus de 500 chantiers à notre actif, vous disposez d'une réactivité et d'un savoir-faire concret.</p>
               <p>Notre promesse : vous accompagner du premier contact jusqu'à la réception finale.</p>
             </div>
           </ScrollReveal>
