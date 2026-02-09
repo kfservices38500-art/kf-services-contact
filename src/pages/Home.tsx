@@ -4,7 +4,6 @@ import {
   Hammer,
   Home as HomeIcon,
   Droplets,
-  ShieldAlert,
   Wrench,
   Building2,
   Star,
@@ -37,7 +36,7 @@ const services = [
   { icon: HomeIcon, label: "Charpente & Couverture" },
   { icon: Wrench, label: "Plomberie & Chauffage" },
   { icon: Droplets, label: "Gouttières Aluminium" },
-  { icon: ShieldAlert, label: "Désamiantage certifié SS4" },
+  { icon: Droplets, label: "Gouttières Aluminium" },
 ];
 
 const serviceCards = [
@@ -60,17 +59,6 @@ const serviceCards = [
       "Une isolation performante qui réduit vos factures d'énergie",
       "Des matériaux durables pour 30 ans de tranquillité",
       "Zinguerie et étanchéité pour zéro infiltration",
-    ],
-  },
-  {
-    icon: ShieldAlert,
-    title: "DÉSAMIANTAGE",
-    subtitle: "",
-    benefits: [
-      "Un diagnostic clair pour savoir où vous en êtes",
-      "Un retrait sécurisé par une équipe certifiée SS4",
-      "Traitement conforme des déchets, vous êtes en règle",
-      "Votre santé et celle de vos proches protégées",
     ],
   },
   {
@@ -112,12 +100,6 @@ const testimonials = [
     rating: 5,
   },
   {
-    text: "Désamiantage réalisé dans les règles de l'art, avec toutes les certifications. On se sent en sécurité avec KF Services. Merci pour votre sérieux.",
-    name: "Catherine Roux",
-    location: "Tullins",
-    rating: 5,
-  },
-  {
     text: "Rénovation complète de notre maison ancienne. Le résultat dépasse nos attentes. L'équipe a su préserver le charme tout en modernisant l'ensemble.",
     name: "Michel Faure",
     location: "Saint-Égrève",
@@ -131,7 +113,7 @@ const testimonials = [
 const guarantees = [
   { icon: Shield, title: "Assurance Décennale", desc: "Vos travaux protégés pendant 10 ans, en toute sérénité" },
   { icon: FileCheck, title: "RC Professionnelle", desc: "Vous êtes couvert en cas d'imprévu sur le chantier" },
-  { icon: Award, title: "Certification SS4", desc: "Votre santé préservée grâce à un désamiantage conforme" },
+  { icon: Award, title: "Qualité certifiée", desc: "Des travaux réalisés dans les règles de l'art par des professionnels qualifiés" },
   { icon: Scale, title: "Normes respectées", desc: "Des travaux conformes qui sécurisent la valeur de votre bien" },
 ];
 
@@ -616,8 +598,8 @@ const Home = () => {
                 </motion.div>
                 <motion.div whileHover={{ y: -3 }} className="bg-background rounded-3xl p-6">
                   <p className="text-sm text-muted-foreground mb-1">5 Janvier 2025</p>
-                  <h4 className="font-bold text-base mb-1">Certification SS4 renouvelée pour 2025</h4>
-                  <p className="text-base text-muted-foreground">Votre sécurité reste notre priorité : notre équipe désamiantage est recertifiée.</p>
+                  <h4 className="font-bold text-base mb-1">Extension livrée à Voiron</h4>
+                  <p className="text-base text-muted-foreground">30 m² supplémentaires pour une famille qui avait besoin d'espace — chantier livré en 8 semaines.</p>
                 </motion.div>
               </div>
             </ScrollReveal>

@@ -15,7 +15,7 @@ const stats = [
 const timeline = [
   { year: "2003", desc: "Notre gérant entre dans le métier — plus de 20 ans d'expérience à votre service" },
   { year: "2010", desc: "Spécialisation charpente-couverture pour mieux protéger votre toiture" },
-  { year: "2015", desc: "Certification SS4 — votre sécurité en désamiantage assurée" },
+  { year: "2015", desc: "Élargissement des compétences — plomberie et chauffage intégrés à notre offre" },
   { year: "2022", desc: "Création de KF Services — un interlocuteur unique pour tous vos travaux" },
   { year: "2023", desc: "3 équipes spécialisées — des délais plus courts pour vos projets" },
   { year: "2024", desc: "+500 chantiers livrés — autant de clients satisfaits" },
@@ -31,7 +31,7 @@ const values = [
 const certifications = [
   { icon: Shield, title: "Assurance Décennale", desc: "Vos travaux garantis 10 ans — en cas de problème, vous êtes couvert." },
   { icon: FileCheck, title: "RC Professionnelle", desc: "En cas d'imprévu sur le chantier, votre patrimoine est protégé." },
-  { icon: Award, title: "Certification SS4", desc: "Désamiantage réalisé en toute sécurité par une équipe certifiée." },
+  { icon: Award, title: "Qualité certifiée", desc: "Des travaux réalisés dans les règles de l'art par des professionnels qualifiés." },
   { icon: Scale, title: "Conformité DTU", desc: "Des travaux aux normes qui sécurisent la valeur de votre bien." },
 ];
 

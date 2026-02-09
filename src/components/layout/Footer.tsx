@@ -49,7 +49,7 @@ const Footer = () => {
                   { label: "Maçonnerie", hash: "maconnerie" },
                   { label: "Charpente & Couverture", hash: "charpente" },
                   { label: "Gouttières Aluminium", hash: "gouttieres" },
-                  { label: "Désamiantage", hash: "desamiantage" },
+                  { label: "Plomberie", hash: "plomberie" },
                   { label: "Plomberie", hash: "plomberie" },
                   { label: "Neuf & Rénovation", hash: "neuf-renovation" },
                 ].map((service) => (

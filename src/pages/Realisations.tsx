@@ -89,17 +89,6 @@ const projects = [
   },
   {
     images: [
-      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
-    ],
-    category: "autres",
-    categoryLabel: "Désamiantage",
-    title: "Un immeuble désamianté en toute sécurité",
-    location: "Voreppe (38)",
-    description: "Retrait complet des matériaux amiantés dans les parties communes.",
-  },
-  {
-    images: [
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
     ],

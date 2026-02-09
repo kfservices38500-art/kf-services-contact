@@ -51,21 +51,6 @@ const servicesData = [
     category: "gouttieres",
   },
   {
-    title: "Désamiantage",
-    emoji: "⚠️",
-    description: "Vous préservez la santé de vos proches et vous mettez en conformité avec la réglementation. Notre équipe certifiée SS4 intervient en toute sécurité pour éliminer ce risque invisible.",
-    benefits: [
-      "Un diagnostic précis pour savoir exactement où se trouve le danger",
-      "Un retrait sécurisé qui protège votre famille et vos voisins",
-      "Un confinement maîtrisé qui empêche toute dispersion de fibres",
-      "Un traitement conforme des déchets — vous êtes en règle",
-      "Un certificat de fin de travaux qui valorise votre bien à la revente",
-      "Une intervention possible même en milieu occupé, sans déménager",
-    ],
-    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
-    category: "desamiantage",
-  },
-  {
     title: "Plomberie",
     emoji: "🔧",
     description: "Vous gagnez en confort au quotidien et vous réduisez vos dépenses énergétiques grâce à des installations modernes, fiables et adaptées à votre habitat.",
