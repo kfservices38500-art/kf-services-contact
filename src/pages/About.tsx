@@ -64,7 +64,7 @@ const values = [{
 const certifications = [{
   icon: Shield,
   title: "Assurance Décennale",
-  desc: "Vos travaux garantis 10 ans — en cas de problème, vous êtes couvert."
+  desc: "Vos travaux couverts et garantis pendant 10 ans."
 }, {
   icon: FileCheck,
   title: "RC Professionnelle",
