@@ -468,7 +468,7 @@ const Home = () => {
       background: 'linear-gradient(135deg, hsl(220 10% 20%), hsl(220 10% 8%))'
     }}>
         <div className="flex whitespace-nowrap" style={{
-        animation: 'marquee 18s linear infinite'
+        animation: 'marquee 12s linear infinite'
       }}>
           {[...Array(3)].map((_, i) => <div key={i} className="flex items-center shrink-0">
               <span className="text-white font-bold text-2xl md:text-4xl uppercase tracking-[0.15em] mx-8 md:mx-14">Transparence</span>
