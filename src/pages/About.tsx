@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Shield, FileCheck, Award, Scale, Target, Heart, Eye, Users } from "lucide-react";
+import { Shield, FileCheck, Award, Scale, Target, Heart, Eye, User } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "../components/animations/ScrollReveal";
 import ParallaxSection from "../components/animations/ParallaxSection";
@@ -57,7 +57,7 @@ const values = [{
   title: "Transparence totale",
   desc: "Vous savez où en est votre chantier, combien il coûte et quand il sera terminé."
 }, {
-  icon: Users,
+  icon: User,
   title: "Un seul interlocuteur",
   desc: "Nous coordonnons tous pour vous. Fini le casse-tête, un projet bien réalisé c'est avant tout un chantier serein."
 }];
