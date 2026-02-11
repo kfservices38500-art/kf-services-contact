@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import dept74Svg from "@/assets/dept-74.svg";
+
 import { ArrowUpRight, Hammer, Home as HomeIcon, Droplets, Wrench, Building2, Star, Users, MapPin, CheckCircle2, ChevronRight, Shield, FileCheck, Award, Scale, Quote } from "lucide-react";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
@@ -631,7 +631,7 @@ zéro mauvaise surprise.<br />Budget maîtrisé, zéro mauvaise surprise.
                 y: -5,
                 boxShadow: "0 20px 40px -15px rgba(0,0,0,0.15)"
               }} className="bg-background rounded-3xl overflow-hidden shadow-sm border border-border group cursor-pointer p-6 text-center flex flex-col items-center">
-                    {d.code === "74" && <img src={dept74Svg} alt="Haute-Savoie" className="w-16 h-16 mb-2" />}
+                    
                     <span className="text-2xl font-black gradient-red-text">{d.code}</span>
                     <p className="text-sm text-muted-foreground mt-1">{d.name}</p>
                   </motion.div>
