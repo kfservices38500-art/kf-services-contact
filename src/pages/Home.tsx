@@ -7,6 +7,7 @@ import ScrollReveal from "../components/animations/ScrollReveal";
 import ParallaxSection from "../components/animations/ParallaxSection";
 import KFButton from "../components/ui/KFButton";
 import WhyUsCarousel from "../components/WhyUsCarousel";
+import MarqueeBanner from "../components/MarqueeBanner";
 const heroImages = [{
   src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80",
   alt: "Votre maison plus solide"
@@ -464,22 +465,7 @@ const Home = () => {
       </ParallaxSection>
 
       {/* Bandeau défilant valeurs */}
-      <div className="w-full overflow-hidden py-6 md:py-8" style={{
-      background: 'linear-gradient(135deg, hsl(220 10% 20%), hsl(220 10% 8%))'
-    }}>
-        <div className="flex whitespace-nowrap" style={{
-        animation: 'marquee 12s linear infinite'
-      }}>
-          {[...Array(3)].map((_, i) => <div key={i} className="flex items-center shrink-0">
-              <span className="text-white font-bold text-2xl md:text-4xl uppercase tracking-[0.15em] mx-8 md:mx-14">Transparence</span>
-              <span className="text-white/50 text-3xl md:text-5xl mx-2">✦</span>
-              <span className="text-white font-bold text-2xl md:text-4xl uppercase tracking-[0.15em] mx-8 md:mx-14">Accompagnement</span>
-              <span className="text-white/50 text-3xl md:text-5xl mx-2">✦</span>
-              <span className="text-white font-bold text-2xl md:text-4xl uppercase tracking-[0.15em] mx-8 md:mx-14">Sérénité</span>
-              <span className="text-white/50 text-3xl md:text-5xl mx-2">✦</span>
-            </div>)}
-        </div>
-      </div>
+      <MarqueeBanner />
 
       {/* Trust - Split card */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
