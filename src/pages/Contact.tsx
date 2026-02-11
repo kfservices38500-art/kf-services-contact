@@ -6,7 +6,7 @@ import contactSvg from "@/assets/contact.svg";
 const Contact = () => {
   return <div>
       {/* Hero */}
-      <section className="bg-muted pt-16 md:pt-24 pb-8 md:pb-10 overflow-hidden">
+      <section className="gradient-red pt-16 md:pt-24 pb-8 md:pb-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <motion.div initial={{
@@ -18,21 +18,21 @@ const Contact = () => {
           }} transition={{
             duration: 0.7
           }} className="flex-1 text-left">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Lancez votre projet <span className="gradient-red-text">en 2 minutes</span></h1>
-              <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">Lancez votre projet <span className="text-white/80">en 2 minutes</span></h1>
+              <p className="text-white/80 text-lg md:text-xl max-w-2xl mb-8">
                 Décrivez votre projet et vos besoins, nous vous contacterons dans les 48h pour une visite gratuite et un devis détaillé sans engagement.
               </p>
               <div className="flex flex-wrap gap-3">
-                <span className="inline-flex items-center gap-2 px-5 py-3 bg-background rounded-full text-base font-semibold shadow-sm border-2 border-border">
-                  <CalendarCheck className="w-5 h-5 text-primary" />
+                <span className="inline-flex items-center gap-2 px-5 py-3 bg-white/15 rounded-full text-base font-semibold shadow-sm border-2 border-white/30 text-white">
+                  <CalendarCheck className="w-5 h-5 text-white" />
                   Réponse sous 48h garantie
                 </span>
-                <span className="inline-flex items-center gap-2 px-5 py-3 bg-background rounded-full text-base font-semibold shadow-sm border-2 border-border">
-                  <FileText className="w-5 h-5 text-primary" />
+                <span className="inline-flex items-center gap-2 px-5 py-3 bg-white/15 rounded-full text-base font-semibold shadow-sm border-2 border-white/30 text-white">
+                  <FileText className="w-5 h-5 text-white" />
                   Devis détaillé et gratuit
                 </span>
-                <span className="inline-flex items-center gap-2 px-5 py-3 bg-background rounded-full text-base font-semibold shadow-sm border-2 border-border">
-                  <Shield className="w-5 h-5 text-primary" />
+                <span className="inline-flex items-center gap-2 px-5 py-3 bg-white/15 rounded-full text-base font-semibold shadow-sm border-2 border-white/30 text-white">
+                  <Shield className="w-5 h-5 text-white" />
                   Assurance décennale & RC Pro
                 </span>
               </div>
@@ -57,7 +57,7 @@ const Contact = () => {
             maskSize: 'contain',
             WebkitMaskPosition: 'center',
             maskPosition: 'center',
-            background: 'linear-gradient(135deg, hsl(0 78% 55%), hsl(0 78% 35%))'
+            background: 'white'
           }} />
           </div>
         </div>
