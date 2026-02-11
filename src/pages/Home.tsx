@@ -629,16 +629,9 @@ zéro mauvaise surprise.<br />Budget maîtrisé, zéro mauvaise surprise.
                   <motion.div whileHover={{
                 y: -5,
                 boxShadow: "0 20px 40px -15px rgba(0,0,0,0.15)"
-              }} className="bg-background rounded-3xl overflow-hidden shadow-sm border border-border group cursor-pointer">
-                    <div className="relative h-32 overflow-hidden">
-                      <img src={d.image} alt={d.landmark} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <span className="absolute bottom-2 left-3 text-white/90 text-xs font-medium">{d.landmark}</span>
-                    </div>
-                    <div className="p-4 text-center">
-                      <span className="text-2xl font-black gradient-red-text">{d.code}</span>
-                      <p className="text-sm text-muted-foreground mt-0.5">{d.name}</p>
-                    </div>
+              }} className="bg-background rounded-3xl overflow-hidden shadow-sm border border-border group cursor-pointer p-6 text-center">
+                    <span className="text-2xl font-black gradient-red-text">{d.code}</span>
+                    <p className="text-sm text-muted-foreground mt-1">{d.name}</p>
                   </motion.div>
                 </Link>
               </ScrollReveal>)}
