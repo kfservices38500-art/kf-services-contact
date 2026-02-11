@@ -103,7 +103,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, i) => <ScrollReveal key={stat.label} delay={i * 0.1}>
-                <img src={stat.icon} alt={stat.label} className="w-[160px] h-[160px] mx-auto mb-2 brightness-0 invert opacity-80" />
+                <img src={stat.icon} alt={stat.label} className="w-[200px] h-[200px] mx-auto mb-2 brightness-0 invert opacity-80" />
                 <span className="text-4xl md:text-5xl font-black text-white">{stat.value}</span>
                 <p className="text-base text-white/70 mt-1">{stat.label}</p>
               </ScrollReveal>)}
