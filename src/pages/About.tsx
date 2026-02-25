@@ -37,7 +37,7 @@ const timeline = [{
   year: "2023",
   desc: "3 équipes spécialisées — des délais plus courts pour vos projets"
 }, {
-  year: "2024",
+  year: "2026",
   desc: "+300 chantiers livrés - autant de clients satisfaits"
 }];
 const values = [{
