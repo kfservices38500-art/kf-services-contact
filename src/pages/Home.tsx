@@ -222,7 +222,7 @@ const TestimonialCarousel = () => {
   }, []);
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex(prev => {
+      setActiveIndex((prev) => {
         const next = (prev + 1) % totalPages;
         scrollToIndex(next);
         return next;
@@ -273,10 +273,10 @@ const TestimonialCarousel = () => {
 };
 
 const homeStats = [
-  { value: "Depuis\n2003", label: "Expérience des gérants\ndans le bâtiment", icon: PoignetmainsIcon },
-  { value: "+\n300", label: "Projets livrés avec succès\ndepuis 2003", icon: ChantierIcon },
-  { value: "+\n50", label: "Projets déjà livrés par\nKF Services depuis 2022", icon: WorkersIcon },
-];
+{ value: "Depuis\n2003", label: "Expérience des gérants\ndans le bâtiment", icon: PoignetmainsIcon },
+{ value: "+\n300", label: "Projets livrés avec succès\ndepuis 2003", icon: ChantierIcon },
+{ value: "+\n50", label: "Projets déjà livrés par\nKF Services depuis 2022", icon: WorkersIcon }];
+
 
 const StatsCarousel = () => {
   const [active, setActive] = useState(0);
@@ -284,7 +284,7 @@ const StatsCarousel = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setActive(prev => (prev + 1) % total);
+      setActive((prev) => (prev + 1) % total);
     }, 5000);
     return () => clearInterval(timer);
   }, [total]);
@@ -294,98 +294,98 @@ const StatsCarousel = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         {/* Top row: all 3 icons as tabs */}
         <div className="flex items-center justify-center gap-6 md:gap-12 mb-12">
-          {homeStats.map((stat, i) => (
-            <motion.button
-              key={stat.label}
-              onClick={() => setActive(i)}
-              className="relative flex flex-col items-center gap-2 group cursor-pointer"
-              animate={{
-                scale: i === active ? 1 : 0.7,
-                opacity: i === active ? 1 : 0.35,
-              }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ opacity: 0.8, scale: 0.85 }}
-            >
+          {homeStats.map((stat, i) =>
+          <motion.button
+            key={stat.label}
+            onClick={() => setActive(i)}
+            className="relative flex flex-col items-center gap-2 group cursor-pointer"
+            animate={{
+              scale: i === active ? 1 : 0.7,
+              opacity: i === active ? 1 : 0.35
+            }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ opacity: 0.8, scale: 0.85 }}>
+
               <motion.img
-                src={stat.icon}
-                alt={stat.label}
-                className="w-[80px] h-[80px] md:w-[120px] md:h-[120px] brightness-0 invert"
-                animate={i === active ? { 
-                  y: [0, -8, 0],
-                } : {}}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              />
+              src={stat.icon}
+              alt={stat.label}
+              className="w-[80px] h-[80px] md:w-[120px] md:h-[120px] brightness-0 invert"
+              animate={i === active ? {
+                y: [0, -8, 0]
+              } : {}}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
+
               {/* Active indicator line */}
               <motion.div
-                className="h-[3px] rounded-full bg-white"
-                animate={{ width: i === active ? 60 : 0, opacity: i === active ? 1 : 0 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-              />
+              className="h-[3px] rounded-full bg-white"
+              animate={{ width: i === active ? 60 : 0, opacity: i === active ? 1 : 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }} />
+
             </motion.button>
-          ))}
+          )}
         </div>
 
         {/* Bottom: animated stat content */}
         <div className="relative h-[140px] md:h-[160px]">
-          {homeStats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={false}
-              animate={{
-                opacity: i === active ? 1 : 0,
-                y: i === active ? 0 : 30,
-                scale: i === active ? 1 : 0.95,
-              }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-0 flex flex-col items-center justify-center text-center"
-              style={{ pointerEvents: i === active ? "auto" : "none" }}
-            >
+          {homeStats.map((stat, i) =>
+          <motion.div
+            key={stat.label}
+            initial={false}
+            animate={{
+              opacity: i === active ? 1 : 0,
+              y: i === active ? 0 : 30,
+              scale: i === active ? 1 : 0.95
+            }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0 flex flex-col items-center justify-center text-center"
+            style={{ pointerEvents: i === active ? "auto" : "none" }}>
+
               <motion.span
-                className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-none block tracking-tight"
-                animate={i === active ? { 
-                  scale: [0.8, 1.02, 1],
-                  opacity: [0, 1, 1],
-                } : { scale: 0.8, opacity: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-              >
+              className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-none block tracking-tight"
+              animate={i === active ? {
+                scale: [0.8, 1.02, 1],
+                opacity: [0, 1, 1]
+              } : { scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}>
+
                 {stat.value.replace("\n", " ")}
               </motion.span>
               <motion.p
-                className="text-lg md:text-2xl text-white/60 mt-3 font-medium tracking-wide"
-                animate={i === active ? { 
-                  opacity: [0, 1],
-                  y: [15, 0],
-                } : { opacity: 0, y: 15 }}
-                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-              >
+              className="text-lg md:text-2xl text-white/60 mt-3 font-medium tracking-wide"
+              animate={i === active ? {
+                opacity: [0, 1],
+                y: [15, 0]
+              } : { opacity: 0, y: 15 }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}>
+
                 {stat.label.replace("\n", " ")}
               </motion.p>
             </motion.div>
-          ))}
+          )}
         </div>
 
         {/* Progress bar */}
         <div className="flex gap-2 justify-center mt-10">
-          {homeStats.map((_, i) => (
-            <button key={i} onClick={() => setActive(i)} className="h-1.5 rounded-full overflow-hidden bg-white/20 w-16 md:w-24">
+          {homeStats.map((_, i) =>
+          <button key={i} onClick={() => setActive(i)} className="h-1.5 rounded-full overflow-hidden bg-white/20 w-16 md:w-24">
               <motion.div
-                className="h-full bg-white rounded-full"
-                initial={{ width: "0%" }}
-                animate={{ width: i === active ? "100%" : "0%" }}
-                transition={i === active ? { duration: 5, ease: "linear" } : { duration: 0.3 }}
-              />
+              className="h-full bg-white rounded-full"
+              initial={{ width: "0%" }}
+              animate={{ width: i === active ? "100%" : "0%" }}
+              transition={i === active ? { duration: 5, ease: "linear" } : { duration: 0.3 }} />
+
             </button>
-          ))}
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage(prev => (prev + 1) % heroImages.length);
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
@@ -423,7 +423,7 @@ const Home = () => {
             </div>
             {/* All services badges in hero */}
             <div className="flex flex-wrap gap-2">
-              {services.map(s => <Link key={s.label} to="/services" className="inline-flex items-center gap-2 px-4 py-2.5 bg-muted rounded-2xl text-sm font-medium text-muted-foreground hover:bg-foreground hover:text-background transition-all duration-300">
+              {services.map((s) => <Link key={s.label} to="/services" className="inline-flex items-center gap-2 px-4 py-2.5 bg-muted rounded-2xl text-sm font-medium text-muted-foreground hover:bg-foreground hover:text-background transition-all duration-300">
                   <s.icon className="w-4 h-4" />
                   {s.label}
                 </Link>)}
@@ -487,7 +487,7 @@ const Home = () => {
                 </h3>
               </div>
               <div className="bg-background rounded-b-3xl p-6 md:p-8 flex-1 shadow-sm">
-                <div className="w-12 h-[3px] gradient-red rounded-full mb-6" />
+                
                 <ul className="space-y-4 mb-6">
                   <li className="flex items-start gap-3 text-muted-foreground text-base">
                     <span className="w-2.5 h-2.5 rounded-full gradient-red flex-shrink-0 mt-1.5" />
@@ -512,7 +512,7 @@ const Home = () => {
               <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Cuisine rénovée KF Services" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
-                {services.map(s => <span key={s.label} className="inline-flex items-center px-4 py-2 bg-foreground/80 backdrop-blur-sm text-background text-sm font-medium rounded-full">
+                {services.map((s) => <span key={s.label} className="inline-flex items-center px-4 py-2 bg-foreground/80 backdrop-blur-sm text-background text-sm font-medium rounded-full">
                     {s.label}
                   </span>)}
               </div>
