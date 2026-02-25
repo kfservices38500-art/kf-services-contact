@@ -290,8 +290,8 @@ const StatsCarousel = () => {
   }, [total]);
 
   return (
-    <section className="gradient-red text-white overflow-hidden relative">
-      <div className="max-w-5xl mx-auto px-4 py-8 md:py-10 relative flex items-center justify-center" style={{ height: "280px" }}>
+    <section className="gradient-red text-white overflow-visible relative py-12 md:py-16">
+      <div className="max-w-5xl mx-auto px-4 relative" style={{ height: "220px" }}>
         {homeStats.map((stat, i) => (
           <motion.div
             key={stat.label}
@@ -308,7 +308,7 @@ const StatsCarousel = () => {
             <motion.img
               src={stat.icon}
               alt={stat.label}
-              className="w-[200px] h-[200px] md:w-[240px] md:h-[240px] brightness-0 invert opacity-90 flex-shrink-0"
+              className="w-[140px] h-[140px] md:w-[180px] md:h-[180px] brightness-0 invert opacity-90 flex-shrink-0"
               animate={{ rotate: i === active ? [0, -3, 3, 0] : 0 }}
               transition={{ duration: 1.2, ease: "easeInOut", delay: 0.3 }}
             />
