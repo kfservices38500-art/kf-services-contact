@@ -18,7 +18,7 @@ const stats = [{
   icon: ChantierIcon
 }, {
   value: "1",
-  label: "Équipe dédiée à votre chantier",
+  label: "Déjà livrés par\nKF Services depuis 2022",
   icon: WorkersIcon
 }, {
   value: "98%",
