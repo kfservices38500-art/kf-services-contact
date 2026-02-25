@@ -10,7 +10,7 @@ import WorkersIcon from "../assets/Workers.svg";
 import FiveStarsIcon from "../assets/5stars.svg";
 const stats = [{
   value: "Depuis 2003",
-  label: "Expérience des gérants dans le bâtiment",
+  label: "Expérience des gérants\ndans le bâtiment",
   icon: PoignetmainsIcon
 }, {
   value: "500+",
@@ -105,7 +105,7 @@ const About = () => {
             {stats.map((stat, i) => <ScrollReveal key={stat.label} delay={i * 0.1}>
                 <img src={stat.icon} alt={stat.label} className="w-[200px] h-[200px] mx-auto mb-2 brightness-0 invert opacity-80" />
                 <span className="text-4xl md:text-5xl font-black text-white">{stat.value}</span>
-                <p className="text-base text-white/70 mt-1">{stat.label}</p>
+                <p className="text-base text-white/70 mt-1 whitespace-pre-line">{stat.label}</p>
               </ScrollReveal>)}
           </div>
         </div>
