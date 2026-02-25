@@ -20,10 +20,6 @@ const stats = [{
   value: "+\n50",
   label: "Projets déjà livrés par\nKF Services depuis 2022",
   icon: WorkersIcon
-}, {
-  value: "98%",
-  label: "De clients satisfaits",
-  icon: FiveStarsIcon
 }];
 const timeline = [{
   year: "2003",
@@ -101,7 +97,7 @@ const About = () => {
       {/* Stats */}
       <section className="gradient-red text-white py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {stats.map((stat, i) => <ScrollReveal key={stat.label} delay={i * 0.1}>
                 <img src={stat.icon} alt={stat.label} className="w-[200px] h-[200px] mx-auto mb-2 brightness-0 invert opacity-80" />
                 <span className="text-4xl md:text-5xl font-black text-white whitespace-pre-line">{stat.value}</span>
