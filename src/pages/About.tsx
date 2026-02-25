@@ -14,7 +14,7 @@ const stats = [{
   icon: PoignetmainsIcon
 }, {
   value: "500+",
-  label: "Projets livrés avec succès",
+  label: "Projets livrés avec succès\ndepuis 2003",
   icon: ChantierIcon
 }, {
   value: "1",
