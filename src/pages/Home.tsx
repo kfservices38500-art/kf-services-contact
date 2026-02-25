@@ -290,8 +290,8 @@ const StatsCarousel = () => {
   }, [total]);
 
   return (
-    <section className="gradient-red text-white py-10 md:py-14 overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 relative" style={{ minHeight: "200px" }}>
+    <section className="gradient-red text-white py-12 md:py-16 overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 relative" style={{ minHeight: "320px" }}>
         {homeStats.map((stat, i) => (
           <motion.div
             key={stat.label}
@@ -302,13 +302,13 @@ const StatsCarousel = () => {
               filter: i === active ? "blur(0px)" : "blur(8px)",
             }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0 flex flex-row items-center justify-center gap-8 md:gap-14"
+            className="absolute inset-0 flex flex-row items-center justify-center gap-10 md:gap-16"
             style={{ pointerEvents: i === active ? "auto" : "none" }}
           >
             <motion.img
               src={stat.icon}
               alt={stat.label}
-              className="w-[120px] h-[120px] md:w-[160px] md:h-[160px] brightness-0 invert opacity-90 flex-shrink-0"
+              className="w-[250px] h-[250px] md:w-[300px] md:h-[300px] brightness-0 invert opacity-90 flex-shrink-0"
               animate={{ rotate: i === active ? [0, -3, 3, 0] : 0 }}
               transition={{ duration: 1.2, ease: "easeInOut", delay: 0.3 }}
             />
@@ -332,7 +332,7 @@ const StatsCarousel = () => {
         ))}
       </div>
       {/* Navigation dots */}
-      <div className="flex gap-3 justify-center mt-6 relative z-10">
+      <div className="flex gap-3 justify-center relative z-10">
         {homeStats.map((_, i) => (
           <button
             key={i}
