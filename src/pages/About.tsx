@@ -117,7 +117,7 @@ const About = () => {
               <p>
                 Quand vous confiez votre chantier à KF Services, vous gagnez un avantage décisif : un seul interlocuteur qui maîtrise tous les métiers du bâtiment.
               </p>
-              <p>Avec trois équipes spécialisées et plus de 500 chantiers à notre actif, vous disposez d'une réactivité et d'un savoir-faire concret.</p>
+              <p>Avec trois équipes spécialisées et plus de 300 chantiers à notre actif (dont plus de 50 avec KF Services) , vous disposez d'une réactivité et d'un savoir-faire concret.</p>
               <p>Notre promesse : vous accompagner du premier contact jusqu'à la réception finale.</p>
             </div>
           </ScrollReveal>
