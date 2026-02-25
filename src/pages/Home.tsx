@@ -638,10 +638,10 @@ const Home = () => {
         </ScrollReveal>
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {processSteps.map((step, i) => <ScrollReveal key={step.num} delay={i * 0.08}>
-              <div className="relative">
-                <span className="text-5xl font-black gradient-red-text opacity-30">{step.num}</span>
-                <h3 className="font-bold text-base mt-2 mb-1">{step.title}</h3>
-                <p className="text-sm text-muted-foreground">{step.desc}</p>
+              <div className="relative p-5 rounded-3xl transition-all duration-400 cursor-default group hover:bg-primary/5 hover:shadow-lg hover:scale-[1.04]">
+                <span className="text-5xl font-black gradient-red-text opacity-30 transition-opacity duration-300 group-hover:opacity-70">{step.num}</span>
+                <h3 className="font-bold text-base mt-2 mb-1 transition-colors duration-300 group-hover:text-primary">{step.title}</h3>
+                <p className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground">{step.desc}</p>
               </div>
             </ScrollReveal>)}
         </div>
