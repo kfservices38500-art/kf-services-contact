@@ -290,48 +290,49 @@ const StatsCarousel = () => {
   }, [total]);
 
   return (
-    <section className="gradient-red text-white py-20 md:py-28 overflow-hidden">
-      <div className="max-w-4xl mx-auto px-4 relative" style={{ minHeight: "420px" }}>
+    <section className="gradient-red text-white py-10 md:py-14 overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 relative" style={{ minHeight: "200px" }}>
         {homeStats.map((stat, i) => (
           <motion.div
             key={stat.label}
             initial={false}
             animate={{
               opacity: i === active ? 1 : 0,
-              scale: i === active ? 1 : 0.85,
-              y: i === active ? 0 : 40,
+              x: i === active ? 0 : 60,
               filter: i === active ? "blur(0px)" : "blur(8px)",
             }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0 flex flex-col items-center justify-center text-center"
+            className="absolute inset-0 flex flex-row items-center justify-center gap-8 md:gap-14"
             style={{ pointerEvents: i === active ? "auto" : "none" }}
           >
             <motion.img
               src={stat.icon}
               alt={stat.label}
-              className="w-[180px] h-[180px] md:w-[260px] md:h-[260px] mx-auto mb-6 brightness-0 invert opacity-90"
+              className="w-[120px] h-[120px] md:w-[160px] md:h-[160px] brightness-0 invert opacity-90 flex-shrink-0"
               animate={{ rotate: i === active ? [0, -3, 3, 0] : 0 }}
               transition={{ duration: 1.2, ease: "easeInOut", delay: 0.3 }}
             />
-            <motion.span
-              className="text-6xl md:text-8xl lg:text-9xl font-black text-white whitespace-pre-line leading-none"
-              animate={{ scale: i === active ? [0.9, 1.05, 1] : 0.9 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-            >
-              {stat.value}
-            </motion.span>
-            <motion.p
-              className="text-lg md:text-2xl text-white/70 mt-4 whitespace-pre-line font-medium"
-              animate={{ opacity: i === active ? 1 : 0, y: i === active ? 0 : 20 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              {stat.label}
-            </motion.p>
+            <div className="text-left">
+              <motion.span
+                className="text-5xl md:text-7xl lg:text-8xl font-black text-white whitespace-pre-line leading-none block"
+                animate={{ scale: i === active ? [0.9, 1.05, 1] : 0.9 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+              >
+                {stat.value}
+              </motion.span>
+              <motion.p
+                className="text-base md:text-xl text-white/70 mt-2 whitespace-pre-line font-medium"
+                animate={{ opacity: i === active ? 1 : 0, y: i === active ? 0 : 15 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                {stat.label}
+              </motion.p>
+            </div>
           </motion.div>
         ))}
       </div>
       {/* Navigation dots */}
-      <div className="flex gap-3 justify-center mt-8 relative z-10">
+      <div className="flex gap-3 justify-center mt-6 relative z-10">
         {homeStats.map((_, i) => (
           <button
             key={i}
