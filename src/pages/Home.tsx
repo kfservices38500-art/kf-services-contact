@@ -290,8 +290,8 @@ const StatsCarousel = () => {
   }, [total]);
 
   return (
-    <section className="gradient-red text-white py-6 md:py-8 overflow-hidden relative">
-      <div className="max-w-5xl mx-auto px-4 relative" style={{ minHeight: "260px" }}>
+    <section className="gradient-red text-white overflow-hidden relative">
+      <div className="max-w-5xl mx-auto px-4 py-8 md:py-10 relative flex items-center justify-center" style={{ height: "280px" }}>
         {homeStats.map((stat, i) => (
           <motion.div
             key={stat.label}
