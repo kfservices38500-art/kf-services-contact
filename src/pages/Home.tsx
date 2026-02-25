@@ -726,16 +726,18 @@ const Home = () => {
                 <Link to={`/realisations?dept=${d.code}`}>
                   <motion.div
                     whileHover={{
-                      scale: 1.06,
-                      y: -4,
+                      scale: 1.05,
+                      y: -6,
                     }}
-                    whileTap={{ scale: 0.97 }}
-                    className="relative bg-background rounded-2xl overflow-hidden border border-border group cursor-pointer py-5 px-3 text-center transition-all duration-300 hover:border-primary/40 hover:shadow-[0_8px_30px_-10px_hsl(0_78%_55%/0.25)]"
+                    whileTap={{ scale: 0.96 }}
+                    className="relative bg-background rounded-2xl overflow-hidden border border-border group cursor-pointer py-5 px-3 text-center transition-all duration-400 hover:border-primary/50 hover:shadow-[0_12px_40px_-10px_hsl(0_78%_55%/0.3)]"
                   >
                     {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/5 to-primary/10 pointer-events-none" />
-                    <span className="relative text-3xl md:text-4xl font-black gradient-red-text block leading-none">{d.code}</span>
-                    <p className="relative text-sm font-medium text-muted-foreground mt-2 group-hover:text-foreground transition-colors duration-300">{d.name}</p>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 gradient-red pointer-events-none" />
+                    {/* MapPin icon */}
+                    <MapPin className="relative w-5 h-5 mx-auto mb-1.5 text-primary/40 transition-all duration-300 group-hover:text-white group-hover:scale-110" />
+                    <span className="relative text-3xl md:text-4xl font-black gradient-red-text block leading-none transition-all duration-300 group-hover:text-white group-hover:[-webkit-text-fill-color:white]">{d.code}</span>
+                    <p className="relative text-sm font-semibold text-muted-foreground mt-2 transition-colors duration-300 group-hover:text-white/90">{d.name}</p>
                   </motion.div>
                 </Link>
               </ScrollReveal>)}
