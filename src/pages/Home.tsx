@@ -271,6 +271,80 @@ const TestimonialCarousel = () => {
       </div>
     </div>;
 };
+
+const homeStats = [
+  { value: "Depuis\n2003", label: "Expérience des gérants\ndans le bâtiment", icon: PoignetmainsIcon },
+  { value: "+\n300", label: "Projets livrés avec succès\ndepuis 2003", icon: ChantierIcon },
+  { value: "+\n50", label: "Projets déjà livrés par\nKF Services depuis 2022", icon: WorkersIcon },
+];
+
+const StatsCarousel = () => {
+  const [active, setActive] = useState(0);
+  const total = homeStats.length;
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive(prev => (prev + 1) % total);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [total]);
+
+  return (
+    <section className="gradient-red text-white py-20 md:py-28 overflow-hidden">
+      <div className="max-w-4xl mx-auto px-4 relative" style={{ minHeight: "420px" }}>
+        {homeStats.map((stat, i) => (
+          <motion.div
+            key={stat.label}
+            initial={false}
+            animate={{
+              opacity: i === active ? 1 : 0,
+              scale: i === active ? 1 : 0.85,
+              y: i === active ? 0 : 40,
+              filter: i === active ? "blur(0px)" : "blur(8px)",
+            }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0 flex flex-col items-center justify-center text-center"
+            style={{ pointerEvents: i === active ? "auto" : "none" }}
+          >
+            <motion.img
+              src={stat.icon}
+              alt={stat.label}
+              className="w-[180px] h-[180px] md:w-[260px] md:h-[260px] mx-auto mb-6 brightness-0 invert opacity-90"
+              animate={{ rotate: i === active ? [0, -3, 3, 0] : 0 }}
+              transition={{ duration: 1.2, ease: "easeInOut", delay: 0.3 }}
+            />
+            <motion.span
+              className="text-6xl md:text-8xl lg:text-9xl font-black text-white whitespace-pre-line leading-none"
+              animate={{ scale: i === active ? [0.9, 1.05, 1] : 0.9 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            >
+              {stat.value}
+            </motion.span>
+            <motion.p
+              className="text-lg md:text-2xl text-white/70 mt-4 whitespace-pre-line font-medium"
+              animate={{ opacity: i === active ? 1 : 0, y: i === active ? 0 : 20 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              {stat.label}
+            </motion.p>
+          </motion.div>
+        ))}
+      </div>
+      {/* Navigation dots */}
+      <div className="flex gap-3 justify-center mt-8 relative z-10">
+        {homeStats.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setActive(i)}
+            className={`h-3 rounded-full transition-all duration-500 ${
+              i === active ? "w-10 bg-white" : "w-3 bg-white/30 hover:bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
   useEffect(() => {
@@ -351,24 +425,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="gradient-red text-white py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {[
-              { value: "Depuis\n2003", label: "Expérience des gérants\ndans le bâtiment", icon: PoignetmainsIcon },
-              { value: "+\n300", label: "Projets livrés avec succès\ndepuis 2003", icon: ChantierIcon },
-              { value: "+\n50", label: "Projets déjà livrés par\nKF Services depuis 2022", icon: WorkersIcon },
-            ].map((stat, i) => (
-              <ScrollReveal key={stat.label} delay={i * 0.1}>
-                <img src={stat.icon} alt={stat.label} className="w-[200px] h-[200px] mx-auto mb-2 brightness-0 invert opacity-80" />
-                <span className="text-4xl md:text-5xl font-black text-white whitespace-pre-line">{stat.value}</span>
-                <p className="text-base text-white/70 mt-1 whitespace-pre-line">{stat.label}</p>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Stats Carousel */}
+      <StatsCarousel />
 
       {/* Value Prop - 3 column layout */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
