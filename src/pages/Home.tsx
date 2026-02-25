@@ -473,10 +473,7 @@ const Home = () => {
               <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" alt="Chantier KF Services" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-white text-2xl md:text-3xl font-bold leading-tight">Budget maîtrisé, zéro mauvaise surprise.
-zéro mauvaise surprise.<br />Budget maîtrisé, zéro mauvaise surprise.
-  
-                </h3>
+                <h3 className="text-white text-2xl md:text-3xl font-bold leading-tight">Budget maîtrisé,<br />zéro mauvaise surprise.</h3>
               </div>
             </div>
           </ScrollReveal>
