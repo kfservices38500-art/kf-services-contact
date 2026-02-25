@@ -721,16 +721,21 @@ const Home = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Nous intervenons partout en <span className="gradient-red-text">Auvergne-Rhône-Alpes</span></h2>
             <p className="text-muted-foreground text-base md:text-lg mb-12 max-w-2xl">Où que vous soyez dans la région, vous bénéficiez de la même qualité de services.</p>
           </ScrollReveal>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-            {departments.map((d, i) => <ScrollReveal key={d.code} delay={i * 0.05}>
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 mb-12">
+            {departments.map((d, i) => <ScrollReveal key={d.code} delay={i * 0.04}>
                 <Link to={`/realisations?dept=${d.code}`}>
-                  <motion.div whileHover={{
-                y: -5,
-                boxShadow: "0 20px 40px -15px rgba(0,0,0,0.15)"
-              }} className="bg-background rounded-3xl overflow-hidden shadow-sm border border-border group cursor-pointer p-6 text-center flex flex-col items-center">
-                    
-                    <span className="text-2xl font-black gradient-red-text">{d.code}</span>
-                    <p className="text-sm text-muted-foreground mt-1">{d.name}</p>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.06,
+                      y: -4,
+                    }}
+                    whileTap={{ scale: 0.97 }}
+                    className="relative bg-background rounded-2xl overflow-hidden border border-border group cursor-pointer py-5 px-3 text-center transition-all duration-300 hover:border-primary/40 hover:shadow-[0_8px_30px_-10px_hsl(0_78%_55%/0.25)]"
+                  >
+                    {/* Gradient overlay on hover */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/5 to-primary/10 pointer-events-none" />
+                    <span className="relative text-3xl md:text-4xl font-black gradient-red-text block leading-none">{d.code}</span>
+                    <p className="relative text-sm font-medium text-muted-foreground mt-2 group-hover:text-foreground transition-colors duration-300">{d.name}</p>
                   </motion.div>
                 </Link>
               </ScrollReveal>)}
