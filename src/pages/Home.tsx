@@ -302,17 +302,17 @@ const StatsCarousel = () => {
               filter: i === active ? "blur(0px)" : "blur(8px)",
             }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0 flex flex-row items-center justify-center gap-10 md:gap-16"
+            className="absolute inset-0 flex flex-row items-center justify-center gap-10 md:gap-16 px-16"
             style={{ pointerEvents: i === active ? "auto" : "none" }}
           >
             <motion.img
               src={stat.icon}
               alt={stat.label}
-              className="w-[250px] h-[250px] md:w-[300px] md:h-[300px] brightness-0 invert opacity-90 flex-shrink-0"
+              className="w-[200px] h-[200px] md:w-[240px] md:h-[240px] brightness-0 invert opacity-90 flex-shrink-0"
               animate={{ rotate: i === active ? [0, -3, 3, 0] : 0 }}
               transition={{ duration: 1.2, ease: "easeInOut", delay: 0.3 }}
             />
-            <div className="text-left">
+            <div className="text-left flex flex-col justify-center">
               <motion.span
                 className="text-5xl md:text-7xl lg:text-8xl font-black text-white whitespace-pre-line leading-none block"
                 animate={{ scale: i === active ? [0.9, 1.05, 1] : 0.9 }}
