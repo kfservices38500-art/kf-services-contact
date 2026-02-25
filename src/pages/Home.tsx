@@ -512,7 +512,7 @@ const Home = () => {
               <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Cuisine rénovée KF Services" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
-                {services.map((s) => <span key={s.label} className="inline-flex items-center px-4 py-2.5 bg-white/95 backdrop-blur-md text-foreground text-sm font-semibold rounded-full shadow-lg">
+                {services.map((s) => <span key={s.label} className="inline-flex items-center px-4 py-2.5 bg-white/85 backdrop-blur-lg text-foreground text-sm font-semibold rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-xl cursor-default">
                     {s.label}
                   </span>)}
               </div>
