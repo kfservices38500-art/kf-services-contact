@@ -112,7 +112,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           <ScrollReveal direction="left">
             <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Pourquoi nous faire confiance</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">20 ans d'expérience au service de <span className="gradient-red-text">votre tranquillité</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">+ de 20 ans d'expérience au service{"\n"}de <span className="gradient-red-text">votre tranquillité</span></h2>
             <div className="space-y-4 text-muted-foreground text-base md:text-lg">
               <p>
                 Quand vous confiez votre chantier à KF Services, vous gagnez un avantage décisif : un seul interlocuteur qui maîtrise tous les métiers du bâtiment.
