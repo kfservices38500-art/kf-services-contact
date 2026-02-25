@@ -38,7 +38,7 @@ const timeline = [{
   desc: "3 équipes spécialisées — des délais plus courts pour vos projets"
 }, {
   year: "2024",
-  desc: "+500 chantiers livrés — autant de clients satisfaits"
+  desc: "+300 chantiers livrés - autant de clients satisfaits"
 }];
 const values = [{
   icon: Target,
