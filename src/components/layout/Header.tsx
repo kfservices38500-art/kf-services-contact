@@ -84,9 +84,9 @@ const Header = () => {
 
           {/* CTA - phone + dark contact button */}
           <div className="hidden md:flex items-center gap-5">
-            <a href="tel:+33123456789" className="flex items-center gap-2 text-base font-medium text-muted-foreground hover:text-foreground hover:font-bold transition-all duration-300">
+            <a href="tel:+33669209788" className="flex items-center gap-2 text-base font-medium text-muted-foreground hover:text-foreground hover:font-bold transition-all duration-300">
               <Phone className="w-5 h-5 text-primary" />
-              01 23 45 67 89
+              06 69 20 97 88
             </a>
             <Link
               to="/contact"
@@ -139,14 +139,14 @@ const Header = () => {
                 </motion.div>
               ))}
               <motion.a
-                href="tel:+33123456789"
+                href="tel:+33669209788"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
                 className="flex items-center gap-3 px-5 py-4 text-lg text-muted-foreground"
               >
                 <Phone className="w-5 h-5 text-primary" />
-                01 23 45 67 89
+                06 69 20 97 88
               </motion.a>
             </nav>
           </motion.div>
