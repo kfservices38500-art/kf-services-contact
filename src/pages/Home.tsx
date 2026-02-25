@@ -290,8 +290,8 @@ const StatsCarousel = () => {
   }, [total]);
 
   return (
-    <section className="gradient-red text-white py-12 md:py-16 overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 relative" style={{ minHeight: "320px" }}>
+    <section className="gradient-red text-white py-6 md:py-8 overflow-hidden relative">
+      <div className="max-w-5xl mx-auto px-4 relative" style={{ minHeight: "260px" }}>
         {homeStats.map((stat, i) => (
           <motion.div
             key={stat.label}
@@ -331,14 +331,14 @@ const StatsCarousel = () => {
           </motion.div>
         ))}
       </div>
-      {/* Navigation dots */}
-      <div className="flex gap-3 justify-center relative z-10">
+      {/* Navigation dots - vertical, right side */}
+      <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-10">
         {homeStats.map((_, i) => (
           <button
             key={i}
             onClick={() => setActive(i)}
-            className={`h-3 rounded-full transition-all duration-500 ${
-              i === active ? "w-10 bg-white" : "w-3 bg-white/30 hover:bg-white/50"
+            className={`w-3 rounded-full transition-all duration-500 ${
+              i === active ? "h-10 bg-white" : "h-3 bg-white/30 hover:bg-white/50"
             }`}
           />
         ))}
