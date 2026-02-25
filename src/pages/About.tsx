@@ -9,7 +9,7 @@ import ChantierIcon from "../assets/Chantier.svg";
 import WorkersIcon from "../assets/Workers.svg";
 import FiveStarsIcon from "../assets/5stars.svg";
 const stats = [{
-  value: "Depuis 2003",
+  value: "Depuis\n2003",
   label: "Expérience des gérants\ndans le bâtiment",
   icon: PoignetmainsIcon
 }, {
