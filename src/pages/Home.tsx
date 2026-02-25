@@ -9,6 +9,9 @@ import ParallaxSection from "../components/animations/ParallaxSection";
 import KFButton from "../components/ui/KFButton";
 import WhyUsCarousel from "../components/WhyUsCarousel";
 import MarqueeBanner from "../components/MarqueeBanner";
+import PoignetmainsIcon from "../assets/Poignetmains.svg";
+import ChantierIcon from "../assets/Chantier.svg";
+import WorkersIcon from "../assets/Workers.svg";
 const heroImages = [{
   src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80",
   alt: "Votre maison plus solide"
@@ -348,21 +351,24 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials - Carousel */}
-      <ParallaxSection className="bg-muted py-16 md:py-24 overflow-hidden" speed={0.15}>
+      {/* Stats */}
+      <section className="gradient-red text-white py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2 text-center">Témoignages</p>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center">
-              Ce que nos clients <span className="gradient-red-text">disent de nous</span>
-            </h2>
-            <p className="text-muted-foreground text-base md:text-lg mb-12 text-center max-w-2xl mx-auto">
-              4.9/5 sur Google · Avis vérifiés
-            </p>
-          </ScrollReveal>
-          <TestimonialCarousel />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            {[
+              { value: "Depuis\n2003", label: "Expérience des gérants\ndans le bâtiment", icon: PoignetmainsIcon },
+              { value: "+\n300", label: "Projets livrés avec succès\ndepuis 2003", icon: ChantierIcon },
+              { value: "+\n50", label: "Projets déjà livrés par\nKF Services depuis 2022", icon: WorkersIcon },
+            ].map((stat, i) => (
+              <ScrollReveal key={stat.label} delay={i * 0.1}>
+                <img src={stat.icon} alt={stat.label} className="w-[200px] h-[200px] mx-auto mb-2 brightness-0 invert opacity-80" />
+                <span className="text-4xl md:text-5xl font-black text-white whitespace-pre-line">{stat.value}</span>
+                <p className="text-base text-white/70 mt-1 whitespace-pre-line">{stat.label}</p>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
-      </ParallaxSection>
+      </section>
 
       {/* Value Prop - 3 column layout */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
