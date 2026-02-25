@@ -75,7 +75,7 @@ const Contact = () => {
                 <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-base">Appelez-nous directement</p>
-                  <a href="tel:+33123456789" className="text-base text-muted-foreground hover:text-foreground transition-colors">01 23 45 67 89</a>
+                  <a href="tel:+33669209788" className="text-base text-muted-foreground hover:text-foreground transition-colors">06 69 20 97 88</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
