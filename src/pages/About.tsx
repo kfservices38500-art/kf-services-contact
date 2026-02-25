@@ -13,7 +13,7 @@ const stats = [{
   label: "Expérience des gérants\ndans le bâtiment",
   icon: PoignetmainsIcon
 }, {
-  value: "+\n500",
+  value: "+\n300",
   label: "Projets livrés avec succès\ndepuis 2003",
   icon: ChantierIcon
 }, {
