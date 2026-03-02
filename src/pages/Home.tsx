@@ -18,7 +18,7 @@ import hero3 from "../assets/hero-3.jpeg";
 import hero4 from "../assets/hero-4.jpeg";
 import hero5 from "../assets/hero-5.jpeg";
 import hero6 from "../assets/hero-6.jpeg";
-import budgetMaitriseImg from "../assets/budget-maitrise.jpg";
+import budgetMaitriseImg from "../assets/budget-maitrise-new.jpg";
 const heroImages = [{
   src: hero1,
   alt: "Maçonnerie et gros œuvre – piscine béton",
