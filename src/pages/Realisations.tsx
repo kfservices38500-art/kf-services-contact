@@ -61,6 +61,16 @@ import realMontStMartin4 from "../assets/real-montstmartin-4.jpeg";
 import realMontStMartin5 from "../assets/real-montstmartin-5.jpeg";
 import realMontStMartin6 from "../assets/real-montstmartin-6.jpeg";
 import realMontStMartin7 from "../assets/real-montstmartin-7.jpeg";
+import realLesEchelles1 from "../assets/real-lesechelles-1.jpeg";
+import realLesEchelles2 from "../assets/real-lesechelles-2.jpeg";
+import realLesEchelles3 from "../assets/real-lesechelles-3.jpeg";
+import realLesEchelles4 from "../assets/real-lesechelles-4.jpeg";
+import realLesEchelles5 from "../assets/real-lesechelles-5.jpeg";
+import realLesEchelles6 from "../assets/real-lesechelles-6.jpeg";
+import realLesEchelles7 from "../assets/real-lesechelles-7.jpeg";
+import realLesEchelles8 from "../assets/real-lesechelles-8.jpeg";
+import realLesEchelles9 from "../assets/real-lesechelles-9.jpeg";
+import realLesEchelles10 from "../assets/real-lesechelles-10.jpeg";
 const deptNames: Record<string, string> = {
   "01": "Ain",
   "03": "Allier",
@@ -162,6 +172,13 @@ const projects = [{
   title: "Abri de jardin en bois avec couverture tuiles",
   location: "Mont-Saint-Martin (54)",
   description: "Construction complète d'un abri de jardin en madriers bois massif avec charpente traditionnelle et couverture en tuiles, intégré harmonieusement au terrain."
+}, {
+  images: [realLesEchelles3, realLesEchelles10, realLesEchelles4, realLesEchelles1, realLesEchelles2, realLesEchelles5, realLesEchelles6, realLesEchelles9, realLesEchelles7, realLesEchelles8],
+  category: ["maconnerie", "autres"],
+  categoryLabel: "Rénovation & Gros œuvre",
+  title: "Aménagement d'une grange en habitation avec plancher bois",
+  location: "Les Échelles (73)",
+  description: "Transformation complète d'une grange en habitation : ouvertures en sous-œuvre dans les murs en pierres, coulage de dalle béton, création d'un plancher bois sur structure apparente et maçonnerie de reprise."
 }, {
   images: ["https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80", "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"],
   category: ["plomberie"],
