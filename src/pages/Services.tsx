@@ -5,6 +5,7 @@ import ParallaxSection from "../components/animations/ParallaxSection";
 import KFButton from "../components/ui/KFButton";
 import servicesMaconnerie from "../assets/services-maconnerie.jpg";
 import servicesCharpente2 from "../assets/services-charpente-2.jpg";
+import servicesGouttieres2 from "../assets/services-gouttieres-2.jpg";
 const servicesData = [{
   title: "Maçonnerie",
   emoji: "🧱",
@@ -24,7 +25,7 @@ const servicesData = [{
   emoji: "💧",
   description: "Vous protégez vos façades et fondations des dégâts des eaux grâce à un système d'évacuation durable, esthétique et sans entretien pendant des années.",
   benefits: ["Des gouttières sur mesure qui s'intègrent parfaitement à votre toiture", "Des descentes d'eau qui éloignent efficacement l'eau de vos fondations", "Des raccordements étanches qui éliminent les fuites", "Un entretien qui prolonge la durée de vie de votre installation", "Une réparation rapide pour stopper les infiltrations en urgence", "Une protection anti-feuilles pour éviter les bouchons et débordements"],
-  image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+  image: servicesGouttieres2,
   category: "gouttieres"
 }, {
   title: "Plomberie & chauffage",
