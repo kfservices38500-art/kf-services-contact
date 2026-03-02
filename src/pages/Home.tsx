@@ -13,6 +13,7 @@ import PoignetmainsIcon from "../assets/Poignetmains.svg";
 import ChantierIcon from "../assets/Chantier.svg";
 import WorkersIcon from "../assets/Workers.svg";
 import servicesMaconnerie from "../assets/services-maconnerie.jpg";
+import servicesCharpente from "../assets/services-charpente.jpg";
 import hero1 from "../assets/hero-1.jpeg";
 import hero2 from "../assets/hero-2.jpeg";
 import hero3 from "../assets/hero-3.jpeg";
@@ -142,7 +143,7 @@ const portfolioItems = [{
   title: "Maçonnerie & Construction",
   desc: "Des murs solides et des extensions qui augmentent la surface habitable."
 }, {
-  img: "https://images.unsplash.com/photo-1635424710928-0544e8512eae?w=800&q=80",
+  img: servicesCharpente,
   title: "Charpente & Couverture",
   desc: "Une toiture qui vous met à l'abri pour des décennies."
 }, {
