@@ -167,8 +167,8 @@ const projects = [{
   description: "Restauration complète d'un mur en pierres : réalisation d'une arase à la chaux, remise en place des pierres, rejointoiement traditionnel et pose de couvertines en pierres de taille."
 }, {
   images: [realMontStMartin3, realMontStMartin4, realMontStMartin5, realMontStMartin7, realMontStMartin1, realMontStMartin2, realMontStMartin6],
-  category: ["autres"],
-  categoryLabel: "Autres",
+  category: ["charpente"],
+  categoryLabel: "Charpente/Couverture",
   title: "Abri de jardin en bois avec couverture tuiles",
   location: "Mont-Saint-Martin (54)",
   description: "Construction complète d'un abri de jardin en madriers bois massif avec charpente traditionnelle et couverture en tuiles, intégré harmonieusement au terrain."
