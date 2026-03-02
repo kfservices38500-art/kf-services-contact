@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import KFButton from "./ui/KFButton";
+import whyusInterlocuteur from "@/assets/whyus-interlocuteur.jpg";
 
 const whyUsSlides = [
   {
@@ -29,8 +30,8 @@ const whyUsSlides = [
     tag: "Un seul interlocuteur",
     title: "Fini la galère des multiples artisans",
     description: "Un seul numéro, un seul contact qui coordonne l'ensemble de votre chantier. Vous gagnez du temps et de la tranquillité d'esprit à chaque étape.",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
-    imageAlt: "Coordination de chantier",
+    image: whyusInterlocuteur,
+    imageAlt: "Un seul interlocuteur KF Services",
   },
 ];
 
