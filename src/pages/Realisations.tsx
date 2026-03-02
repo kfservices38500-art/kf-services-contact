@@ -52,6 +52,8 @@ import realSassenage7 from "../assets/real-sassenage-7.jpeg";
 import realSassenage8 from "../assets/real-sassenage-8.jpeg";
 import realSassenage9 from "../assets/real-sassenage-9.jpeg";
 import realSassenage10 from "../assets/real-sassenage-10.jpeg";
+import realVoreppe1 from "../assets/real-voreppe-1.jpeg";
+import realVoreppe2 from "../assets/real-voreppe-2.jpeg";
 const deptNames: Record<string, string> = {
   "01": "Ain",
   "03": "Allier",
@@ -138,6 +140,13 @@ const projects = [{
   title: "Ouvertures en sous-œuvre et mezzanine bois dans bâtiment en pierres",
   location: "Sassenage (38)",
   description: "Création de deux ouvertures en sous-œuvre dans un mur en pierres, coulage d'une dalle béton armé et construction d'une mezzanine en structure bois pour réhabiliter un bâtiment ancien."
+}, {
+  images: [realVoreppe1, realVoreppe2],
+  category: ["maconnerie", "autres"],
+  categoryLabel: "Rénovation & Gros œuvre",
+  title: "Réfection d'un mur en pierres avec arase et couvertine",
+  location: "Voreppe (38)",
+  description: "Restauration complète d'un mur en pierres : réalisation d'une arase à la chaux, remise en place des pierres, rejointoiement traditionnel et pose de couvertines en pierres de taille."
 }, {
   images: ["https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80", "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"],
   category: ["plomberie"],
