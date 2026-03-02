@@ -508,7 +508,7 @@ const Home = () => {
               <img src={budgetMaitriseImg} alt="Budget maîtrisé – devis signé sur chantier" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md rounded-2xl p-5">
-                <h3 className="text-2xl md:text-3xl font-bold leading-tight">
+                <h3 className="text-xl md:text-2xl font-bold leading-tight">
                   <span className="text-white">Budget maîtrisé,</span><br />
                   <span className="gradient-red-text">zéro mauvaise surprise.</span>
                 </h3>
