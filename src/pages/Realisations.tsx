@@ -6,6 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "../components/animations/ScrollReveal";
 import KFButton from "../components/ui/KFButton";
 import ProjectModal from "../components/ProjectModal";
+import realIzeauxMac1 from "../assets/real-izeaux-mac-1.jpeg";
+import realIzeauxMac2 from "../assets/real-izeaux-mac-2.jpeg";
+import realIzeauxMac3 from "../assets/real-izeaux-mac-3.jpeg";
+import realIzeauxMac4 from "../assets/real-izeaux-mac-4.jpeg";
+import realIzeauxMac5 from "../assets/real-izeaux-mac-5.jpeg";
+import realIzeauxMac6 from "../assets/real-izeaux-mac-6.jpeg";
 const deptNames: Record<string, string> = {
   "01": "Ain",
   "03": "Allier",
@@ -37,12 +43,12 @@ const categories = [{
   label: "Autres"
 }];
 const projects = [{
-  images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80", "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80"],
+  images: [realIzeauxMac4, realIzeauxMac5, realIzeauxMac1, realIzeauxMac2, realIzeauxMac3, realIzeauxMac6],
   category: "maconnerie",
   categoryLabel: "Maçonnerie",
-  title: "+30 m² habitables grâce à une rénovation complète",
-  location: "Voiron (38)",
-  description: "Les propriétaires ont gagné un étage entier et revalorisé leur bien de 150 000 €, sans un seul jour de retard."
+  title: "Terrassement et maçonnerie pour une construction neuve",
+  location: "Izeaux (38)",
+  description: "Du terrassement aux fondations jusqu'à l'élévation des murs : construction complète d'une maison individuelle en briques avec dalle béton armé."
 }, {
   images: ["https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80", "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800&q=80", "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80"],
   category: "maconnerie",
