@@ -17,6 +17,15 @@ import realLaTroncheCharp2 from "../assets/real-latronche-charp-2.jpeg";
 import realLaTroncheCharp3 from "../assets/real-latronche-charp-3.jpeg";
 import realLaTroncheCharp4 from "../assets/real-latronche-charp-4.jpeg";
 import realLaTroncheCharp5 from "../assets/real-latronche-charp-5.jpeg";
+import realMaubec1 from "../assets/real-maubec-1.jpeg";
+import realMaubec2 from "../assets/real-maubec-2.jpeg";
+import realMaubec3 from "../assets/real-maubec-3.jpeg";
+import realMaubec4 from "../assets/real-maubec-4.jpeg";
+import realMaubec5 from "../assets/real-maubec-5.jpeg";
+import realMaubec6 from "../assets/real-maubec-6.jpeg";
+import realMaubec7 from "../assets/real-maubec-7.jpeg";
+import realMaubec8 from "../assets/real-maubec-8.jpeg";
+import realMaubec9 from "../assets/real-maubec-9.jpeg";
 const deptNames: Record<string, string> = {
   "01": "Ain",
   "03": "Allier",
@@ -55,12 +64,12 @@ const projects = [{
   location: "Izeaux (38)",
   description: "Du terrassement aux fondations jusqu'à l'élévation des murs : construction complète d'une maison individuelle en briques avec dalle béton armé."
 }, {
-  images: ["https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80", "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800&q=80", "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80"],
+  images: [realMaubec6, realMaubec4, realMaubec5, realMaubec8, realMaubec1, realMaubec2, realMaubec3, realMaubec7, realMaubec9],
   category: "maconnerie",
-  categoryLabel: "Maçonnerie",
-  title: "Une extension lumineuse qui a changé leur quotidien",
-  location: "Grenoble (38)",
-  description: "40 m² supplémentaires avec baies vitrées et toiture terrasse."
+  categoryLabel: "Maçonnerie & Charpente",
+  title: "Construction complète : maçonnerie et charpente couverture",
+  location: "Maubec (38)",
+  description: "Élévation des murs en parpaings, pose de la charpente industrielle, couverture tuiles et finitions gouttières pour une maison neuve de plain-pied."
 }, {
   images: [realLaTroncheCharp1, realLaTroncheCharp2, realLaTroncheCharp3, realLaTroncheCharp4, realLaTroncheCharp5],
   category: "charpente",
