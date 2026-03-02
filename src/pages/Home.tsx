@@ -12,23 +12,29 @@ import MarqueeBanner from "../components/MarqueeBanner";
 import PoignetmainsIcon from "../assets/Poignetmains.svg";
 import ChantierIcon from "../assets/Chantier.svg";
 import WorkersIcon from "../assets/Workers.svg";
+import hero1 from "../assets/hero-1.jpeg";
+import hero2 from "../assets/hero-2.jpeg";
+import hero3 from "../assets/hero-3.jpeg";
+import hero4 from "../assets/hero-4.jpeg";
+import hero5 from "../assets/hero-5.jpeg";
+import hero6 from "../assets/hero-6.jpeg";
 const heroImages = [{
-  src: "/images/hero-1.jpeg",
+  src: hero1,
   alt: "Maçonnerie et gros œuvre – piscine béton"
 }, {
-  src: "/images/hero-2.jpeg",
+  src: hero2,
   alt: "Charpente – fermettes bois"
 }, {
-  src: "/images/hero-3.jpeg",
+  src: hero3,
   alt: "Maçonnerie – dalle béton"
 }, {
-  src: "/images/hero-4.jpeg",
+  src: hero4,
   alt: "Carport bois avec claustra"
 }, {
-  src: "/images/hero-5.jpeg",
+  src: hero5,
   alt: "Rénovation façade pierre"
 }, {
-  src: "/images/hero-6.jpeg",
+  src: hero6,
   alt: "Rénovation intérieure – structure bois"
 }];
 const services = [{
