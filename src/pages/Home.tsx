@@ -552,7 +552,7 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
                 {services.map((s) => (
-                  <span key={s.label} className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-black/40 backdrop-blur-md border border-white/15 text-white text-xs font-medium rounded-full transition-all duration-300 hover:bg-black/60 cursor-default">
+                  <span key={s.label} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-black/40 backdrop-blur-md border border-white/15 text-white text-[11px] font-medium rounded-full transition-all duration-300 hover:bg-black/60 cursor-default whitespace-nowrap">
                     <s.icon className="w-3.5 h-3.5 opacity-80" />
                     {s.label}
                   </span>
