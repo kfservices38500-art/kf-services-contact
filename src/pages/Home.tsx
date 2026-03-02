@@ -18,6 +18,7 @@ import hero3 from "../assets/hero-3.jpeg";
 import hero4 from "../assets/hero-4.jpeg";
 import hero5 from "../assets/hero-5.jpeg";
 import hero6 from "../assets/hero-6.jpeg";
+import budgetMaitriseImg from "../assets/budget-maitrise.jpg";
 const heroImages = [{
   src: hero1,
   alt: "Maçonnerie et gros œuvre – piscine béton",
@@ -504,10 +505,13 @@ const Home = () => {
           {/* Left - Photo with overlay */}
           <ScrollReveal direction="left">
             <div className="relative rounded-3xl overflow-hidden h-full min-h-[400px]">
-              <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" alt="Chantier KF Services" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <img src={budgetMaitriseImg} alt="Budget maîtrisé – devis signé sur chantier" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-white text-2xl md:text-3xl font-bold leading-tight">Budget maîtrisé,<br />zéro mauvaise surprise.</h3>
+                <h3 className="text-2xl md:text-3xl font-bold leading-tight">
+                  <span className="text-black">Budget maîtrisé,</span><br />
+                  <span className="gradient-red-text">zéro mauvaise surprise.</span>
+                </h3>
               </div>
             </div>
           </ScrollReveal>
