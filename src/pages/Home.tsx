@@ -12,6 +12,7 @@ import MarqueeBanner from "../components/MarqueeBanner";
 import PoignetmainsIcon from "../assets/Poignetmains.svg";
 import ChantierIcon from "../assets/Chantier.svg";
 import WorkersIcon from "../assets/Workers.svg";
+import servicesMaconnerie from "../assets/services-maconnerie.jpg";
 import hero1 from "../assets/hero-1.jpeg";
 import hero2 from "../assets/hero-2.jpeg";
 import hero3 from "../assets/hero-3.jpeg";
@@ -137,7 +138,7 @@ const guarantees = [{
   desc: "Des travaux conformes qui sécurisent la valeur de votre bien"
 }];
 const portfolioItems = [{
-  img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
+  img: servicesMaconnerie,
   title: "Maçonnerie & Construction",
   desc: "Des murs solides et des extensions qui augmentent la surface habitable."
 }, {
