@@ -472,7 +472,7 @@ const Home = () => {
               {heroImages.map((img, i) => <img key={i} src={img.src} alt={img.alt} className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === currentImage ? "opacity-100" : "opacity-0"}`} />)}
             </div>
             {/* Stats bar */}
-            <div className="absolute bottom-4 left-4 right-4 bg-background/40 backdrop-blur-xl rounded-2xl p-4 flex items-center justify-between gap-4 text-white">
+            <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md rounded-2xl p-4 flex items-center justify-between gap-4 text-white">
               <div className="flex items-center gap-2 transition-all duration-500">
                 {heroImages[currentImage].left.icon === "Shield" && <Shield className="w-5 h-5" />}
                 {heroImages[currentImage].left.icon === "Award" && <Award className="w-5 h-5" />}
