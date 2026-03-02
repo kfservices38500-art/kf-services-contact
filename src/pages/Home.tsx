@@ -506,10 +506,10 @@ const Home = () => {
           <ScrollReveal direction="left">
             <div className="relative rounded-3xl overflow-hidden h-full min-h-[400px]">
               <img src={budgetMaitriseImg} alt="Budget maîtrisé – devis signé sur chantier" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <h3 className="text-2xl md:text-3xl font-bold leading-tight">
-                  <span className="text-black">Budget maîtrisé,</span><br />
+                  <span className="text-white">Budget maîtrisé,</span><br />
                   <span className="gradient-red-text">zéro mauvaise surprise.</span>
                 </h3>
               </div>
