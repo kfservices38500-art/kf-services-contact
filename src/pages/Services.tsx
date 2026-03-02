@@ -6,6 +6,7 @@ import KFButton from "../components/ui/KFButton";
 import servicesMaconnerie from "../assets/services-maconnerie.jpg";
 import servicesCharpente2 from "../assets/services-charpente-2.jpg";
 import servicesGouttieres2 from "../assets/services-gouttieres-2.jpg";
+import servicesConstruction from "../assets/services-construction.jpg";
 const servicesData = [{
   title: "Maçonnerie",
   emoji: "🧱",
@@ -39,7 +40,7 @@ const servicesData = [{
   emoji: "🏗️",
   description: "Évitez la complexité et gagnez du temps, de l'argent et de la tranquillité en confiant l'ensemble de votre projet à un seul interlocuteur de la conception à la livraison : KF Services",
   benefits: ["Une maison neuve clé en main, conforme à vos plans et à votre budget", "Une rénovation complète qui transforme votre intérieur sans tracas", "Une transformation de locaux adaptée à votre nouveau besoin", "Une mise en conformité qui protège votre bien et ses occupants", "Une coordination de tous les corps de métier — zéro stress pour vous", "Un suivi de chantier régulier pour que vous restiez informé à chaque étape"],
-  image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+  image: servicesConstruction,
   category: "neuf-renovation"
 }];
 const Services = () => {
