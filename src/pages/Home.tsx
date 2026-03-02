@@ -20,22 +20,34 @@ import hero5 from "../assets/hero-5.jpeg";
 import hero6 from "../assets/hero-6.jpeg";
 const heroImages = [{
   src: hero1,
-  alt: "Maçonnerie et gros œuvre – piscine béton"
+  alt: "Maçonnerie et gros œuvre – piscine béton",
+  left: { icon: "Shield", text: "Garantie décennale incluse" },
+  right: { icon: "CheckCircle2", text: "Solidité & durabilité" },
 }, {
   src: hero2,
-  alt: "Charpente – fermettes bois"
+  alt: "Charpente – fermettes bois",
+  left: { icon: "Award", text: "Artisans certifiés RGE" },
+  right: { icon: "Shield", text: "Toiture protégée 30 ans" },
 }, {
   src: hero3,
-  alt: "Maçonnerie – dalle béton"
+  alt: "Maçonnerie – dalle béton",
+  left: { icon: "FileCheck", text: "Devis gratuit sous 48h" },
+  right: { icon: "Scale", text: "Prix fixe sans surprise" },
 }, {
   src: hero4,
-  alt: "Carport bois avec claustra"
+  alt: "Carport bois avec claustra",
+  left: { icon: "Star", text: "Finitions sur mesure" },
+  right: { icon: "CheckCircle2", text: "Bois sélectionné avec soin" },
 }, {
   src: hero5,
-  alt: "Rénovation façade pierre"
+  alt: "Rénovation façade pierre",
+  left: { icon: "Award", text: "+20 ans d'expérience" },
+  right: { icon: "MapPin", text: "Auvergne-Rhône-Alpes" },
 }, {
   src: hero6,
-  alt: "Rénovation intérieure – structure bois"
+  alt: "Rénovation intérieure – structure bois",
+  left: { icon: "Users", text: "Un seul interlocuteur" },
+  right: { icon: "Shield", text: "Chantier assuré & suivi" },
 }];
 const services = [{
   icon: Hammer,
@@ -460,16 +472,23 @@ const Home = () => {
             </div>
             {/* Stats bar */}
             <div className="absolute bottom-4 left-4 right-4 bg-background/40 backdrop-blur-xl rounded-2xl p-4 flex items-center justify-between gap-4 text-white">
-              <div className="flex items-center gap-2">
-                <Users className="w-5 h-5" />
-                <span className="text-base font-bold">+20 ans d'expérience</span>
+              <div className="flex items-center gap-2 transition-all duration-500">
+                {heroImages[currentImage].left.icon === "Shield" && <Shield className="w-5 h-5" />}
+                {heroImages[currentImage].left.icon === "Award" && <Award className="w-5 h-5" />}
+                {heroImages[currentImage].left.icon === "FileCheck" && <FileCheck className="w-5 h-5" />}
+                {heroImages[currentImage].left.icon === "Star" && <Star className="w-5 h-5" />}
+                {heroImages[currentImage].left.icon === "Users" && <Users className="w-5 h-5" />}
+                <motion.span key={`left-${currentImage}`} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="text-base font-bold">{heroImages[currentImage].left.text}</motion.span>
               </div>
               <div className="flex gap-1.5">
                 {heroImages.map((_, i) => <button key={i} onClick={() => setCurrentImage(i)} className={`w-3 h-3 rounded-full transition-all duration-300 ${i === currentImage ? "gradient-red scale-110" : "bg-white/40"}`} />)}
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5" />
-                <span className="text-base font-bold">Auvergne-Rhône-Alpes</span>
+              <div className="flex items-center gap-2 transition-all duration-500">
+                {heroImages[currentImage].right.icon === "CheckCircle2" && <CheckCircle2 className="w-5 h-5" />}
+                {heroImages[currentImage].right.icon === "Shield" && <Shield className="w-5 h-5" />}
+                {heroImages[currentImage].right.icon === "Scale" && <Scale className="w-5 h-5" />}
+                {heroImages[currentImage].right.icon === "MapPin" && <MapPin className="w-5 h-5" />}
+                <motion.span key={`right-${currentImage}`} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="text-base font-bold">{heroImages[currentImage].right.text}</motion.span>
               </div>
             </div>
           </motion.div>
