@@ -549,11 +549,13 @@ const Home = () => {
           <ScrollReveal direction="right">
             <div className="relative rounded-3xl overflow-hidden h-full min-h-[400px]">
               <img src={servicesCardImg} alt="Remise des clés – KF Services" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
-                {services.map((s) => <span key={s.label} className="inline-flex items-center px-4 py-2.5 bg-white/85 backdrop-blur-lg text-foreground text-sm font-semibold rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-xl cursor-default">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 flex flex-col items-start gap-2.5">
+                {services.map((s, i) => (
+                  <span key={s.label} className={`inline-flex items-center px-5 py-2.5 bg-white/90 backdrop-blur-lg text-foreground text-sm font-semibold rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-xl cursor-default ${i === services.length - 1 ? 'self-end' : ''}`}>
                     {s.label}
-                  </span>)}
+                  </span>
+                ))}
               </div>
             </div>
           </ScrollReveal>
