@@ -19,6 +19,7 @@ import hero4 from "../assets/hero-4.jpeg";
 import hero5 from "../assets/hero-5.jpeg";
 import hero6 from "../assets/hero-6.jpeg";
 import budgetMaitriseImg from "../assets/budget-maitrise-new.jpg";
+import interlocuteurImg from "../assets/interlocuteur-unique.jpg";
 import servicesCardImg from "../assets/services-card.jpg";
 const heroImages = [{
   src: hero1,
@@ -506,12 +507,12 @@ const Home = () => {
           {/* Left - Photo with overlay */}
           <ScrollReveal direction="left">
             <div className="relative rounded-3xl overflow-hidden h-full min-h-[400px]">
-              <img src={budgetMaitriseImg} alt="Budget maîtrisé – devis signé sur chantier" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={interlocuteurImg} alt="Un seul interlocuteur – KF Services" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md rounded-2xl p-5">
                 <h3 className="text-xl md:text-2xl font-bold leading-tight">
-                  <span className="text-white">Budget maîtrisé,</span><br />
-                  <span className="gradient-red-text">zéro mauvaise surprise.</span>
+                  <span className="text-white">Un seul interlocuteur,</span><br />
+                  <span className="gradient-red-text">zéro prise de tête.</span>
                 </h3>
               </div>
             </div>
