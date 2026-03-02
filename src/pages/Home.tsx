@@ -19,6 +19,7 @@ import hero4 from "../assets/hero-4.jpeg";
 import hero5 from "../assets/hero-5.jpeg";
 import hero6 from "../assets/hero-6.jpeg";
 import budgetMaitriseImg from "../assets/budget-maitrise-new.jpg";
+import servicesCardImg from "../assets/services-card.jpg";
 const heroImages = [{
   src: hero1,
   alt: "Maçonnerie et gros œuvre – piscine béton",
@@ -547,7 +548,7 @@ const Home = () => {
           {/* Right - Photo with service tags */}
           <ScrollReveal direction="right">
             <div className="relative rounded-3xl overflow-hidden h-full min-h-[400px]">
-              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Cuisine rénovée KF Services" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={servicesCardImg} alt="Remise des clés – KF Services" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
                 {services.map((s) => <span key={s.label} className="inline-flex items-center px-4 py-2.5 bg-white/85 backdrop-blur-lg text-foreground text-sm font-semibold rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-xl cursor-default">
