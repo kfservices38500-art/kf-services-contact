@@ -689,44 +689,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* News */}
-      <ParallaxSection className="bg-muted py-16 md:py-24" speed={0.1}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Toujours en mouvement</p>
-            <h2 className="text-3xl md:text-5xl font-bold mb-12">Suivez nos <span className="gradient-red-text">avancées</span></h2>
-          </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <ScrollReveal>
-              <motion.div whileHover={{
-              y: -3
-            }} className="bg-background rounded-3xl p-6">
-                <p className="text-sm text-muted-foreground mb-1">10 Janvier 2025</p>
-                <h4 className="font-bold text-base mb-1">Nouveau projet livré à Moirans</h4>
-                <p className="text-base text-muted-foreground">Une maison de ville entièrement rénovée : les propriétaires ont gagné 30 m² de surface habitable.</p>
-              </motion.div>
-            </ScrollReveal>
-            <ScrollReveal>
-              <motion.div whileHover={{
-              y: -3
-            }} className="bg-background rounded-3xl p-6">
-                <p className="text-sm text-muted-foreground mb-1">5 Janvier 2025</p>
-                <h4 className="font-bold text-base mb-1">Extension livrée à Voiron</h4>
-                <p className="text-base text-muted-foreground">30 m² supplémentaires pour une famille qui avait besoin d'espace — chantier livré en 8 semaines.</p>
-              </motion.div>
-            </ScrollReveal>
-            <ScrollReveal>
-              <motion.div whileHover={{
-              y: -3
-            }} className="bg-background rounded-3xl p-6">
-                <p className="text-sm text-muted-foreground mb-1">15 Décembre 2024</p>
-                <h4 className="font-bold text-base mb-1">Toiture rénovée à Grenoble</h4>
-                <p className="text-base text-muted-foreground">Charpente et couverture complètes pour une maison des années 60 — étanchéité garantie.</p>
-              </motion.div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </ParallaxSection>
 
       {/* CTA */}
       <section className="gradient-red text-white py-16 md:py-24">
