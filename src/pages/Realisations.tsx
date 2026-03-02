@@ -34,6 +34,9 @@ import realRoybon5 from "../assets/real-roybon-5.jpeg";
 import realSteCrossey1 from "../assets/real-stecrossey-1.jpeg";
 import realSteCrossey2 from "../assets/real-stecrossey-2.jpeg";
 import realSteCrossey3 from "../assets/real-stecrossey-3.jpeg";
+import realStGeoire1 from "../assets/real-stgeoire-1.jpeg";
+import realStGeoire2 from "../assets/real-stgeoire-2.jpeg";
+import realStGeoire3 from "../assets/real-stgeoire-3.jpeg";
 const deptNames: Record<string, string> = {
   "01": "Ain",
   "03": "Allier",
@@ -99,6 +102,13 @@ const projects = [{
   title: "Mezzanine en bois avec dalle de verre intégrée",
   location: "Saint-Étienne-de-Crossey (38)",
   description: "Création d'une mezzanine sur structure bois apparente avec insertion d'une dalle en verre pour apporter lumière naturelle entre les niveaux."
+}, {
+  images: [realStGeoire1, realStGeoire2, realStGeoire3],
+  category: ["maconnerie"],
+  categoryLabel: "Maçonnerie & Gros œuvre",
+  title: "Accès carrossable en béton désactivé sur mesure",
+  location: "Saint-Geoire-en-Valdaine (38)",
+  description: "Réalisation d'un accès carrossable en béton désactivé, offrant une surface robuste et esthétique adaptée au passage des véhicules."
 }, {
   images: ["https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80", "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"],
   category: ["plomberie"],
