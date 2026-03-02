@@ -37,6 +37,11 @@ import realSteCrossey3 from "../assets/real-stecrossey-3.jpeg";
 import realStGeoire1 from "../assets/real-stgeoire-1.jpeg";
 import realStGeoire2 from "../assets/real-stgeoire-2.jpeg";
 import realStGeoire3 from "../assets/real-stgeoire-3.jpeg";
+import realStPaulIzeaux1 from "../assets/real-stpaulizeaux-1.jpeg";
+import realStPaulIzeaux2 from "../assets/real-stpaulizeaux-2.jpeg";
+import realStPaulIzeaux3 from "../assets/real-stpaulizeaux-3.jpeg";
+import realStPaulIzeaux4 from "../assets/real-stpaulizeaux-4.jpeg";
+import realStPaulIzeaux5 from "../assets/real-stpaulizeaux-5.jpeg";
 const deptNames: Record<string, string> = {
   "01": "Ain",
   "03": "Allier",
@@ -109,6 +114,13 @@ const projects = [{
   title: "Accès carrossable en béton désactivé sur mesure",
   location: "Saint-Geoire-en-Valdaine (38)",
   description: "Réalisation d'un accès carrossable en béton désactivé, offrant une surface robuste et esthétique adaptée au passage des véhicules."
+}, {
+  images: [realStPaulIzeaux4, realStPaulIzeaux5, realStPaulIzeaux1, realStPaulIzeaux2, realStPaulIzeaux3],
+  category: ["maconnerie"],
+  categoryLabel: "Maçonnerie & Gros œuvre",
+  title: "Piscine à débordement en béton armé",
+  location: "Saint-Paul-d'Izeaux (38)",
+  description: "Construction d'une piscine à débordement en béton armé, du terrassement au coulage du radier et élévation des murs en parpaings avec local technique intégré."
 }, {
   images: ["https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80", "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"],
   category: ["plomberie"],
