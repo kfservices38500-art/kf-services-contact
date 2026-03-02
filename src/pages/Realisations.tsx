@@ -26,6 +26,11 @@ import realMaubec6 from "../assets/real-maubec-6.jpeg";
 import realMaubec7 from "../assets/real-maubec-7.jpeg";
 import realMaubec8 from "../assets/real-maubec-8.jpeg";
 import realMaubec9 from "../assets/real-maubec-9.jpeg";
+import realRoybon1 from "../assets/real-roybon-1.jpeg";
+import realRoybon2 from "../assets/real-roybon-2.jpeg";
+import realRoybon3 from "../assets/real-roybon-3.jpeg";
+import realRoybon4 from "../assets/real-roybon-4.jpeg";
+import realRoybon5 from "../assets/real-roybon-5.jpeg";
 const deptNames: Record<string, string> = {
   "01": "Ain",
   "03": "Allier",
@@ -78,12 +83,12 @@ const projects = [{
   location: "La Tronche (38)",
   description: "Conception et réalisation d'un carport en charpente bois avec bardage à claire-voie, intégré à l'environnement de la maison."
 }, {
-  images: ["https://images.unsplash.com/photo-1632759145905-98a82e3776a6?w=800&q=80", "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800&q=80", "https://images.unsplash.com/photo-1600566752734-2a0cd66c42f2?w=800&q=80"],
+  images: [realRoybon2, realRoybon5, realRoybon1, realRoybon4, realRoybon3],
   category: ["charpente"],
   categoryLabel: "Charpente/Couverture",
-  title: "Une charpente en chêne qui traversera les générations",
-  location: "Chambéry (73)",
-  description: "Charpente traditionnelle massive pour une maison neuve."
+  title: "Terrasses et ossatures bois pour une extension sur mesure",
+  location: "Roybon (38)",
+  description: "Création de terrasses surélevées et ossatures bois adossées à une maison existante, alliant structure porteuse et esthétique naturelle."
 }, {
   images: ["https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80", "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"],
   category: ["plomberie"],
