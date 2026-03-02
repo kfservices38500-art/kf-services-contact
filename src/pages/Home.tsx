@@ -549,13 +549,18 @@ const Home = () => {
           <ScrollReveal direction="right">
             <div className="relative rounded-3xl overflow-hidden h-full min-h-[400px]">
               <img src={servicesCardImg} alt="Remise des clés – KF Services" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 flex flex-col items-start gap-2.5">
-                {services.map((s, i) => (
-                  <span key={s.label} className={`inline-flex items-center px-5 py-2.5 bg-white/90 backdrop-blur-lg text-foreground text-sm font-semibold rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-xl cursor-default ${i === services.length - 1 ? 'self-end' : ''}`}>
-                    {s.label}
-                  </span>
-                ))}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5">
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4">
+                  <div className="flex flex-wrap gap-2">
+                    {services.map((s) => (
+                      <span key={s.label} className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-medium rounded-full transition-all duration-300 hover:bg-white/30 hover:border-white/40 cursor-default">
+                        <s.icon className="w-3.5 h-3.5 opacity-80" />
+                        {s.label}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </ScrollReveal>
