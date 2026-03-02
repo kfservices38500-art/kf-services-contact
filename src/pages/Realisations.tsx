@@ -179,27 +179,6 @@ const projects = [{
   title: "Aménagement d'une grange en habitation avec plancher bois",
   location: "Les Échelles (73)",
   description: "Transformation complète d'une grange en habitation : ouvertures en sous-œuvre dans les murs en pierres, coulage de dalle béton, création d'un plancher bois sur structure apparente et maçonnerie de reprise."
-}, {
-  images: ["https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80", "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"],
-  category: ["plomberie"],
-  categoryLabel: "Plomberie",
-  title: "-40% sur la facture de chauffage grâce à une pompe à chaleur",
-  location: "Annecy (74)",
-  description: "Installation d'une PAC air/eau avec nouveaux radiateurs."
-}, {
-  images: ["https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80", "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&q=80", "https://images.unsplash.com/photo-1600566752229-250ed79470f8?w=800&q=80"],
-  category: ["plomberie"],
-  categoryLabel: "Plomberie",
-  title: "Une salle de bain spa qui valorise l'appartement",
-  location: "Lyon 6ème (69)",
-  description: "Douche italienne, baignoire balnéo et finitions haut de gamme."
-}, {
-  images: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80", "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"],
-  category: ["autres"],
-  categoryLabel: "Gouttières",
-  title: "Des gouttières alu qui protègent les façades pour 25 ans",
-  location: "Tullins (38)",
-  description: "Installation sur mesure avec descentes décoratives."
 }];
 const Realisations = () => {
   const [searchParams] = useSearchParams();
