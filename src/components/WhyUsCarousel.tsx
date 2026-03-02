@@ -5,13 +5,14 @@ import KFButton from "./ui/KFButton";
 import whyusInterlocuteur from "@/assets/whyus-interlocuteur.jpg";
 import whyusBudget from "@/assets/whyus-budget.jpg";
 import whyusArtisans from "@/assets/whyus-artisans.jpg";
+import whyusPlan from "@/assets/whyus-plan.jpg";
 
 const whyUsSlides = [
   {
     tag: "Votre projet, simplifié",
     title: "Un plan clair dès le départ",
     description: "Vous obtenez une vision complète de votre projet avant le premier coup de pioche : choix des matériaux, planning détaillé et estimation précise. Vous savez exactement où vous allez.",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
+    image: whyusPlan,
     imageAlt: "Consultation chantier",
   },
   {
