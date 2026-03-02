@@ -12,6 +12,11 @@ import realIzeauxMac3 from "../assets/real-izeaux-mac-3.jpeg";
 import realIzeauxMac4 from "../assets/real-izeaux-mac-4.jpeg";
 import realIzeauxMac5 from "../assets/real-izeaux-mac-5.jpeg";
 import realIzeauxMac6 from "../assets/real-izeaux-mac-6.jpeg";
+import realLaTroncheCharp1 from "../assets/real-latronche-charp-1.jpeg";
+import realLaTroncheCharp2 from "../assets/real-latronche-charp-2.jpeg";
+import realLaTroncheCharp3 from "../assets/real-latronche-charp-3.jpeg";
+import realLaTroncheCharp4 from "../assets/real-latronche-charp-4.jpeg";
+import realLaTroncheCharp5 from "../assets/real-latronche-charp-5.jpeg";
 const deptNames: Record<string, string> = {
   "01": "Ain",
   "03": "Allier",
@@ -57,12 +62,12 @@ const projects = [{
   location: "Grenoble (38)",
   description: "40 m² supplémentaires avec baies vitrées et toiture terrasse."
 }, {
-  images: ["https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80", "https://images.unsplash.com/photo-1635424710928-0544e8512eae?w=800&q=80", "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80"],
+  images: [realLaTroncheCharp1, realLaTroncheCharp2, realLaTroncheCharp3, realLaTroncheCharp4, realLaTroncheCharp5],
   category: "charpente",
   categoryLabel: "Charpente/Couverture",
-  title: "Fini les infiltrations : une toiture neuve pour 30 ans",
-  location: "Moirans (38)",
-  description: "Couverture ardoise intégralement remplacée avec isolation par l'extérieur."
+  title: "Un abri voiture en bois sur mesure, esthétique et durable",
+  location: "La Tronche (38)",
+  description: "Conception et réalisation d'un carport en charpente bois avec bardage à claire-voie, intégré à l'environnement de la maison."
 }, {
   images: ["https://images.unsplash.com/photo-1632759145905-98a82e3776a6?w=800&q=80", "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800&q=80", "https://images.unsplash.com/photo-1600566752734-2a0cd66c42f2?w=800&q=80"],
   category: "charpente",
