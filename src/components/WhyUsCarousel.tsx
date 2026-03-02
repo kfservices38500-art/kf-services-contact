@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import KFButton from "./ui/KFButton";
 import whyusInterlocuteur from "@/assets/whyus-interlocuteur.jpg";
 import whyusBudget from "@/assets/whyus-budget.jpg";
+import whyusArtisans from "@/assets/whyus-artisans.jpg";
 
 const whyUsSlides = [
   {
@@ -17,7 +18,7 @@ const whyUsSlides = [
     tag: "Qualité garantie",
     title: "Des artisans qualifiés sur chaque poste",
     description: "Chaque intervenant est sélectionné pour son expertise métier. Maçons, couvreurs, plombiers : vous avez accès à des spécialistes expérimentés qui maîtrisent leur domaine.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    image: whyusArtisans,
     imageAlt: "Artisan qualifié au travail",
   },
   {
