@@ -11,11 +11,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             {/* Brand */}
             <div className="md:col-span-1">
-              <img
-                src={logoKF}
-                alt="KF Services"
-                className="h-14 w-auto mb-4 brightness-0 invert"
-              />
+              <Link to="/">
+                <img
+                  src={logoKF}
+                  alt="KF Services"
+                  className="h-14 w-auto mb-4 brightness-0 invert transition-transform duration-300 hover:scale-110"
+                />
+              </Link>
               <p className="text-base text-white/70">
                 Fort de plus de 20 ans d'expertise, KF Services vous accompagne pour vos projets de construction et rénovation en Auvergne-Rhône-Alpes.
               </p>
