@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import KFButton from "./ui/KFButton";
 import whyusInterlocuteur from "@/assets/whyus-interlocuteur.jpg";
+import whyusBudget from "@/assets/whyus-budget.jpg";
 
 const whyUsSlides = [
   {
@@ -23,8 +24,8 @@ const whyUsSlides = [
     tag: "Zéro surprise",
     title: "Un budget respecté, sans mauvaise surprise",
     description: "Le devis que vous signez est le prix que vous payez. Pas de coûts cachés, pas de surcharge en cours de chantier. Vous gardez le contrôle de votre budget du début à la fin.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
-    imageAlt: "Devis et budget maîtrisé",
+    image: whyusBudget,
+    imageAlt: "Budget maîtrisé avec devis",
   },
   {
     tag: "Un seul interlocuteur",
