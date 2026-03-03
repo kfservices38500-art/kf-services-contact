@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
 import arrowsDown from "../assets/arrows-down.svg";
@@ -181,6 +181,12 @@ const projects = [{
   description: "Transformation complète d'une grange en habitation : ouvertures en sous-œuvre dans les murs en pierres, coulage de dalle béton, création d'un plancher bois sur structure apparente et maçonnerie de reprise."
 }];
 const Realisations = () => {
+  useEffect(() => {
+    document.title = "Nos réalisations | Chantiers BTP à Voiron – KF Services";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Découvrez les chantiers réalisés par KF Services en Auvergne–Rhône-Alpes : maçonnerie, charpente, couverture. Un savoir-faire prouvé sur le terrain.");
+  }, []);
+
   const [searchParams] = useSearchParams();
   const initialCategory = searchParams.get("category") || "all";
   const deptFilter = searchParams.get("dept") || null;

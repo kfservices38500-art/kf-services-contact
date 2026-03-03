@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 
 const PolitiqueConfidentialite = () => {
+  useEffect(() => {
+    document.title = "Politique de confidentialité – KF Services";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Découvrez comment KF Services collecte, utilise et protège vos données personnelles conformément au RGPD. Contact : contact@kf-services.fr.");
+  }, []);
+
   return (
     <div className="py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
