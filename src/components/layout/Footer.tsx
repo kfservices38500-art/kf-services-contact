@@ -91,6 +91,9 @@ const Footer = () => {
             <Link to="/politique-confidentialite" className="hover:text-white transition-colors">Politique de confidentialité</Link>
           </div>
         </div>
+        <div className="text-center text-xs text-white/35 mt-4">
+          Site créé par <a href="https://novavisio.ch" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Nova Visio</a>
+        </div>
       </div>
     </footer>
   );
