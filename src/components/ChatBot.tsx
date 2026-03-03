@@ -1,15 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, Bot, User } from "lucide-react";
+import { MessageCircle, X, Send, Bot, User, Wrench, FileText, MapPin } from "lucide-react";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat`;
 
 const suggestions = [
-  "Quels services proposez-vous ?",
-  "Comment obtenir un devis gratuit ?",
-  "Quelle est votre zone d'intervention ?",
+  { text: "Quels services proposez-vous ?", icon: Wrench },
+  { text: "Comment obtenir un devis gratuit ?", icon: FileText },
+  { text: "Quelle est votre zone d'intervention ?", icon: MapPin },
 ];
 
 const ChatBot = () => {
@@ -116,7 +116,7 @@ const ChatBot = () => {
             exit={{ scale: 0 }}
             whileHover={{ scale: 1.1 }}
             onClick={() => setOpen(true)}
-            className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full btn-gradient shadow-[0_8px_25px_-5px_hsl(0_78%_45%/0.4)] flex items-center justify-center"
+            className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full btn-gradient shadow-[0_8px_25px_-5px_hsl(0_78%_45%/0.4)] flex items-center justify-center"
           >
             <MessageCircle className="w-6 h-6 text-white" />
           </motion.button>
@@ -131,7 +131,7 @@ const ChatBot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-background rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-border flex flex-col overflow-hidden"
+            className="fixed bottom-6 right-6 z-[9999] w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-background rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-border flex flex-col overflow-hidden isolation-auto"
           >
             {/* Header */}
             <div className="gradient-red px-4 py-3 flex items-center justify-between shrink-0">
@@ -185,15 +185,20 @@ const ChatBot = () => {
               )}
               {/* Suggestions */}
               {showSuggestions && messages.length === 1 && (
-                <div className="flex flex-col gap-2 mt-2">
+                <div className="flex flex-col gap-2 mt-3">
                   {suggestions.map((s) => (
-                    <button
-                      key={s}
-                      onClick={() => { setInput(""); sendText(s); }}
-                      className="text-left text-sm px-3.5 py-2.5 rounded-xl border border-border bg-background hover:bg-muted transition-colors text-foreground"
+                    <motion.button
+                      key={s.text}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => { setInput(""); sendText(s.text); }}
+                      className="flex items-center gap-3 text-left text-sm px-4 py-3 rounded-xl bg-muted hover:bg-primary/10 transition-all duration-200 text-foreground font-medium group"
                     >
-                      {s}
-                    </button>
+                      <span className="w-8 h-8 rounded-lg gradient-red flex items-center justify-center shrink-0 group-hover:shadow-[0_4px_12px_-2px_hsl(0_78%_45%/0.4)] transition-shadow">
+                        <s.icon className="w-4 h-4 text-white" />
+                      </span>
+                      {s.text}
+                    </motion.button>
                   ))}
                 </div>
               )}
