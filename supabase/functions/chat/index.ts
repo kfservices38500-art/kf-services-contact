@@ -73,13 +73,66 @@ const SYSTEM_PROMPT = `Tu es l'assistant virtuel de KF Services, une entreprise 
 - Sois concis (3-4 phrases max sauf si le client demande des détails).
 - N'invente jamais de prix ou de tarifs. Dis que chaque projet est unique et qu'un devis personnalisé gratuit est nécessaire.`;
 
+// Simple in-memory rate limiting
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_WINDOW = 60000; // 1 minute
+const MAX_REQUESTS = 10;
+
+function checkRateLimit(clientId: string): boolean {
+  const now = Date.now();
+  const data = rateLimitMap.get(clientId);
+  if (!data || now > data.resetTime) {
+    rateLimitMap.set(clientId, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+    return true;
+  }
+  if (data.count >= MAX_REQUESTS) return false;
+  data.count++;
+  return true;
+}
+
+// Input validation
+function validateMessages(messages: unknown): { role: string; content: string }[] | null {
+  if (!Array.isArray(messages)) return null;
+  if (messages.length === 0 || messages.length > 50) return null;
+  for (const msg of messages) {
+    if (!msg || typeof msg !== "object") return null;
+    if (!["user", "assistant", "system"].includes(msg.role)) return null;
+    if (typeof msg.content !== "string" || msg.content.length === 0 || msg.content.length > 2000) return null;
+  }
+  return messages as { role: string; content: string }[];
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
-    const { messages } = await req.json();
+    // Rate limiting
+    const clientId = req.headers.get("x-forwarded-for") || req.headers.get("cf-connecting-ip") || "unknown";
+    if (!checkRateLimit(clientId)) {
+      return new Response(JSON.stringify({ error: "Trop de requêtes, veuillez réessayer dans quelques instants." }), {
+        status: 429,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    // Input validation
+    const body = await req.json();
+    const messages = validateMessages(body?.messages);
+    if (!messages) {
+      return new Response(JSON.stringify({ error: "Format de requête invalide." }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
+    if (!LOVABLE_API_KEY) {
+      console.error("LOVABLE_API_KEY is not configured");
+      return new Response(JSON.stringify({ error: "Service temporairement indisponible." }), {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
@@ -98,22 +151,10 @@ serve(async (req) => {
     });
 
     if (!response.ok) {
-      if (response.status === 429) {
-        return new Response(JSON.stringify({ error: "Trop de requêtes, veuillez réessayer dans quelques instants." }), {
-          status: 429,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
-      }
-      if (response.status === 402) {
-        return new Response(JSON.stringify({ error: "Service temporairement indisponible." }), {
-          status: 402,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
-      }
       const t = await response.text();
       console.error("AI gateway error:", response.status, t);
-      return new Response(JSON.stringify({ error: "Erreur du service IA" }), {
-        status: 500,
+      return new Response(JSON.stringify({ error: "Service temporairement indisponible. Veuillez réessayer." }), {
+        status: response.status === 429 ? 429 : 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
@@ -123,7 +164,7 @@ serve(async (req) => {
     });
   } catch (e) {
     console.error("chat error:", e);
-    return new Response(JSON.stringify({ error: e instanceof Error ? e.message : "Erreur inconnue" }), {
+    return new Response(JSON.stringify({ error: "Une erreur est survenue. Veuillez réessayer." }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
