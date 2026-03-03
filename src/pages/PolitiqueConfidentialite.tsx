@@ -98,7 +98,7 @@ const PolitiqueConfidentialite = () => {
             <section>
               <h2 className="text-lg font-semibold text-foreground mb-2">10. Mise à jour</h2>
               <p>
-                La présente politique de confidentialité peut être mise à jour à tout moment. La date de dernière mise à jour est : <strong>mars 2025</strong>.
+                La présente politique de confidentialité peut être mise à jour à tout moment. La date de dernière mise à jour est : <strong>mars 2026</strong>.
               </p>
             </section>
           </div>
