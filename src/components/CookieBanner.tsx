@@ -39,10 +39,13 @@ const CookieBanner = () => {
                 <Cookie className="w-4.5 h-4.5 text-primary" />
               </div>
               <div className="flex-1">
-                <p className="text-sm text-background/80 leading-relaxed">
-                  Ce site utilise des cookies pour améliorer votre expérience de navigation.
+                <p className="text-sm font-semibold text-background mb-1">
+                  🍪 Nous utilisons des cookies
                 </p>
-                <div className="flex items-center gap-2 mt-4">
+                <p className="text-xs text-background/65 leading-relaxed">
+                  Ce site utilise des cookies essentiels au fonctionnement et des cookies d'analyse pour améliorer votre expérience. Aucune donnée personnelle n'est revendue à des tiers. En cliquant sur « Accepter », vous consentez à l'utilisation de l'ensemble des cookies.
+                </p>
+                <div className="flex items-center gap-2 mt-3">
                   <button
                     onClick={accept}
                     className="btn-gradient px-5 py-2 rounded-full text-sm font-semibold"
