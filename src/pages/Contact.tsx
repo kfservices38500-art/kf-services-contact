@@ -1,9 +1,16 @@
+import { useEffect } from "react";
 import { Phone, Mail, MapPin, Clock, CalendarCheck, FileText, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm";
 import ScrollReveal from "../components/animations/ScrollReveal";
 import contactIcon from "@/assets/contact-icon.svg";
 const Contact = () => {
+  useEffect(() => {
+    document.title = "Contact & devis gratuit | KF Services – Voiron (38)";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Demandez un devis gratuit sous 48 h à KF Services. Rénovation et travaux BTP à Voiron et en Auvergne–Rhône-Alpes. Appelez le 06 69 20 97 88.");
+  }, []);
+
   return <div>
       {/* Hero */}
       <section className="gradient-red pt-16 md:pt-24 pb-8 md:pb-10 overflow-hidden">

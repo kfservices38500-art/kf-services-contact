@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 
 const MentionsLegales = () => {
+  useEffect(() => {
+    document.title = "Mentions légales – KF Services";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Mentions légales du site KF Services : raison sociale, SIRET, siège social, hébergeur et directeur de publication.");
+  }, []);
+
   return (
     <div className="py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
