@@ -9,6 +9,7 @@ import Realisations from "./pages/Realisations";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import CookieBanner from "./components/CookieBanner";
+import ChatBot from "./components/ChatBot";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         </main>
         <Footer />
         <CookieBanner />
+        <ChatBot />
       </div>
     </BrowserRouter>
   );
