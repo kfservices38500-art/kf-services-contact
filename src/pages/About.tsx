@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Shield, FileCheck, Award, Scale, Target, Heart, Eye, User } from "lucide-react";
 import { motion } from "framer-motion";
@@ -75,6 +76,12 @@ const certifications = [{
   desc: "Des travaux en conformité selon les règles pour garantir qualité, durabilité et sécurité de votre bien."
 }];
 const About = () => {
+  useEffect(() => {
+    document.title = "À propos de KF Services | Rénovation à Voiron (38)";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Découvrez KF Services : plus de 20 ans d'expérience en rénovation, maçonnerie et charpente à Voiron. Un interlocuteur unique pour tous vos travaux.");
+  }, []);
+
   return <div>
       {/* Hero */}
       <section className="bg-muted py-16 md:py-24">
