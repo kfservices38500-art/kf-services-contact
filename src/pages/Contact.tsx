@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, CalendarCheck, FileText, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm";
@@ -61,7 +62,7 @@ const Contact = () => {
               delay: 1
             }
           }} className="hidden lg:block flex-shrink-0">
-              <img src={contactIcon} alt="Contact" className="w-[500px] h-[500px] object-contain brightness-0 invert" />
+              <img src={contactIcon} alt="Icône contact – demandez un devis gratuit à KF Services" className="w-[500px] h-[500px] object-contain brightness-0 invert" />
             </motion.div>
           </div>
         </div>
@@ -115,6 +116,11 @@ const Contact = () => {
               <p className="text-sm text-white/80">
                 Intervention dans toute la région Auvergne-Rhône-Alpes : Isère, Savoie, Haute-Savoie, Rhône, Drôme, Ain et tous les départements de la région. 
               </p>
+            </div>
+            <div className="mt-4">
+              <Link to="/realisations" className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:underline">
+                Voir nos réalisations →
+              </Link>
             </div>
           </ScrollReveal>
 

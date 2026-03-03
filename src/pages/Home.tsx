@@ -25,32 +25,32 @@ import budgetMaitriseImg from "../assets/budget-maitrise-new.jpg";
 import servicesCardImg from "../assets/services-card.jpg";
 const heroImages = [{
   src: hero1,
-  alt: "Maçonnerie et gros œuvre – piscine béton",
+  alt: "Maçonnerie et construction de piscine béton à Voiron – KF Services",
   left: { icon: "Shield", text: "Garantie décennale incluse" },
   right: { icon: "CheckCircle2", text: "Solidité & durabilité" },
 }, {
   src: hero2,
-  alt: "Charpente – fermettes bois",
+  alt: "Charpente fermettes bois en Isère – KF Services",
   left: { icon: "Award", text: "Artisans certifiés RGE" },
   right: { icon: "Shield", text: "Toiture protégée 30 ans" },
 }, {
   src: hero3,
-  alt: "Maçonnerie – dalle béton",
+  alt: "Dalle béton armé pour maison neuve – KF Services Voiron",
   left: { icon: "FileCheck", text: "Devis gratuit sous 48h" },
   right: { icon: "Scale", text: "Prix fixe sans surprise" },
 }, {
   src: hero4,
-  alt: "Carport bois avec claustra",
+  alt: "Carport bois avec claustra sur mesure – KF Services",
   left: { icon: "Star", text: "Finitions sur mesure" },
   right: { icon: "CheckCircle2", text: "Bois sélectionné avec soin" },
 }, {
   src: hero5,
-  alt: "Rénovation façade pierre",
+  alt: "Rénovation de façade en pierre en Auvergne-Rhône-Alpes – KF Services",
   left: { icon: "Award", text: "+20 ans d'expérience" },
   right: { icon: "MapPin", text: "Auvergne-Rhône-Alpes" },
 }, {
   src: hero6,
-  alt: "Rénovation intérieure – structure bois",
+  alt: "Rénovation intérieure avec structure bois – KF Services Voiron",
   left: { icon: "Users", text: "Un seul interlocuteur" },
   right: { icon: "Shield", text: "Chantier assuré & suivi" },
 }];
@@ -142,19 +142,23 @@ const guarantees = [{
 const portfolioItems = [{
   img: servicesMaconnerie,
   title: "Maçonnerie & Construction",
-  desc: "Des murs solides et des extensions qui augmentent la surface habitable."
+  desc: "Des murs solides et des extensions qui augmentent la surface habitable.",
+  alt: "Chantier de maçonnerie et construction en Isère – KF Services"
 }, {
   img: servicesCharpente,
   title: "Charpente & Couverture",
-  desc: "Une toiture qui vous met à l'abri pour des décennies."
+  desc: "Une toiture qui vous met à l'abri pour des décennies.",
+  alt: "Charpente et couverture de toiture en Auvergne-Rhône-Alpes – KF Services"
 }, {
   img: servicesGouttieres,
   title: "Gouttières Aluminium",
-  desc: "Des gouttières sur mesure qui protègent vos façades."
+  desc: "Des gouttières sur mesure qui protègent vos façades.",
+  alt: "Pose de gouttières aluminium sur mesure – KF Services Voiron"
 }, {
   img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
   title: "Plomberie & Chauffage",
-  desc: "Un confort thermique optimal et des économies d'énergie."
+  desc: "Un confort thermique optimal et des économies d'énergie.",
+  alt: "Installation plomberie et chauffage – KF Services Voiron"
 }];
 const processSteps = [{
   num: "01",
@@ -509,7 +513,7 @@ const Home = () => {
           {/* Left - Photo with overlay */}
           <ScrollReveal direction="left">
             <div className="relative rounded-3xl overflow-hidden h-full min-h-[400px]">
-              <img src={budgetMaitriseImg} alt="Budget maîtrisé – devis signé sur chantier" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={budgetMaitriseImg} alt="Devis signé sur chantier – budget maîtrisé par KF Services" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md rounded-2xl p-5">
                 <h3 className="text-xl md:text-2xl font-bold leading-tight">
@@ -551,7 +555,7 @@ const Home = () => {
           {/* Right - Photo with service tags */}
           <ScrollReveal direction="right">
             <div className="relative rounded-3xl overflow-hidden h-full min-h-[400px]">
-              <img src={servicesCardImg} alt="Remise des clés – KF Services" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={servicesCardImg} alt="Remise des clés après travaux de rénovation – KF Services Voiron" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
                 {services.map((s) => (
@@ -656,7 +660,7 @@ const Home = () => {
               y: -5,
               boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)"
             }} className="bg-background rounded-3xl overflow-hidden shadow-sm">
-                  <img src={item.img} alt={item.title} className="w-full aspect-[4/3] object-cover" />
+                  <img src={item.img} alt={item.alt || item.title} className="w-full aspect-[4/3] object-cover" />
                   <div className="p-5">
                     <h3 className="font-bold text-base mb-1">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.desc}</p>

@@ -14,6 +14,7 @@ const servicesData = [{
   description: "Vous bénéficiez de structures solides qui supportent vos projets sur le long terme. Murs, dalles et extensions sont conçus pour que votre maison reste stable, sûre et prête à évoluer avec vos besoins.",
   benefits: ["Des murs porteurs et cloisons qui garantissent la solidité de votre bâti", "Des fondations et dallages dimensionnés pour durer des décennies", "Des extensions qui ajoutent de l'espace et de la valeur à votre bien", "Une rénovation de façade qui redonne vie à votre extérieur", "Des ouvertures de murs réalisées en toute sécurité structurelle", "Des terrasses qui prolongent votre espace de vie à l'extérieur"],
   image: servicesMaconnerie,
+  imageAlt: "Travaux de maçonnerie et gros œuvre à Voiron – KF Services",
   category: "maconnerie"
 }, {
   title: "Charpente & Couverture",
@@ -21,6 +22,7 @@ const servicesData = [{
   description: "Vous êtes protégé pour les 30 prochaines années. Notre expertise en charpente traditionnelle et couverture vous garantit une toiture étanche, isolée et durable.",
   benefits: ["Une charpente en bois massif qui résiste au temps et aux contraintes", "Une couverture étanche qui élimine tout risque d'infiltration", "Une rénovation complète qui redonne sa solidité à votre toit", "Une isolation par l'extérieur qui réduit vos factures d'énergie", "Une zinguerie soignée qui protège vos murs des eaux de ruissellement", "Des fenêtres de toit qui apportent lumière et ventilation naturelle"],
   image: servicesCharpente2,
+  imageAlt: "Charpente traditionnelle et couverture tuiles en Isère – KF Services",
   category: "charpente"
 }, {
   title: "Gouttières Aluminium",
@@ -28,6 +30,7 @@ const servicesData = [{
   description: "Vous protégez vos façades et fondations des dégâts des eaux grâce à un système d'évacuation durable, esthétique et sans entretien pendant des années.",
   benefits: ["Des gouttières sur mesure qui s'intègrent parfaitement à votre toiture", "Des descentes d'eau qui éloignent efficacement l'eau de vos fondations", "Des raccordements étanches qui éliminent les fuites", "Un entretien qui prolonge la durée de vie de votre installation", "Une réparation rapide pour stopper les infiltrations en urgence", "Une protection anti-feuilles pour éviter les bouchons et débordements"],
   image: servicesGouttieres2,
+  imageAlt: "Gouttières aluminium sur mesure – KF Services Voiron",
   category: "gouttieres"
 }, {
   title: "Plomberie & chauffage",
@@ -35,6 +38,7 @@ const servicesData = [{
   description: "Grâce à des installations modernes, fiables et adaptées à votre habitat, vous gagnez en confort au quotidien et vous réduisez vos dépenses énergétiques.",
   benefits: ["Des sanitaires fonctionnels et esthétiques dès le premier jour", "Un chauffage performant qui répartit la chaleur uniformément", "Une pompe à chaleur qui divise vos factures de chauffage", "Un air sain grâce à une VMC bien dimensionnée pour votre logement", "Un dépannage rapide qui limite les dégâts en cas d'urgence", "Une mise aux normes qui sécurise votre installation"],
   image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80",
+  imageAlt: "Plomberie et chauffage – installation et rénovation par KF Services",
   category: "plomberie"
 }, {
   title: "Construction neuve & Rénovation globale",
@@ -42,6 +46,7 @@ const servicesData = [{
   description: "Évitez la complexité et gagnez du temps, de l'argent et de la tranquillité en confiant l'ensemble de votre projet à un seul interlocuteur de la conception à la livraison : KF Services",
   benefits: ["Une maison neuve clé en main, conforme à vos plans et à votre budget", "Une rénovation complète qui transforme votre intérieur sans tracas", "Une transformation de locaux adaptée à votre nouveau besoin", "Une mise en conformité qui protège votre bien et ses occupants", "Une coordination de tous les corps de métier — zéro stress pour vous", "Un suivi de chantier régulier pour que vous restiez informé à chaque étape"],
   image: servicesConstruction,
+  imageAlt: "Construction neuve et rénovation globale – KF Services Auvergne-Rhône-Alpes",
   category: "neuf-renovation"
 }];
 const Services = () => {
@@ -103,7 +108,7 @@ const Services = () => {
                 scale: 1.03
               }} transition={{
                 duration: 0.5
-              }} src={service.image} alt={service.title} className="w-full aspect-[4/3] object-cover" />
+              }} src={service.image} alt={service.imageAlt || service.title} className="w-full aspect-[4/3] object-cover" />
                 </div>
               </ScrollReveal>
             </div>)}
