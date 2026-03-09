@@ -31,9 +31,9 @@ const CookieBanner = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-50"
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-lg z-50"
         >
-          <div className="bg-foreground/95 backdrop-blur-xl text-background rounded-2xl p-5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)]">
+          <div className="backdrop-blur-xl text-white rounded-2xl p-5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]" style={{ background: "linear-gradient(135deg, hsl(0 0% 18%), hsl(0 0% 8%))" }}>
             <div className="flex items-start gap-3">
               <div className="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-0.5">
                 <Cookie className="w-4.5 h-4.5 text-primary" />
