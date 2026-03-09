@@ -39,12 +39,12 @@ const CookieBanner = () => {
                 <Cookie className="w-4.5 h-4.5 text-primary" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-semibold text-background mb-1">
+                <p className="text-sm font-semibold text-white mb-1">
                   🍪 Nous utilisons des cookies
                 </p>
-                <p className="text-xs text-background/65 leading-relaxed">
+                <p className="text-xs text-white/65 leading-relaxed">
                   Ce site utilise des cookies essentiels au fonctionnement. Aucune donnée personnelle n'est revendue à des tiers. Consultez notre{" "}
-                  <a href="/politique-confidentialite" className="underline hover:text-background transition-colors">politique de confidentialité</a>.
+                  <a href="/politique-confidentialite" className="underline hover:text-white transition-colors">politique de confidentialité</a>.
                 </p>
                 <div className="flex items-center gap-2 mt-3">
                   <button
@@ -55,7 +55,7 @@ const CookieBanner = () => {
                   </button>
                   <button
                     onClick={decline}
-                    className="px-5 py-2 rounded-full text-sm font-semibold text-background/60 hover:text-background transition-colors"
+                    className="px-5 py-2 rounded-full text-sm font-semibold text-white/60 hover:text-white transition-colors"
                   >
                     Refuser
                   </button>
