@@ -142,11 +142,6 @@ const portfolioItems = [{
   desc: "Une toiture qui vous met à l'abri pour des décennies.",
   alt: "Charpente et couverture de toiture en Auvergne-Rhône-Alpes – KF Services"
 }, {
-  img: servicesGouttieres,
-  title: "Gouttières Aluminium",
-  desc: "Des gouttières sur mesure qui protègent vos façades.",
-  alt: "Pose de gouttières aluminium sur mesure – KF Services Voiron"
-}, {
   img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
   title: "Plomberie & Chauffage",
   desc: "Un confort thermique optimal et des économies d'énergie.",
