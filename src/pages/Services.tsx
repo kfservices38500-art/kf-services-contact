@@ -25,14 +25,6 @@ const servicesData = [{
   imageAlt: "Charpente traditionnelle et couverture tuiles en Isère – KF Services",
   category: "charpente"
 }, {
-  title: "Gouttières Aluminium",
-  emoji: "💧",
-  description: "Vous protégez vos façades et fondations des dégâts des eaux grâce à un système d'évacuation durable, esthétique et sans entretien pendant des années.",
-  benefits: ["Des gouttières sur mesure qui s'intègrent parfaitement à votre toiture", "Des descentes d'eau qui éloignent efficacement l'eau de vos fondations", "Des raccordements étanches qui éliminent les fuites", "Un entretien qui prolonge la durée de vie de votre installation", "Une réparation rapide pour stopper les infiltrations en urgence", "Une protection anti-feuilles pour éviter les bouchons et débordements"],
-  image: servicesGouttieres2,
-  imageAlt: "Gouttières aluminium sur mesure – KF Services Voiron",
-  category: "gouttieres"
-}, {
   title: "Plomberie & chauffage",
   emoji: "🔧",
   description: "Grâce à des installations modernes, fiables et adaptées à votre habitat, vous gagnez en confort au quotidien et vous réduisez vos dépenses énergétiques.",
