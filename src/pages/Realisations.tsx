@@ -99,6 +99,9 @@ const categories = [{
   key: "plomberie",
   label: "Plomberie"
 }, {
+  key: "renovation",
+  label: "Rénovation"
+}, {
   key: "autres",
   label: "Autres"
 }];
