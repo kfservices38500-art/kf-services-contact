@@ -6,7 +6,7 @@ import ParallaxSection from "../components/animations/ParallaxSection";
 import KFButton from "../components/ui/KFButton";
 import servicesMaconnerie from "../assets/services-maconnerie.jpg";
 import servicesCharpente2 from "../assets/services-charpente-2.jpg";
-import servicesGouttieres2 from "../assets/services-gouttieres-2.jpg";
+
 import servicesConstruction from "../assets/services-construction.jpg";
 const servicesData = [{
   title: "Maçonnerie",
