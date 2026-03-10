@@ -78,11 +78,6 @@ const serviceCards = [{
   subtitle: "PROTECTION & ISOLATION",
   benefits: ["Une toiture étanche qui vous protège des intempéries", "Une isolation performante qui réduit vos factures d'énergie", "Des matériaux durables pour 30 ans de tranquillité", "Zinguerie et étanchéité pour zéro infiltration"]
 }, {
-  icon: Droplets,
-  title: "GOUTTIÈRES ALUMINIUM",
-  subtitle: "ÉVACUATION & ÉTANCHÉITÉ",
-  benefits: ["Des gouttières sur mesure intégrées à votre toiture", "Des raccordements étanches qui éliminent les fuites", "Une protection durable de vos façades et fondations"]
-}, {
   icon: Wrench,
   title: "PLOMBERIE & CHAUFFAGE",
   subtitle: "CONFORT & ÉCONOMIES",
