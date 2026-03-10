@@ -14,6 +14,7 @@ import ChantierIcon from "../assets/Chantier.svg";
 import WorkersIcon from "../assets/Workers.svg";
 import servicesMaconnerie from "../assets/services-maconnerie.jpg";
 import servicesCharpente from "../assets/services-charpente.jpg";
+import servicesConstruction from "../assets/services-construction.jpg";
 
 import hero1 from "../assets/hero-1.jpeg";
 import hero2 from "../assets/hero-2.jpeg";
@@ -146,6 +147,11 @@ const portfolioItems = [{
   title: "Plomberie & Chauffage",
   desc: "Un confort thermique optimal et des économies d'énergie.",
   alt: "Installation plomberie et chauffage – KF Services Voiron"
+}, {
+  img: servicesConstruction,
+  title: "Neuf & Rénovation",
+  desc: "Un projet clé en main, de la conception à la livraison.",
+  alt: "Construction neuve et rénovation globale – KF Services"
 }];
 const processSteps = [{
   num: "01",
