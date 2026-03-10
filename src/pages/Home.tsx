@@ -146,6 +146,11 @@ const portfolioItems = [{
   title: "Plomberie & Chauffage",
   desc: "Un confort thermique optimal et des économies d'énergie.",
   alt: "Installation plomberie et chauffage – KF Services Voiron"
+}, {
+  img: servicesConstruction,
+  title: "Neuf & Rénovation",
+  desc: "Un projet clé en main, de la conception à la livraison.",
+  alt: "Construction neuve et rénovation globale – KF Services"
 }];
 const processSteps = [{
   num: "01",
