@@ -32,7 +32,7 @@ const heroImages = [{
 }, {
   src: hero2,
   alt: "Charpente fermettes bois en Isère – KF Services",
-  left: { icon: "Award", text: "Artisans certifiés RGE" },
+  left: { icon: "Award", text: "Artisans qualifiés" },
   right: { icon: "Shield", text: "Toiture protégée 30 ans" },
 }, {
   src: hero3,
