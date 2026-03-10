@@ -14,6 +14,7 @@ import ChantierIcon from "../assets/Chantier.svg";
 import WorkersIcon from "../assets/Workers.svg";
 import servicesMaconnerie from "../assets/services-maconnerie.jpg";
 import servicesCharpente from "../assets/services-charpente.jpg";
+import servicesConstruction from "../assets/services-construction.jpg";
 
 import hero1 from "../assets/hero-1.jpeg";
 import hero2 from "../assets/hero-2.jpeg";
