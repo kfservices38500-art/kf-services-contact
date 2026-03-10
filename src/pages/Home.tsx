@@ -580,10 +580,10 @@ const Home = () => {
               boxShadow: "0 20px 40px -15px rgba(0,0,0,0.15)"
             }} className="bg-background rounded-3xl overflow-hidden shadow-sm h-full flex flex-col">
                   {/* Gradient red header */}
-                  <div className="gradient-red p-6 pb-5 min-h-[140px] flex flex-col justify-end">
+                  <div className="gradient-red p-6 pb-5">
                     <card.icon className="w-8 h-8 text-white/80 mb-3" />
-                    <h3 className="text-white text-lg font-bold leading-tight line-clamp-2">{card.title}</h3>
-                    {card.subtitle && <p className="text-white/70 text-sm font-medium mt-1 line-clamp-1">{card.subtitle}</p>}
+                    <h3 className="text-white text-[15px] font-bold leading-tight whitespace-nowrap">{card.title}</h3>
+                    {card.subtitle && <p className="text-white/70 text-xs font-medium mt-1">{card.subtitle}</p>}
                   </div>
                   {/* Benefits */}
                   <div className="p-6 flex-1">
