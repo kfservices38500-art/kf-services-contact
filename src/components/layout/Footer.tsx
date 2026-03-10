@@ -50,7 +50,7 @@ const Footer = () => {
                 {[
                   { label: "Maçonnerie", hash: "maconnerie" },
                   { label: "Charpente & Couverture", hash: "charpente" },
-                  { label: "Gouttières Aluminium", hash: "gouttieres" },
+                  
                   { label: "Plomberie", hash: "plomberie" },
                   { label: "Neuf & Rénovation", hash: "neuf-renovation" },
                 ].map((service) => (

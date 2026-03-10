@@ -115,7 +115,7 @@ const projects = [{
   categoryLabel: "Maçonnerie & Charpente",
   title: "Construction complète : maçonnerie et charpente couverture",
   location: "Maubec (38)",
-  description: "Élévation des murs en parpaings, pose de la charpente industrielle, couverture ardoises et finitions gouttières pour une maison neuve de plain-pied."
+  description: "Élévation des murs en parpaings, pose de la charpente industrielle et couverture ardoises pour une maison neuve de plain-pied."
 }, {
   images: [realLaTroncheCharp1, realLaTroncheCharp2, realLaTroncheCharp3, realLaTroncheCharp4, realLaTroncheCharp5],
   category: ["charpente"],

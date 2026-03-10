@@ -25,7 +25,7 @@ const SYSTEM_PROMPT = `Tu es l'assistant virtuel de KF Services, une entreprise 
 1. **Maçonnerie & Gros œuvre** : Murs porteurs, cloisons, fondations, dallages, extensions, rénovation de façade, ouvertures de murs, terrasses, piscines béton
 2. **Charpente & Couverture** : Charpente bois massif traditionnelle, couverture étanche, rénovation toiture, isolation extérieure, zinguerie, fenêtres de toit, carports, abris de jardin
 3. **Plomberie & Chauffage** : Sanitaires, chauffage performant, pompes à chaleur, VMC, dépannage urgence, mise aux normes
-5. **Construction neuve & Rénovation globale** : Maison neuve clé en main, rénovation complète, transformation de locaux, mise en conformité, coordination tous corps de métier, suivi de chantier
+4. **Construction neuve & Rénovation globale** : Maison neuve clé en main, rénovation complète, transformation de locaux, mise en conformité, coordination tous corps de métier, suivi de chantier
 
 ## Garanties & Certifications
 - Assurance Décennale (10 ans)
