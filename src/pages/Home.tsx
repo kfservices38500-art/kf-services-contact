@@ -740,7 +740,7 @@ const Home = () => {
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 gradient-red pointer-events-none" />
                     {/* MapPin icon */}
                     <MapPin className="relative w-5 h-5 mx-auto mb-1.5 text-primary/40 transition-all duration-300 group-hover:text-white group-hover:scale-110" />
-                    <span className="relative text-3xl md:text-4xl font-black gradient-red-text block leading-none transition-all duration-300 group-hover:text-white group-hover:[-webkit-text-fill-color:white]">{d.code}</span>
+                    <span className="relative text-3xl md:text-4xl font-black block leading-none transition-all duration-300 gradient-red-text group-hover:[background:none] group-hover:text-white group-hover:[-webkit-text-fill-color:white]">{d.code}</span>
                     <p className="relative text-sm font-semibold text-muted-foreground mt-2 transition-colors duration-300 group-hover:text-white/90">{d.name}</p>
                   </motion.div>
                 </Link>
