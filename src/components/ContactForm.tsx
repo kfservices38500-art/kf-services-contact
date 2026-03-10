@@ -7,7 +7,7 @@ const projectTypes = [
   "Charpente & Couverture",
   "Plomberie",
   
-  "Rénovation complète",
+  "Rénovation",
   "Autre",
 ];
 
