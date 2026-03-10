@@ -71,7 +71,7 @@ const serviceCards = [{
   icon: Hammer,
   title: "MAÇONNERIE",
   subtitle: "SOLIDITÉ & DURABILITÉ",
-  benefits: ["Des fondations et murs solides pour un bâti durable", "Des extensions qui valorisent votre bien immobilier", "Une rénovation complète qui transforme votre intérieur"]
+  benefits: ["Des fondations et murs solides pour un bâti durable", "Des extensions qui valorisent votre bien immobilier", "Une rénovation complète qui transforme votre intérieur", "Des terrasses et ouvertures réalisées en toute sécurité"]
 }, {
   icon: HomeIcon,
   title: "CHARPENTE & COUVERTURE",
@@ -81,12 +81,12 @@ const serviceCards = [{
   icon: Wrench,
   title: "PLOMBERIE & CHAUFFAGE",
   subtitle: "CONFORT & ÉCONOMIES",
-  benefits: ["Des sanitaires fonctionnels dès le premier jour", "Un chauffage performant pour une chaleur homogène dans toute la maison", "Des économies d'énergie avec une pompe à chaleur adaptée", "Un air sain grâce à une VMC bien dimensionnée", "Un dépannage rapide"]
+  benefits: ["Des sanitaires fonctionnels dès le premier jour", "Un chauffage performant pour une chaleur homogène", "Des économies d'énergie avec une pompe à chaleur adaptée", "Un air sain grâce à une VMC bien dimensionnée"]
 }, {
   icon: Building2,
   title: "NEUF & RÉNOVATION",
   subtitle: "PROJET CLÉ EN MAIN",
-  benefits: ["Une maison neuve conforme à vos plans et votre budget", "Une rénovation complète sans tracas", "Un seul interlocuteur qui coordonne tous les corps de métier"]
+  benefits: ["Une maison neuve conforme à vos plans et votre budget", "Une rénovation complète sans tracas", "Un seul interlocuteur qui coordonne tous les corps de métier", "Un suivi de chantier régulier et transparent"]
 }];
 const testimonials = [{
   text: "Notre salle de bain est méconnaissable ! Délais tenus, budget respecté et une équipe toujours à l'écoute. On a gagné en confort au quotidien sans aucune mauvaise surprise.",
