@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { SmtpClient } from "https://deno.land/x/smtp@v0.7.0/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -20,15 +21,23 @@ interface ContactFormData {
 const rateLimitMap = new Map<string, number>();
 const RATE_LIMIT_MS = 30_000;
 
+const SMTP_CONFIG = {
+  hostname: "smtp.hostinger.com",
+  port: 587,
+  username: "contact@kf-services.fr",
+  from: "contact@kf-services.fr",
+  to: "contact@kf-services.fr",
+};
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    if (!RESEND_API_KEY) {
-      throw new Error("RESEND_API_KEY is not configured");
+    const SMTP_PASSWORD = Deno.env.get("SMTP_PASSWORD");
+    if (!SMTP_PASSWORD) {
+      throw new Error("SMTP_PASSWORD is not configured");
     }
 
     // Rate limiting by IP
@@ -70,6 +79,15 @@ serve(async (req) => {
     // Sanitize for HTML
     const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
+    // Create SMTP client
+    const client = new SmtpClient();
+    await client.connectTLS({
+      hostname: SMTP_CONFIG.hostname,
+      port: SMTP_CONFIG.port,
+      username: SMTP_CONFIG.username,
+      password: SMTP_PASSWORD,
+    });
+
     // 1. Notification email to owner
     const ownerHtml = `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;">
@@ -85,27 +103,14 @@ serve(async (req) => {
       </div>
     `;
 
-    const ownerRes = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${RESEND_API_KEY}`,
-      },
-      body: JSON.stringify({
-        from: "KF Services <noreply@kf-services.fr>",
-        to: ["contact@kf-services.fr"],
-        subject: `Nouvelle demande de devis – ${esc(firstName)} ${esc(lastName)}`,
-        html: ownerHtml,
-        reply_to: email,
-      }),
+    await client.send({
+      from: SMTP_CONFIG.from,
+      to: SMTP_CONFIG.to,
+      subject: `Nouvelle demande de devis – ${firstName} ${lastName}`,
+      content: "Nouvelle demande de devis",
+      html: ownerHtml,
+      headers: { "Reply-To": email },
     });
-
-    if (!ownerRes.ok) {
-      const errData = await ownerRes.text();
-      console.error("Resend owner email error:", errData);
-      throw new Error(`Failed to send owner notification [${ownerRes.status}]`);
-    }
-    await ownerRes.text();
 
     // 2. Confirmation email to client
     const clientHtml = `
@@ -138,27 +143,20 @@ serve(async (req) => {
       </div>
     `;
 
-    const clientRes = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${RESEND_API_KEY}`,
-      },
-      body: JSON.stringify({
-        from: "KF Services <noreply@kf-services.fr>",
-        to: [email],
+    try {
+      await client.send({
+        from: SMTP_CONFIG.from,
+        to: email,
         subject: "Votre demande de devis a bien été reçue – KF Services",
+        content: "Votre demande de devis a bien été reçue",
         html: clientHtml,
-      }),
-    });
-
-    if (!clientRes.ok) {
-      const errData = await clientRes.text();
-      console.error("Resend client email error:", errData);
+      });
+    } catch (clientEmailErr) {
+      console.error("SMTP client email error:", clientEmailErr);
       // Don't fail the whole request if client confirmation fails
-    } else {
-      await clientRes.text();
     }
+
+    await client.close();
 
     // Save to database
     try {
