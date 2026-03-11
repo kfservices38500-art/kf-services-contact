@@ -24,7 +24,7 @@ const stats = [{
 }];
 const timeline = [{
   year: "2003",
-  desc: "Notre gérant entre dans le métier — plus de 20 ans d'expérience à votre service"
+  desc: "Notre gérant entre dans le métier - plus de 20 ans d'expérience à votre service"
 }, {
   year: "2010",
   desc: "Spécialisation charpente-couverture pour mieux protéger votre toiture"
