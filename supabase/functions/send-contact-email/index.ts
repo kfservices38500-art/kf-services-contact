@@ -93,7 +93,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: "KF Services <noreply@kf-services.fr>",
-        to: ["contact@kf-services.fr"],
+        to: ["comonweb2.0@gmail.com"],
         subject: `Nouvelle demande de devis – ${esc(firstName)} ${esc(lastName)}`,
         html: ownerHtml,
         reply_to: email,
