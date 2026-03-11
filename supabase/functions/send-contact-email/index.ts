@@ -160,6 +160,24 @@ serve(async (req) => {
       await clientRes.text();
     }
 
+    // Save to database
+    try {
+      const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+      const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+      const sb = createClient(supabaseUrl, supabaseServiceKey);
+      await sb.from("contact_requests").insert({
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        phone,
+        project_type: projectType,
+        description,
+      });
+    } catch (dbErr) {
+      console.error("DB insert error:", dbErr);
+      // Don't fail the request if DB save fails
+    }
+
     return new Response(
       JSON.stringify({ success: true }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }

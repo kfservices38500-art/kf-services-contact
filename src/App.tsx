@@ -20,8 +20,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <JsonLd />
       <div className="min-h-screen flex flex-col">
         <Header />
+        <Breadcrumbs />
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -37,6 +39,7 @@ const App = () => {
         <Footer />
         <CookieBanner />
         <ChatBot />
+        <ClickToCall />
       </div>
     </BrowserRouter>
   );
