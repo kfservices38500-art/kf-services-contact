@@ -36,7 +36,7 @@ const timeline = [{
   desc: "Création de KF Services - un interlocuteur unique pour tous vos travaux"
 }, {
   year: "2023",
-  desc: "3 équipes spécialisées — des délais plus courts pour vos projets"
+  desc: "3 équipes spécialisées - des délais plus courts pour vos projets"
 }, {
   year: "2026",
   desc: "+300 chantiers livrés - autant de clients satisfaits"
