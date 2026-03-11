@@ -12,6 +12,9 @@ import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import NotFound from "./pages/NotFound";
 import CookieBanner from "./components/CookieBanner";
 import ChatBot from "./components/ChatBot";
+import ClickToCall from "./components/ClickToCall";
+import JsonLd from "./components/JsonLd";
+import Breadcrumbs from "./components/Breadcrumbs";
 
 const App = () => {
   return (
