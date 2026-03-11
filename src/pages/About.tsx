@@ -30,7 +30,7 @@ const timeline = [{
   desc: "Spécialisation charpente - couverture pour mieux protéger votre toiture"
 }, {
   year: "2015",
-  desc: "Élargissement des compétences — plomberie et chauffage intégrés à notre offre"
+  desc: "Élargissement des compétences - plomberie et chauffage intégrés à notre offre"
 }, {
   year: "2022",
   desc: "Création de KF Services — un interlocuteur unique pour tous vos travaux"
