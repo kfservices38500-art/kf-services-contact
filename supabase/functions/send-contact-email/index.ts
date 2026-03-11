@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { SmtpClient } from "https://deno.land/x/smtp@v0.7.0/mod.ts";
+import nodemailer from "npm:nodemailer@6.9.16";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -20,14 +20,6 @@ interface ContactFormData {
 // Rate limiting: track IPs
 const rateLimitMap = new Map<string, number>();
 const RATE_LIMIT_MS = 30_000;
-
-const SMTP_CONFIG = {
-  hostname: "smtp.hostinger.com",
-  port: 587,
-  username: "contact@kf-services.fr",
-  from: "contact@kf-services.fr",
-  to: "contact@kf-services.fr",
-};
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -79,13 +71,15 @@ serve(async (req) => {
     // Sanitize for HTML
     const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-    // Create SMTP client
-    const client = new SmtpClient();
-    await client.connectTLS({
-      hostname: SMTP_CONFIG.hostname,
-      port: SMTP_CONFIG.port,
-      username: SMTP_CONFIG.username,
-      password: SMTP_PASSWORD,
+    // Create nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      host: "smtp.hostinger.com",
+      port: 465,
+      secure: true, // SSL
+      auth: {
+        user: "contact@kf-services.fr",
+        pass: SMTP_PASSWORD,
+      },
     });
 
     // 1. Notification email to owner
@@ -103,13 +97,12 @@ serve(async (req) => {
       </div>
     `;
 
-    await client.send({
-      from: SMTP_CONFIG.from,
-      to: SMTP_CONFIG.to,
+    await transporter.sendMail({
+      from: '"KF Services" <contact@kf-services.fr>',
+      to: "contact@kf-services.fr",
+      replyTo: email,
       subject: `Nouvelle demande de devis – ${firstName} ${lastName}`,
-      content: "Nouvelle demande de devis",
       html: ownerHtml,
-      headers: { "Reply-To": email },
     });
 
     // 2. Confirmation email to client
@@ -144,19 +137,15 @@ serve(async (req) => {
     `;
 
     try {
-      await client.send({
-        from: SMTP_CONFIG.from,
+      await transporter.sendMail({
+        from: '"KF Services" <contact@kf-services.fr>',
         to: email,
         subject: "Votre demande de devis a bien été reçue – KF Services",
-        content: "Votre demande de devis a bien été reçue",
         html: clientHtml,
       });
     } catch (clientEmailErr) {
       console.error("SMTP client email error:", clientEmailErr);
-      // Don't fail the whole request if client confirmation fails
     }
-
-    await client.close();
 
     // Save to database
     try {
@@ -173,7 +162,6 @@ serve(async (req) => {
       });
     } catch (dbErr) {
       console.error("DB insert error:", dbErr);
-      // Don't fail the request if DB save fails
     }
 
     return new Response(
@@ -182,7 +170,6 @@ serve(async (req) => {
     );
   } catch (error: unknown) {
     console.error("send-contact-email error:", error);
-    const message = error instanceof Error ? error.message : "Erreur interne";
     return new Response(
       JSON.stringify({ error: "Une erreur est survenue lors de l'envoi. Veuillez réessayer." }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
