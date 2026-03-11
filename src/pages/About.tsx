@@ -27,7 +27,7 @@ const timeline = [{
   desc: "Notre gérant entre dans le métier - plus de 20 ans d'expérience à votre service"
 }, {
   year: "2010",
-  desc: "Spécialisation charpente-couverture pour mieux protéger votre toiture"
+  desc: "Spécialisation charpente - couverture pour mieux protéger votre toiture"
 }, {
   year: "2015",
   desc: "Élargissement des compétences — plomberie et chauffage intégrés à notre offre"
