@@ -74,7 +74,7 @@ const serviceCards = [{
   icon: Hammer,
   title: "MAÇONNERIE",
   subtitle: "SOLIDITÉ & DURABILITÉ",
-  benefits: ["Des fondations et murs solides pour un bâti durable", "Des extensions qui valorisent votre bien immobilier", "Une rénovation complète qui transforme votre intérieur", "Des terrasses et ouvertures réalisées en toute sécurité"]
+  benefits: ["Des fondations et murs solides pour un bâti durable", "Des extensions qui valorisent votre bien immobilier", "Une rénovation qui transforme votre intérieur", "Des terrasses et ouvertures réalisées en toute sécurité"]
 }, {
   icon: HomeIcon,
   title: "CHARPENTE & COUVERTURE",
