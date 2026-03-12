@@ -129,7 +129,7 @@ const Contact = () => {
           {/* Right: Form */}
           <ScrollReveal direction="right" className="lg:col-span-3">
             <div className="bg-background border-2 border-border rounded-3xl p-6 md:p-10">
-              <h2 className="text-xl md:text-2xl font-bold mb-2">Décrivez votre <span className="gradient-red-text">projet</span></h2>
+              <h2 className="text-xl md:text-2xl font-bold mb-2">Décrivez votre <span className="gradient-red-text">projet.</span></h2>
               <p className="text-base text-muted-foreground mb-6">
                 Plus vous êtes précis, plus notre devis sera adapté à vos besoins réels.
               </p>
