@@ -20,7 +20,7 @@ const servicesData = [{
   title: "Charpente & Couverture",
   emoji: "🏠",
   description: "Vous êtes protégé pour les 30 prochaines années. Notre expertise en charpente traditionnelle et couverture vous garantit une toiture étanche, isolée et durable.",
-  benefits: ["Une charpente en bois massif qui résiste au temps et aux contraintes", "Une couverture étanche qui élimine tout risque d'infiltration", "Une rénovation complète qui redonne sa solidité à votre toit", "Une isolation par l'extérieur qui réduit vos factures d'énergie", "Une zinguerie soignée qui protège vos murs des eaux de ruissellement", "Des fenêtres de toit qui apportent lumière et ventilation naturelle"],
+  benefits: ["Une charpente en bois massif qui résiste au temps et aux contraintes", "Une couverture étanche qui élimine tout risque d'infiltration", "Une rénovation qui redonne sa solidité à votre toit", "Une isolation par l'extérieur qui réduit vos factures d'énergie", "Une zinguerie soignée qui protège vos murs des eaux de ruissellement", "Des fenêtres de toit qui apportent lumière et ventilation naturelle"],
   image: servicesCharpente2,
   imageAlt: "Charpente traditionnelle et couverture tuiles en Isère – KF Services",
   category: "charpente"
@@ -36,7 +36,7 @@ const servicesData = [{
   title: "Construction neuve & Rénovation globale",
   emoji: "🏗️",
   description: "Évitez la complexité et gagnez du temps, de l'argent et de la tranquillité en confiant l'ensemble de votre projet à un seul interlocuteur de la conception à la livraison : KF Services",
-  benefits: ["Une maison neuve clé en main, conforme à vos plans et à votre budget", "Une rénovation complète qui transforme votre intérieur sans tracas", "Une transformation de locaux adaptée à votre nouveau besoin", "Une mise en conformité qui protège votre bien et ses occupants", "Une coordination de tous les corps de métier — zéro stress pour vous", "Un suivi de chantier régulier pour que vous restiez informé à chaque étape"],
+  benefits: ["Une maison neuve clé en main, conforme à vos plans et à votre budget", "Une rénovation qui transforme votre intérieur sans tracas", "Une transformation de locaux adaptée à votre nouveau besoin", "Une mise en conformité qui protège votre bien et ses occupants", "Une coordination de tous les corps de métier — zéro stress pour vous", "Un suivi de chantier régulier pour que vous restiez informé à chaque étape"],
   image: servicesConstruction,
   imageAlt: "Construction neuve et rénovation globale – KF Services Auvergne-Rhône-Alpes",
   category: "neuf-renovation"

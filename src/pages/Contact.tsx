@@ -28,7 +28,7 @@ const Contact = () => {
           }} transition={{
             duration: 0.7
           }} className="flex-1 text-left">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">Lancez votre projet <span className="text-white/80">en 2 minutes</span></h1>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">Lancez votre projet <span className="text-white/80">en 2 minutes.</span></h1>
               <p className="text-white/80 text-lg md:text-xl max-w-2xl mb-8">
                 Décrivez votre projet et vos besoins, nous vous contacterons dans les 48h pour une visite gratuite et un devis détaillé sans engagement.
               </p>
@@ -120,7 +120,7 @@ const Contact = () => {
               </p>
             </div>
             <div className="mt-4">
-              <Link to="/realisations" className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:underline">
+              <Link to="/realisations" className="inline-flex items-center gap-2 gradient-red-text font-semibold text-sm hover:underline">
                 Voir nos réalisations →
               </Link>
             </div>
@@ -129,7 +129,7 @@ const Contact = () => {
           {/* Right: Form */}
           <ScrollReveal direction="right" className="lg:col-span-3">
             <div className="bg-background border-2 border-border rounded-3xl p-6 md:p-10">
-              <h2 className="text-xl md:text-2xl font-bold mb-2">Décrivez votre <span className="gradient-red-text">projet</span></h2>
+              <h2 className="text-xl md:text-2xl font-bold mb-2">Décrivez votre <span className="gradient-red-text">projet.</span></h2>
               <p className="text-base text-muted-foreground mb-6">
                 Plus vous êtes précis, plus notre devis sera adapté à vos besoins réels.
               </p>

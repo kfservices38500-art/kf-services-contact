@@ -74,7 +74,7 @@ const serviceCards = [{
   icon: Hammer,
   title: "MAÇONNERIE",
   subtitle: "SOLIDITÉ & DURABILITÉ",
-  benefits: ["Des fondations et murs solides pour un bâti durable", "Des extensions qui valorisent votre bien immobilier", "Une rénovation complète qui transforme votre intérieur", "Des terrasses et ouvertures réalisées en toute sécurité"]
+  benefits: ["Des fondations et murs solides pour un bâti durable", "Des extensions qui valorisent votre bien immobilier", "Une rénovation qui transforme votre intérieur", "Des terrasses et ouvertures réalisées en toute sécurité"]
 }, {
   icon: HomeIcon,
   title: "CHARPENTE & COUVERTURE",
@@ -89,7 +89,7 @@ const serviceCards = [{
   icon: Building2,
   title: "NEUF & RÉNOVATION",
   subtitle: "PROJET CLÉ EN MAIN",
-  benefits: ["Une maison neuve conforme à vos plans et votre budget", "Une rénovation complète sans tracas", "Un seul interlocuteur qui coordonne tous les corps de métier", "Un suivi de chantier régulier et transparent"]
+  benefits: ["Une maison neuve conforme à vos plans et votre budget", "Une rénovation sans tracas", "Un seul interlocuteur qui coordonne tous les corps de métier", "Un suivi de chantier régulier et transparent"]
 }];
 const testimonials = [{
   text: "Notre salle de bain est méconnaissable ! Délais tenus, budget respecté et une équipe toujours à l'écoute. On a gagné en confort au quotidien sans aucune mauvaise surprise.",
@@ -444,7 +444,7 @@ const Home = () => {
               <span className="gradient-red-text">plus sûre, plus belle.</span>
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-lg">
-              La diversité de nos activités vous permettra de réduire les interlocuteurs ainsi qu'une meilleure coordination de vos travaux.
+              La diversité de nos activités vous permet de réduire le nombre d'interlocuteurs et d'assurer une meilleure coordination de vos travaux.
             </p>
             <div className="flex flex-wrap gap-3 mb-8">
               <KFButton to="/contact" variant="gradient">
