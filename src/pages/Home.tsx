@@ -437,7 +437,7 @@ const Home = () => {
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
               Votre maison plus solide,{" "}
-              <span className="gradient-red-text">plus sûre, plus belle</span>
+              <span className="gradient-red-text">plus sûre, plus belle.</span>
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-lg">
               La diversité de nos activités vous permettra de réduire les interlocuteurs ainsi qu'une meilleure coordination de vos travaux.
