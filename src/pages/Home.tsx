@@ -570,7 +570,7 @@ const Home = () => {
             <div className="grid lg:grid-cols-2 gap-8 mb-12">
               <div>
                 <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Tous vos travaux, un seul partenaire</p>
-                <h2 className="text-3xl md:text-5xl font-bold">Des solutions concrètes pour <span className="gradient-red-text">chaque besoin</span></h2>
+                <h2 className="text-3xl md:text-5xl font-bold">Des solutions concrètes pour <span className="gradient-red-text">chaque besoin.</span></h2>
               </div>
               <div className="flex items-end">
                 <p className="text-muted-foreground text-base md:text-lg">
