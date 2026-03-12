@@ -115,11 +115,12 @@ const ChatBot = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
             onClick={() => setOpen(true)}
-            className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full btn-gradient shadow-[0_8px_25px_-5px_hsl(0_78%_45%/0.4)] flex items-center justify-center"
+            className="fixed bottom-6 right-6 z-[9999] flex items-center gap-2.5 rounded-full btn-gradient shadow-[0_8px_25px_-5px_hsl(0_78%_45%/0.4)] pl-5 pr-3 py-2.5"
           >
-            <img src={chatbotIcon} alt="Chat" className="w-8 h-8 rounded-full" />
+            <span className="text-white font-semibold text-sm whitespace-nowrap">Une question ?</span>
+            <img src={chatbotIcon} alt="Chat" className="w-9 h-9 rounded-full" />
           </motion.button>
         )}
       </AnimatePresence>
