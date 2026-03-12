@@ -24,6 +24,7 @@ import hero4 from "../assets/hero-4.jpeg";
 import hero5 from "../assets/hero-5.jpeg";
 import hero6 from "../assets/hero-6.jpeg";
 import budgetMaitriseImg from "../assets/budget-maitrise-new.jpg";
+import ctaBgImg from "../assets/cta-bg.jpg";
 import servicesCardImg from "../assets/services-card.jpg";
 const heroImages = [{
   src: hero1,
@@ -501,8 +502,12 @@ const Home = () => {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-muted border-y border-border">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={ctaBgImg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-foreground/60" />
+        </div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
           <ScrollReveal>
             <div className="bg-background rounded-3xl shadow-lg overflow-hidden">
               {/* Top row */}
