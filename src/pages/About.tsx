@@ -162,7 +162,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Ce que vous gagnez avec nous</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-12">Des engagements concrets, <span className="gradient-red-text">pas des promesses en l'air</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12">Des engagements concrets, <span className="gradient-red-text">pas des promesses en l'air.</span></h2>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v, i) => <ScrollReveal key={v.title} delay={i * 0.1}>
