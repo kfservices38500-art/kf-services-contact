@@ -768,7 +768,8 @@ const Home = () => {
         </div>
       </section>
 
-
+      {/* Map / Coverage + Google Maps */}
+      <ParallaxSection className="bg-muted py-16 md:py-24" speed={0.1}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Près de chez vous</p>
