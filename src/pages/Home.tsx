@@ -89,7 +89,7 @@ const serviceCards = [{
   icon: Building2,
   title: "NEUF & RÉNOVATION",
   subtitle: "PROJET CLÉ EN MAIN",
-  benefits: ["Une maison neuve conforme à vos plans et votre budget", "Une rénovation complète sans tracas", "Un seul interlocuteur qui coordonne tous les corps de métier", "Un suivi de chantier régulier et transparent"]
+  benefits: ["Une maison neuve conforme à vos plans et votre budget", "Une rénovation sans tracas", "Un seul interlocuteur qui coordonne tous les corps de métier", "Un suivi de chantier régulier et transparent"]
 }];
 const testimonials = [{
   text: "Notre salle de bain est méconnaissable ! Délais tenus, budget respecté et une équipe toujours à l'écoute. On a gagné en confort au quotidien sans aucune mauvaise surprise.",

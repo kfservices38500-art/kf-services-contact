@@ -120,7 +120,7 @@ const Contact = () => {
               </p>
             </div>
             <div className="mt-4">
-              <Link to="/realisations" className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:underline">
+              <Link to="/realisations" className="inline-flex items-center gap-2 gradient-red-text font-semibold text-sm hover:underline">
                 Voir nos réalisations →
               </Link>
             </div>
