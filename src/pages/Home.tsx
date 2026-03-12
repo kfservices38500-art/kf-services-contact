@@ -693,18 +693,6 @@ const Home = () => {
       </section>
 
 
-      {/* CTA */}
-      <section className="gradient-red text-white py-16 md:py-24">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Prêt à concrétiser votre projet ?</h2>
-            <p className="text-white/70 text-base md:text-lg mb-8">En 48h, vous recevez une réponse et un rendez-vous pour avancer ensemble.</p>
-            <KFButton to="/contact" variant="light">
-              Obtenir mon devis gratuit
-            </KFButton>
-          </ScrollReveal>
-        </div>
-      </section>
 
       {/* Contact Form */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
