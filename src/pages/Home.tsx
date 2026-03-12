@@ -412,7 +412,7 @@ const StatsCarousel = () => {
     </section>);
 
 };
-const Home = () => {
+const Home = () => { // parallax CTA
   const navigate = useNavigate();
   const [currentImage, setCurrentImage] = useState(0);
   const [locationInput, setLocationInput] = useState("");
