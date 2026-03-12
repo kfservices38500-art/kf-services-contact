@@ -101,19 +101,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-background py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {stats.map((stat, i) => <ScrollReveal key={stat.label} delay={i * 0.1}>
-                <img src={stat.icon} alt={stat.label} className="w-[200px] h-[200px] mx-auto mb-2 opacity-80" style={{ filter: "brightness(0) saturate(100%) invert(28%) sepia(82%) saturate(2476%) hue-rotate(346deg) brightness(91%) contrast(95%)" }} />
-                <span className="text-4xl md:text-5xl font-black gradient-red-text whitespace-pre-line">{stat.value}</span>
-                <p className="text-base text-muted-foreground mt-1 whitespace-pre-line">{stat.label}</p>
-              </ScrollReveal>)}
-          </div>
-        </div>
-      </section>
-
       {/* About + Timeline */}
       <section className="gradient-red py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
@@ -154,6 +141,19 @@ const About = () => {
                 </motion.div>)}
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="bg-background py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            {stats.map((stat, i) => <ScrollReveal key={stat.label} delay={i * 0.1}>
+                <img src={stat.icon} alt={stat.label} className="w-[200px] h-[200px] mx-auto mb-2 opacity-80" style={{ filter: "brightness(0) saturate(100%) invert(28%) sepia(82%) saturate(2476%) hue-rotate(346deg) brightness(91%) contrast(95%)" }} />
+                <span className="text-4xl md:text-5xl font-black gradient-red-text whitespace-pre-line">{stat.value}</span>
+                <p className="text-base text-muted-foreground mt-1 whitespace-pre-line">{stat.label}</p>
+              </ScrollReveal>)}
+          </div>
         </div>
       </section>
 
