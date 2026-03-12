@@ -130,6 +130,7 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
         phone: "",
         projectType: "",
         description: "",
+        location: "",
       });
     } catch (err) {
       console.error("Erreur envoi formulaire:", err);
