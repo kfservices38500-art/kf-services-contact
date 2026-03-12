@@ -23,23 +23,35 @@ const stats = [{
   icon: WorkersIcon
 }];
 const timeline = [{
+  number: "01",
   year: "2003",
-  desc: "Notre gérant entre dans le métier - plus de 20 ans d'expérience à votre service"
+  title: "Entrée dans le métier",
+  desc: "Plus de 20 ans d'expérience à votre service."
 }, {
+  number: "02",
   year: "2010",
-  desc: "Spécialisation charpente - couverture pour mieux protéger votre toiture"
+  title: "Spécialisation toiture",
+  desc: "Charpente et couverture pour mieux protéger votre bien."
 }, {
+  number: "03",
   year: "2015",
-  desc: "Élargissement des compétences - plomberie et chauffage intégrés à notre offre"
+  title: "Élargissement des compétences",
+  desc: "Plomberie et chauffage intégrés à notre offre."
 }, {
+  number: "04",
   year: "2022",
-  desc: "Création de KF Services - un interlocuteur unique pour tous vos travaux"
+  title: "Création de KF Services",
+  desc: "Un interlocuteur unique pour tous vos travaux."
 }, {
+  number: "05",
   year: "2023",
-  desc: "3 équipes spécialisées - des délais plus courts pour vos projets"
+  title: "3 équipes spécialisées",
+  desc: "Des délais plus courts pour vos projets."
 }, {
+  number: "06",
   year: "2026",
-  desc: "+300 chantiers livrés - autant de clients satisfaits"
+  title: "+300 chantiers livrés",
+  desc: "Autant de clients satisfaits."
 }];
 const values = [{
   icon: Target,
@@ -124,20 +136,21 @@ const About = () => {
             </div>
           </ScrollReveal>
           <ScrollReveal direction="right">
-            <div className="space-y-6">
-              {timeline.map((item, i) => <motion.div key={item.year} initial={{
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {timeline.map((item, i) => <motion.div key={item.number} initial={{
               opacity: 0,
-              x: 20
+              y: 20
             }} whileInView={{
               opacity: 1,
-              x: 0
+              y: 0
             }} viewport={{
               once: true
             }} transition={{
               delay: i * 0.1
-            }} className="flex gap-4">
-                  <span className="text-xl font-black text-white min-w-[70px]">{item.year}</span>
-                  <p className="text-white/70 text-base pt-0.5">{item.desc}</p>
+            }} className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 text-center">
+                  <span className="text-4xl md:text-5xl font-black text-white/30 block mb-2">{item.number}</span>
+                  <h3 className="font-bold text-white text-base mb-1">{item.title}</h3>
+                  <p className="text-white/60 text-sm">{item.desc}</p>
                 </motion.div>)}
             </div>
           </ScrollReveal>
