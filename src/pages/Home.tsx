@@ -706,67 +706,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="relative overflow-hidden bg-muted" style={{ aspectRatio: '1280 / 500' }}>
-        <div className="absolute inset-0">
-          <img src={ctaBgImg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 via-45% to-transparent" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 h-full flex items-center">
-          <ScrollReveal>
-            <div className="max-w-xl">
-              <div className="bg-background/95 backdrop-blur-sm rounded-3xl shadow-lg overflow-hidden">
-                <div className="p-6 md:p-8">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                    Un projet de travaux en tête en<br /><span className="gradient-red-text">Auvergne-Rhône-Alpes ?</span>
-                  </h2>
-                  <div className="flex flex-col sm:flex-row items-stretch gap-3">
-                    <div className="flex-1 relative">
-                      <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                      <input
-                        type="text"
-                        placeholder="Code postal, ville"
-                        value={locationInput}
-                        onChange={(e) => setLocationInput(e.target.value)}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter") {
-                            navigate(`/contact${locationInput.trim() ? `?location=${encodeURIComponent(locationInput.trim())}` : ""}`);
-                          }
-                        }}
-                        className="w-full pl-12 pr-5 py-4 rounded-2xl border-2 border-input bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all"
-                      />
-                    </div>
-                    <button
-                      onClick={() => navigate(`/contact${locationInput.trim() ? `?location=${encodeURIComponent(locationInput.trim())}` : ""}`)}
-                      className="btn-gradient px-8 py-4 rounded-full text-base font-bold inline-flex items-center justify-center gap-2 group whitespace-nowrap"
-                    >
-                      Je demande un devis
-                      <span className="relative w-5 h-5">
-                        <ArrowUpRight className="w-5 h-5 absolute inset-0 transition-all duration-300 group-hover:opacity-0 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                        <ArrowRight className="w-5 h-5 absolute inset-0 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0.5" />
-                      </span>
-                    </button>
-                  </div>
-                </div>
-                <div className="bg-muted/80 px-6 md:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-border">
-                  <p className="text-sm md:text-base font-semibold text-muted-foreground">
-                    Vous pouvez aussi nous appeler directement
-                  </p>
-                  <a
-                    href="tel:+33669209788"
-                    className="inline-flex items-center gap-3 text-foreground font-bold text-lg md:text-xl hover:text-primary transition-colors"
-                  >
-                    <span className="w-9 h-9 rounded-full gradient-red flex items-center justify-center">
-                      <Phone className="w-4.5 h-4.5 text-white" />
-                    </span>
-                    06 69 20 97 88
-                  </a>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
 
       {/* Map / Coverage + Google Maps */}
       <ParallaxSection className="bg-muted py-16 md:py-24" speed={0.1}>
