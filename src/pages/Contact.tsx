@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, CalendarCheck, FileText, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm";
