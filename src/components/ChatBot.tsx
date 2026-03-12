@@ -218,7 +218,7 @@ const ChatBot = () => {
                 <input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Posez votre question..."
+                  placeholder="Encore des questions ? 🙂"
                   className="flex-1 bg-muted rounded-xl px-3.5 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                   disabled={isLoading}
                 />
