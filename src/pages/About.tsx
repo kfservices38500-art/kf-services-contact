@@ -115,7 +115,7 @@ const About = () => {
 
       {/* About + Timeline */}
       <section className="bg-background py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 bg-muted rounded-3xl p-8 md:p-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "hsl(0 30% 97%)" }}>
           <ScrollReveal direction="left">
             <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Pourquoi nous faire confiance</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">+ de 20 ans d'expérience au service{"\n"}de <span className="gradient-red-text italic">votre tranquillité.</span></h2>
