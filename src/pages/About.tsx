@@ -115,22 +115,22 @@ const About = () => {
       </section>
 
       {/* About + Timeline */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="grid lg:grid-cols-2 gap-12">
+      <section className="gradient-red py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
           <ScrollReveal direction="left">
-            <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Pourquoi nous faire confiance</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">+ de 20 ans d'expérience au service{"\n"}de <span className="gradient-red-text">votre tranquillité</span></h2>
-            <div className="space-y-4 text-muted-foreground text-base md:text-lg">
+            <p className="text-white/70 font-bold text-base uppercase tracking-wider mb-2">Pourquoi nous faire confiance</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">+ de 20 ans d'expérience au service{"\n"}de <span className="text-white/90 italic">votre tranquillité</span></h2>
+            <div className="space-y-4 text-white/80 text-base md:text-lg">
               <p>
                 Quand vous confiez votre chantier à KF Services, vous gagnez un avantage décisif : un seul interlocuteur qui maîtrise tous les métiers du bâtiment.
               </p>
               <p>Avec trois équipes spécialisées et plus de 300 chantiers à notre actif (dont plus de 50 avec KF Services) , vous disposez d'une réactivité et d'un savoir-faire concret.</p>
               <p>Notre promesse : vous accompagner du premier contact jusqu'à la réception finale.</p>
               <div className="flex flex-wrap gap-3 mt-6">
-                <Link to="/services" className="inline-flex items-center gap-2 gradient-red-text font-bold text-base hover:underline">
+                <Link to="/services" className="inline-flex items-center gap-2 text-white font-bold text-base hover:underline">
                   Découvrir nos services →
                 </Link>
-                <Link to="/realisations" className="inline-flex items-center gap-2 gradient-red-text font-bold text-base hover:underline">
+                <Link to="/realisations" className="inline-flex items-center gap-2 text-white font-bold text-base hover:underline">
                   Voir nos réalisations →
                 </Link>
               </div>
@@ -149,8 +149,8 @@ const About = () => {
             }} transition={{
               delay: i * 0.1
             }} className="flex gap-4">
-                  <span className="text-xl font-black gradient-red-text min-w-[70px]">{item.year}</span>
-                  <p className="text-muted-foreground text-base pt-0.5">{item.desc}</p>
+                  <span className="text-xl font-black text-white min-w-[70px]">{item.year}</span>
+                  <p className="text-white/70 text-base pt-0.5">{item.desc}</p>
                 </motion.div>)}
             </div>
           </ScrollReveal>
