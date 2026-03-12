@@ -212,7 +212,7 @@ const Realisations = () => {
           duration: 0.7
         }}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              {deptFilter ? <>Nos réalisations en <span className="gradient-red-text">{deptNames[deptFilter] || deptFilter} ({deptFilter})</span></> : <>Pas des promesses, <span className="gradient-red-text">juste des résultats concrets</span></>}
+              {deptFilter ? <>Nos réalisations en <span className="gradient-red-text">{deptNames[deptFilter] || deptFilter} ({deptFilter}).</span></> : <>Pas des promesses, <span className="gradient-red-text">juste des résultats concrets.</span></>}
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
               {deptFilter ? `Découvrez nos chantiers réalisés dans le département ${deptNames[deptFilter] || deptFilter}.` : "Chaque projet ci-dessous est un client qui a retrouvé satisfaction, sécurité, confort, + valeur immobilière."}

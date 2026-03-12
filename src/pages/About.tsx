@@ -95,7 +95,7 @@ const About = () => {
         }} transition={{
           duration: 0.7
         }}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Un partenaire fiable pour des travaux <span className="gradient-red-text">sereins</span></h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Un partenaire fiable pour des travaux <span className="gradient-red-text">sereins.</span></h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">Fort de plus de 20 ans d'expertise, vous profitez d'une équipe expérimentée qui coordonne tous les corps de métier pour que votre projet soit à votre image et sans stress.</p>
           </motion.div>
         </div>
