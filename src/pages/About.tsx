@@ -114,46 +114,35 @@ const About = () => {
       </section>
 
       {/* About + Timeline */}
-      <section className="gradient-red py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
-          <ScrollReveal direction="left">
-            <p className="text-white/70 font-bold text-base uppercase tracking-wider mb-2">Pourquoi nous faire confiance</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">+ de 20 ans d'expérience au service{"\n"}de <span className="text-white/90 italic">votre tranquillité.</span></h2>
-            <div className="space-y-4 text-white/80 text-base md:text-lg">
-              <p>
-                Quand vous confiez votre chantier à KF Services, vous gagnez un avantage décisif : un seul interlocuteur qui maîtrise tous les métiers du bâtiment.
-              </p>
-              <p>Avec trois équipes spécialisées et plus de 300 chantiers à notre actif (dont plus de 50 avec KF Services) , vous disposez d'une réactivité et d'un savoir-faire concret.</p>
-              <p>Notre promesse : vous accompagner du premier contact jusqu'à la réception finale.</p>
-              <div className="flex flex-wrap gap-3 mt-6">
-                <Link to="/services" className="inline-flex items-center gap-2 text-white font-bold text-base hover:underline">
-                  Découvrir nos services →
-                </Link>
-                <Link to="/realisations" className="inline-flex items-center gap-2 text-white font-bold text-base hover:underline">
-                  Voir nos réalisations →
-                </Link>
-              </div>
-            </div>
+      <section className="bg-muted py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <p className="gradient-red-text font-bold text-base uppercase tracking-wider mb-2">Notre parcours</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12">+ de 20 ans d'expérience au service de <span className="gradient-red-text italic">votre tranquillité.</span></h2>
           </ScrollReveal>
-          <ScrollReveal direction="right">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {timeline.map((item, i) => <motion.div key={item.number} initial={{
-              opacity: 0,
-              y: 20
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              delay: i * 0.1
-            }} className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 text-center">
-                  <span className="text-4xl md:text-5xl font-black text-white/30 block mb-2">{item.number}</span>
-                  <h3 className="font-bold text-white text-base mb-1">{item.title}</h3>
-                  <p className="text-white/60 text-sm">{item.desc}</p>
-                </motion.div>)}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
+            {timeline.map((item, i) => <ScrollReveal key={item.number} delay={i * 0.08}>
+                <motion.div whileHover={{
+                  y: -5,
+                  boxShadow: "0 20px 40px -15px rgba(0,0,0,0.08)"
+                }} className="bg-background rounded-3xl p-6 md:p-8 text-center">
+                  <span className="text-4xl md:text-6xl font-black text-primary/30 block mb-3">{item.number}</span>
+                  <p className="text-sm text-primary font-semibold mb-1">{item.year}</p>
+                  <h3 className="font-bold text-foreground text-base md:text-lg mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                </motion.div>
+              </ScrollReveal>)}
+          </div>
+          <div className="mt-12 text-center">
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/services" className="inline-flex items-center gap-2 gradient-red-text font-bold text-base hover:underline">
+                Découvrir nos services →
+              </Link>
+              <Link to="/realisations" className="inline-flex items-center gap-2 gradient-red-text font-bold text-base hover:underline">
+                Voir nos réalisations →
+              </Link>
             </div>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 
