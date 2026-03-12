@@ -497,6 +497,50 @@ const Home = () => {
         </div>
       </section>
 
+      {/* CTA Banner */}
+      <section className="bg-muted border-y border-border">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+          <ScrollReveal>
+            <div className="bg-background rounded-3xl shadow-lg overflow-hidden">
+              {/* Top row */}
+              <div className="p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+                <div className="flex-1">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                    Un projet de travaux en tête<span className="gradient-red-text"> ?</span>
+                  </h2>
+                  <div className="w-16 h-1 gradient-red rounded-full" />
+                </div>
+                <Link
+                  to="/contact"
+                  className="btn-gradient px-8 py-4 rounded-full text-base font-bold inline-flex items-center gap-2 group whitespace-nowrap"
+                >
+                  Je demande un devis
+                  <span className="relative w-5 h-5">
+                    <ArrowUpRight className="w-5 h-5 absolute inset-0 transition-all duration-300 group-hover:opacity-0 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    <ArrowRight className="w-5 h-5 absolute inset-0 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0.5" />
+                  </span>
+                </Link>
+              </div>
+              {/* Bottom row – phone */}
+              <div className="bg-muted px-6 md:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-border">
+                <p className="text-sm md:text-base font-semibold text-muted-foreground">
+                  Vous pouvez aussi nous appeler directement
+                </p>
+                <a
+                  href="tel:+33669209788"
+                  className="inline-flex items-center gap-3 text-foreground font-bold text-lg md:text-xl hover:text-primary transition-colors"
+                >
+                  <span className="w-9 h-9 rounded-full gradient-red flex items-center justify-center">
+                    <Phone className="w-4.5 h-4.5 text-white" />
+                  </span>
+                  06 69 20 97 88
+                </a>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Stats Carousel */}
       <StatsCarousel />
 
