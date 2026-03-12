@@ -46,6 +46,12 @@ const contactSchema = z.object({
     .trim()
     .min(1, "La description est requise")
     .max(2000, "La description ne doit pas dépasser 2000 caractères"),
+  location: z
+    .string()
+    .trim()
+    .max(100, "La localisation ne doit pas dépasser 100 caractères")
+    .optional()
+    .or(z.literal("")),
 });
 
 type FormErrors = Partial<Record<keyof z.infer<typeof contactSchema>, string>>;
