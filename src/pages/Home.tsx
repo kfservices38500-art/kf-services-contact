@@ -508,7 +508,7 @@ const Home = () => {
               {/* Top row */}
               <div className="p-6 md:p-8">
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                  Un projet de travaux en tête en Auvergne-Rhône-Alpes<span className="gradient-red-text"> ?</span>
+                  Un projet de travaux en tête en<br /><span className="gradient-red-text">Auvergne-Rhône-Alpes ?</span>
                 </h2>
                 <div className="flex flex-col sm:flex-row items-stretch gap-3">
                   <div className="flex-1 relative">
