@@ -4,54 +4,54 @@ import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 
 const projectTypes = [
-  "Maçonnerie",
-  "Charpente & Couverture",
-  "Plomberie",
-  
-  "Rénovation",
-  "Autre",
-];
+"Maçonnerie",
+"Charpente & Couverture",
+"Plomberie",
+
+"Rénovation",
+"Autre"];
+
 
 const contactSchema = z.object({
-  firstName: z
-    .string()
-    .trim()
-    .min(1, "Le prénom est requis")
-    .max(50, "Le prénom ne doit pas dépasser 50 caractères")
-    .regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Le prénom contient des caractères invalides"),
-  lastName: z
-    .string()
-    .trim()
-    .min(1, "Le nom est requis")
-    .max(50, "Le nom ne doit pas dépasser 50 caractères")
-    .regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Le nom contient des caractères invalides"),
-  email: z
-    .string()
-    .trim()
-    .min(1, "L'email est requis")
-    .email("L'adresse email est invalide")
-    .max(255, "L'email ne doit pas dépasser 255 caractères"),
-  phone: z
-    .string()
-    .trim()
-    .min(1, "Le téléphone est requis")
-    .max(20, "Le numéro de téléphone est trop long")
-    .regex(/^[0-9\s+()-]+$/, "Le numéro de téléphone est invalide"),
-  projectType: z
-    .string()
-    .min(1, "Le type de projet est requis")
-    .refine((val) => projectTypes.includes(val), "Type de projet invalide"),
-  description: z
-    .string()
-    .trim()
-    .min(1, "La description est requise")
-    .max(2000, "La description ne doit pas dépasser 2000 caractères"),
-  location: z
-    .string()
-    .trim()
-    .max(100, "La localisation ne doit pas dépasser 100 caractères")
-    .optional()
-    .or(z.literal("")),
+  firstName: z.
+  string().
+  trim().
+  min(1, "Le prénom est requis").
+  max(50, "Le prénom ne doit pas dépasser 50 caractères").
+  regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Le prénom contient des caractères invalides"),
+  lastName: z.
+  string().
+  trim().
+  min(1, "Le nom est requis").
+  max(50, "Le nom ne doit pas dépasser 50 caractères").
+  regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Le nom contient des caractères invalides"),
+  email: z.
+  string().
+  trim().
+  min(1, "L'email est requis").
+  email("L'adresse email est invalide").
+  max(255, "L'email ne doit pas dépasser 255 caractères"),
+  phone: z.
+  string().
+  trim().
+  min(1, "Le téléphone est requis").
+  max(20, "Le numéro de téléphone est trop long").
+  regex(/^[0-9\s+()-]+$/, "Le numéro de téléphone est invalide"),
+  projectType: z.
+  string().
+  min(1, "Le type de projet est requis").
+  refine((val) => projectTypes.includes(val), "Type de projet invalide"),
+  description: z.
+  string().
+  trim().
+  min(1, "La description est requise").
+  max(2000, "La description ne doit pas dépasser 2000 caractères"),
+  location: z.
+  string().
+  trim().
+  max(100, "La localisation ne doit pas dépasser 100 caractères").
+  optional().
+  or(z.literal(""))
 });
 
 type FormErrors = Partial<Record<keyof z.infer<typeof contactSchema>, string>>;
@@ -68,7 +68,7 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
     phone: "",
     projectType: "",
     description: "",
-    location: initialLocation,
+    location: initialLocation
   });
 
   useEffect(() => {
@@ -117,7 +117,7 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
 
     try {
       const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: formData,
+        body: formData
       });
 
       if (error) throw error;
@@ -130,7 +130,7 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
         phone: "",
         projectType: "",
         description: "",
-        location: "",
+        location: ""
       });
     } catch (err) {
       console.error("Erreur envoi formulaire:", err);
@@ -160,8 +160,8 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
           tabIndex={-1}
           autoComplete="off"
           value={honeypot}
-          onChange={(e) => setHoneypot(e.target.value)}
-        />
+          onChange={(e) => setHoneypot(e.target.value)} />
+        
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -177,8 +177,8 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
               setFormData({ ...formData, firstName: e.target.value });
               clearError("firstName");
             }}
-            className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.firstName ? "border-red-500" : "border-input"}`}
-          />
+            className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.firstName ? "border-red-500" : "border-input"}`} />
+          
           {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
         </div>
         <div>
@@ -193,8 +193,8 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
               setFormData({ ...formData, lastName: e.target.value });
               clearError("lastName");
             }}
-            className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.lastName ? "border-red-500" : "border-input"}`}
-          />
+            className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.lastName ? "border-red-500" : "border-input"}`} />
+          
           {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
         </div>
       </div>
@@ -211,8 +211,8 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
               setFormData({ ...formData, email: e.target.value });
               clearError("email");
             }}
-            className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.email ? "border-red-500" : "border-input"}`}
-          />
+            className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.email ? "border-red-500" : "border-input"}`} />
+          
           {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
         </div>
         <div>
@@ -227,8 +227,8 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
               setFormData({ ...formData, phone: e.target.value });
               clearError("phone");
             }}
-            className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.phone ? "border-red-500" : "border-input"}`}
-          />
+            className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.phone ? "border-red-500" : "border-input"}`} />
+          
           {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
         </div>
       </div>
@@ -241,12 +241,12 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
             setFormData({ ...formData, projectType: e.target.value });
             clearError("projectType");
           }}
-          className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.projectType ? "border-red-500" : "border-input"}`}
-        >
+          className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.projectType ? "border-red-500" : "border-input"}`}>
+          
           <option value="">Sélectionnez le type de projet</option>
-          {projectTypes.map((type) => (
-            <option key={type} value={type}>{type}</option>
-          ))}
+          {projectTypes.map((type) =>
+          <option key={type} value={type}>{type}</option>
+          )}
         </select>
         {errors.projectType && <p className="text-red-500 text-sm mt-1">{errors.projectType}</p>}
       </div>
@@ -261,12 +261,12 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
             setFormData({ ...formData, location: e.target.value });
             clearError("location");
           }}
-          className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.location ? "border-red-500" : "border-input"}`}
-        />
+          className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring transition-all ${errors.location ? "border-red-500" : "border-input"}`} />
+        
         {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location}</p>}
       </div>
       <div className="mb-6">
-        <label className="block text-base font-semibold mb-2">Décrivez votre projet *</label>
+        <label className="block text-base font-semibold mb-2">Votre projet en quelques mots *</label>
         <textarea
           required
           rows={4}
@@ -277,35 +277,35 @@ const ContactForm = ({ initialLocation = "" }: ContactFormProps) => {
             setFormData({ ...formData, description: e.target.value });
             clearError("description");
           }}
-          className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring resize-none transition-all ${errors.description ? "border-red-500" : "border-input"}`}
-        />
+          className={`w-full px-5 py-3.5 rounded-2xl border-2 bg-background text-base focus:outline-none focus:ring-2 focus:ring-ring resize-none transition-all ${errors.description ? "border-red-500" : "border-input"}`} />
+        
         {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description}</p>}
       </div>
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full btn-gradient py-4 rounded-full text-base font-bold group flex items-center justify-center gap-2 disabled:opacity-60"
-      >
+        className="w-full btn-gradient py-4 rounded-full text-base font-bold group flex items-center justify-center gap-2 disabled:opacity-60">
+        
         {isSubmitting ? "Envoi en cours..." : "Envoyer ma demande de devis"}
-        {!isSubmitting && (
-          <span className="relative w-5 h-5">
+        {!isSubmitting &&
+        <span className="relative w-5 h-5">
             <ArrowUpRight className="w-5 h-5 absolute inset-0 transition-all duration-300 group-hover:opacity-0" />
             <ArrowRight className="w-5 h-5 absolute inset-0 opacity-0 transition-all duration-300 group-hover:opacity-100" />
           </span>
-        )}
+        }
       </button>
-      {submitStatus === "success" && (
-        <div className="mt-4 p-4 rounded-2xl bg-green-50 border border-green-200 text-green-800 text-sm font-medium">
+      {submitStatus === "success" &&
+      <div className="mt-4 p-4 rounded-2xl bg-green-50 border border-green-200 text-green-800 text-sm font-medium">
           ✅ Merci ! Votre demande a bien été envoyée. Nous vous recontacterons sous 48h.
         </div>
-      )}
-      {submitStatus === "error" && (
-        <div className="mt-4 p-4 rounded-2xl bg-red-50 border border-red-200 text-red-800 text-sm font-medium">
+      }
+      {submitStatus === "error" &&
+      <div className="mt-4 p-4 rounded-2xl bg-red-50 border border-red-200 text-red-800 text-sm font-medium">
           ❌ Une erreur est survenue. Veuillez réessayer ou nous appeler au 06 69 20 97 88.
         </div>
-      )}
-    </form>
-  );
+      }
+    </form>);
+
 };
 
 export default ContactForm;
