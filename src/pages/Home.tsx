@@ -784,7 +784,7 @@ const Home = () => { // parallax CTA
           </ScrollReveal>
           <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 mb-12">
             {departments.map((d, i) => <ScrollReveal key={d.code} delay={i * 0.04}>
-                <Link to={`/realisations?dept=${d.code}`}>
+                <Link to="/realisations">
                   <motion.div
                     whileHover={{
                       scale: 1.05,
