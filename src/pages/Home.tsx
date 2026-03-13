@@ -704,10 +704,10 @@ const Home = () => { // parallax CTA
 
 
       {/* CTA Banner */}
-      <section className="relative overflow-hidden bg-muted" style={{ aspectRatio: '1280 / 500' }} ref={ctaSectionRef}>
+      <section className="relative overflow-hidden bg-muted md:[aspect-ratio:1280/500]" ref={ctaSectionRef}>
         {/* Background photo with parallax */}
         <motion.div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           style={{
             y: ctaParallaxY,
             scale: ctaParallaxScale,
@@ -715,8 +715,8 @@ const Home = () => { // parallax CTA
         >
           <img src={ctaBgImg} alt="" className="w-full h-full object-cover" style={{ minHeight: '120%', marginTop: '-10%' }} />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 via-45% to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 h-full flex items-center">
+        <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-background via-background/90 via-45% to-transparent" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 md:h-full flex items-center">
           <ScrollReveal>
             <div className="max-w-xl">
               <div className="bg-background/95 backdrop-blur-sm rounded-3xl shadow-lg overflow-hidden">
