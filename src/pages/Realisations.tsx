@@ -42,7 +42,7 @@ import realStPaulIzeaux2 from "../assets/real-stpaulizeaux-2.jpeg";
 import realStPaulIzeaux3 from "../assets/real-stpaulizeaux-3.jpeg";
 import realStPaulIzeaux4 from "../assets/real-stpaulizeaux-4.jpeg";
 import realStPaulIzeaux5 from "../assets/real-stpaulizeaux-5.jpeg";
-import realSassenage1 from "../assets/real-sassenage-1.jpeg";
+
 import realSassenage2 from "../assets/real-sassenage-2.jpeg";
 import realSassenage3 from "../assets/real-sassenage-3.jpeg";
 import realSassenage4 from "../assets/real-sassenage-4.jpeg";
@@ -51,7 +51,7 @@ import realSassenage6 from "../assets/real-sassenage-6.jpeg";
 import realSassenage7 from "../assets/real-sassenage-7.jpeg";
 import realSassenage8 from "../assets/real-sassenage-8.jpeg";
 import realSassenage9 from "../assets/real-sassenage-9.jpeg";
-import realSassenage10 from "../assets/real-sassenage-10.jpeg";
+
 import realVoreppe1 from "../assets/real-voreppe-1.jpeg";
 import realVoreppe2 from "../assets/real-voreppe-2.jpeg";
 import realMontStMartin1 from "../assets/real-montstmartin-1.jpeg";
@@ -151,7 +151,7 @@ const projects = [{
   location: "Saint-Paul-d'Izeaux (38)",
   description: "Construction d'une piscine à débordement en béton armé, du terrassement au coulage du radier et élévation des murs en parpaings avec local technique intégré."
 }, {
-  images: [realSassenage9, realSassenage10, realSassenage1, realSassenage2, realSassenage4, realSassenage3, realSassenage5, realSassenage6, realSassenage7, realSassenage8],
+  images: [realSassenage9, realSassenage2, realSassenage4, realSassenage3, realSassenage5, realSassenage6, realSassenage7, realSassenage8],
   category: ["maconnerie", "renovation"],
   categoryLabel: "Rénovation & Gros œuvre",
   title: "Ouvertures en sous-œuvre et mezzanine bois dans bâtiment en pierres",
