@@ -42,7 +42,7 @@ import realStPaulIzeaux2 from "../assets/real-stpaulizeaux-2.jpeg";
 import realStPaulIzeaux3 from "../assets/real-stpaulizeaux-3.jpeg";
 import realStPaulIzeaux4 from "../assets/real-stpaulizeaux-4.jpeg";
 import realStPaulIzeaux5 from "../assets/real-stpaulizeaux-5.jpeg";
-import realSassenage1 from "../assets/real-sassenage-1.jpeg";
+
 import realSassenage2 from "../assets/real-sassenage-2.jpeg";
 import realSassenage3 from "../assets/real-sassenage-3.jpeg";
 import realSassenage4 from "../assets/real-sassenage-4.jpeg";
